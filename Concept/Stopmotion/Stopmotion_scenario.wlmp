@@ -1,0 +1,2164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="Stopmotion_scenario" themeId="0" version="65540" templateID="SimpleProjectTemplate">
+  <MediaItems>
+    <MediaItem id="163" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140502(0).jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="1" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_130523.jpg" arWidth="1024" arHeight="768" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="165" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140507.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="2" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_130537.jpg" arWidth="1024" arHeight="768" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="166" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140508.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="3" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_130542.jpg" arWidth="1024" arHeight="768" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="167" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140509.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="4" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_130545.jpg" arWidth="1024" arHeight="768" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="168" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140511.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="5" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_130547.jpg" arWidth="1024" arHeight="768" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="169" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140515.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="6" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_130549.jpg" arWidth="1024" arHeight="768" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="170" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140516.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="7" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_130552.jpg" arWidth="1024" arHeight="768" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="171" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140517.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="8" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_130616.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="172" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140519.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="9" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_130618.jpg" arWidth="1024" arHeight="768" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="173" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140520.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="10" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_130620.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="174" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140522.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="11" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_130622.jpg" arWidth="1024" arHeight="768" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="175" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140523.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="12" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_130625.jpg" arWidth="1024" arHeight="768" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="176" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140524.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="13" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_130721.jpg" arWidth="1024" arHeight="768" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="177" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140525.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="14" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_130756.jpg" arWidth="1024" arHeight="768" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="178" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140526.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="15" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_130848.jpg" arWidth="1024" arHeight="768" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="179" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140527.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="16" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_130932.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="180" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140528.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="17" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_131015(0).jpg" arWidth="1024" arHeight="768" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="181" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140529.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="18" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_131015.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="182" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140530.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="19" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_131020.jpg" arWidth="1024" arHeight="768" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="183" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140532.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="20" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_131023.jpg" arWidth="1024" arHeight="768" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="184" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140534.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="21" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_131025.jpg" arWidth="1024" arHeight="768" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="185" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140536.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="22" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_131108.jpg" arWidth="1024" arHeight="768" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="186" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140537.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="23" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_131111.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="187" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140538.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="24" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_131112.jpg" arWidth="1024" arHeight="768" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="188" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140540.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="25" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_131118.jpg" arWidth="1024" arHeight="768" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="189" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140541.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="26" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_131120.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="190" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140542.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="27" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_131121.jpg" arWidth="1024" arHeight="768" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="191" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140543.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="28" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134118.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="192" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140551.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="29" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134127.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="193" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140555.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="30" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134131.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="194" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140600.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="31" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134135.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="195" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140606.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="32" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134139.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="196" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140611.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="33" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134143.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="197" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140613.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="34" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134147.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="198" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\Upbeat Ukulele Background Music - That Positive Feeling by Alumo.mp3" arWidth="0" arHeight="0" duration="138.55346929999999" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="3" />
+    <MediaItem id="35" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134207.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="36" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134211.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="37" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134213.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="38" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134217.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="39" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134221.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="40" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134227.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="41" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134233.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="42" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134237.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="43" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134247.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="44" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134256.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="45" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134257.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="46" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134259.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="47" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134306.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="48" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134311.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="49" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134315.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="50" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134321.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="51" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134328.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="52" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134331.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="53" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134335.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="54" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134343.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="55" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134349.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="56" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134350.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="57" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_134351.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="58" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135437.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="59" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135444.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="60" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135446.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="61" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135448.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="62" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135452.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="63" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135635.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="64" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135638.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="65" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135641.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="66" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135644.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="67" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135648.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="68" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135702.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="69" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135704.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="70" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135705.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="71" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135707.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="72" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135709.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="73" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135710.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="74" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135712.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="75" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135713.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="76" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135715.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="77" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135717.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="78" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135719.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="79" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135729.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="80" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135738.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="81" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135745.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="82" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135749.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="83" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135800.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="84" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135802.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="85" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135804.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="86" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135805.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="87" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135807.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="88" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135808.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="89" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135810.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="90" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135811.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="91" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135824.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="92" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135832.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="93" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135841.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="94" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135851.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="95" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135852.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="96" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135853.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="97" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135855.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="98" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135856.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="99" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135857.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="100" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135906.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="101" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135908.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="102" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135909.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="103" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135910.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="104" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135924.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="105" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135927.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="106" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135929.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="107" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135930.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="108" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135939.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="109" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135942.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="110" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135945.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="111" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135952.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="112" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135954.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="113" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_135955.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="114" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140008.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="115" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140010.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="116" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140011.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="117" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140019.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="118" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140022.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="119" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140023.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="120" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140024.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="121" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140025.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="122" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140028.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="123" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140106.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="124" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140117.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="125" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140123.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="126" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140137.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="127" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140142.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="128" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140147.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="129" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140156.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="130" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140236.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="131" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140247.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="132" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140252.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="133" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140257.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="134" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140301.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="135" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140306.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="136" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140310.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="137" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140315.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="138" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140319.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="139" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140323.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="140" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140334.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="141" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140342.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="142" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140349.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="143" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140357.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="144" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140406.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="145" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140408.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="146" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140410.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="147" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140412.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="148" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140415.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="149" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140416.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="150" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140418.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="151" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140419.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="152" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140421.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="153" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140423.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="154" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140443.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="155" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140445.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="156" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140447.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="157" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140449.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="158" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140452.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="159" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140454.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="160" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140456.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="161" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140458.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+    <MediaItem id="162" filePath="C:\Users\Alexander\Dropbox\Map van Mellex\typetopia\20141127_140500.jpg" arWidth="3264" arHeight="2448" duration="0" songTitle="" songArtist="" songAlbum="" songCopyrightUrl="" songArtistUrl="" songAudioFileUrl="" stabilizationMode="0" mediaItemType="2" />
+  </MediaItems>
+  <Extents>
+    <ImageClip extentID="163" gapBefore="0" mediaItemID="77" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="164" gapBefore="0" mediaItemID="78" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="165" gapBefore="0" mediaItemID="79" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="166" gapBefore="0" mediaItemID="80" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="167" gapBefore="0" mediaItemID="81" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="168" gapBefore="0" mediaItemID="82" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="5" gapBefore="0" mediaItemID="1" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="169" gapBefore="0" mediaItemID="83" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="6" gapBefore="0" mediaItemID="2" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="170" gapBefore="0" mediaItemID="84" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="7" gapBefore="0" mediaItemID="3" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="171" gapBefore="0" mediaItemID="85" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="8" gapBefore="0" mediaItemID="4" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="172" gapBefore="0" mediaItemID="86" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="9" gapBefore="0" mediaItemID="5" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="173" gapBefore="0" mediaItemID="87" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="10" gapBefore="0" mediaItemID="6" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="174" gapBefore="0" mediaItemID="88" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="11" gapBefore="0" mediaItemID="7" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="175" gapBefore="0" mediaItemID="89" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="12" gapBefore="0" mediaItemID="8" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="176" gapBefore="0" mediaItemID="90" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="13" gapBefore="0" mediaItemID="9" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="177" gapBefore="0" mediaItemID="91" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="14" gapBefore="0" mediaItemID="10" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="178" gapBefore="0" mediaItemID="92" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="15" gapBefore="0" mediaItemID="11" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="179" gapBefore="0" mediaItemID="93" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="16" gapBefore="0" mediaItemID="12" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="180" gapBefore="0" mediaItemID="94" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="17" gapBefore="0" mediaItemID="13" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="181" gapBefore="0" mediaItemID="95" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="18" gapBefore="0" mediaItemID="14" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="182" gapBefore="0" mediaItemID="96" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="19" gapBefore="0" mediaItemID="15" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="183" gapBefore="0" mediaItemID="97" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="20" gapBefore="0" mediaItemID="16" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="184" gapBefore="0" mediaItemID="98" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="21" gapBefore="0" mediaItemID="17" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="185" gapBefore="0" mediaItemID="99" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="22" gapBefore="0" mediaItemID="18" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="186" gapBefore="0" mediaItemID="100" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="23" gapBefore="0" mediaItemID="19" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="187" gapBefore="0" mediaItemID="101" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="24" gapBefore="0" mediaItemID="20" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="188" gapBefore="0" mediaItemID="102" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="25" gapBefore="0" mediaItemID="21" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="189" gapBefore="0" mediaItemID="103" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="26" gapBefore="0" mediaItemID="22" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="190" gapBefore="0" mediaItemID="104" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="27" gapBefore="0" mediaItemID="23" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="191" gapBefore="0" mediaItemID="105" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="28" gapBefore="0" mediaItemID="24" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="192" gapBefore="0" mediaItemID="106" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="29" gapBefore="0" mediaItemID="25" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="193" gapBefore="0" mediaItemID="107" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="30" gapBefore="0" mediaItemID="26" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="194" gapBefore="0" mediaItemID="108" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="31" gapBefore="0" mediaItemID="27" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="195" gapBefore="0" mediaItemID="109" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="196" gapBefore="0" mediaItemID="110" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="197" gapBefore="0" mediaItemID="111" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="198" gapBefore="0" mediaItemID="112" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="199" gapBefore="0" mediaItemID="113" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <TitleClip extentID="36" gapBefore="0" duration="3">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyFloatSet Name="diffuseColor">
+          <BoundPropertyFloatElement Value="0" />
+          <BoundPropertyFloatElement Value="0" />
+          <BoundPropertyFloatElement Value="0" />
+        </BoundPropertyFloatSet>
+        <BoundPropertyFloat Name="transparency" Value="0" />
+      </BoundProperties>
+    </TitleClip>
+    <ImageClip extentID="200" gapBefore="0" mediaItemID="114" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <TitleClip extentID="37" gapBefore="0.033333333333331439" duration="2.9666666666666686">
+      <Effects>
+        <TextEffect effectTemplateID="TextEffectFadeZoomTemplate" TextScriptId="9">
+          <BoundProperties>
+            <BoundPropertyBool Name="automatic" Value="false" />
+            <BoundPropertyFloatSet Name="color">
+              <BoundPropertyFloatElement Value="1" />
+              <BoundPropertyFloatElement Value="1" />
+              <BoundPropertyFloatElement Value="1" />
+            </BoundPropertyFloatSet>
+            <BoundPropertyStringSet Name="family">
+              <BoundPropertyStringElement Value="Segoe UI" />
+            </BoundPropertyStringSet>
+            <BoundPropertyBool Name="horizontal" Value="true" />
+            <BoundPropertyStringSet Name="justify">
+              <BoundPropertyStringElement Value="MIDDLE" />
+            </BoundPropertyStringSet>
+            <BoundPropertyBool Name="leftToRight" Value="true" />
+            <BoundPropertyFloatSet Name="length" />
+            <BoundPropertyFloat Name="maxExtent" Value="0" />
+            <BoundPropertyFloatSet Name="outlineColor">
+              <BoundPropertyFloatElement Value="0.64705884456634521" />
+              <BoundPropertyFloatElement Value="0.64705884456634521" />
+              <BoundPropertyFloatElement Value="0.64705884456634521" />
+            </BoundPropertyFloatSet>
+            <BoundPropertyInt Name="outlineSizeIndex" Value="0" />
+            <BoundPropertyFloatSet Name="position">
+              <BoundPropertyFloatElement Value="-0.13973808288574219" />
+              <BoundPropertyFloatElement Value="1" />
+              <BoundPropertyFloatElement Value="0.02500000037252903" />
+            </BoundPropertyFloatSet>
+            <BoundPropertyFloat Name="size" Value="0.80000001192092896" />
+            <BoundPropertyStringSet Name="string">
+              <BoundPropertyStringElement Value="Bakkerij Alberto;" />
+              <BoundPropertyStringElement Value="Ingrediënten" />
+            </BoundPropertyStringSet>
+            <BoundPropertyString Name="style" Value="Plain" />
+            <BoundPropertyFloat Name="transparency" Value="0" />
+          </BoundProperties>
+        </TextEffect>
+      </Effects>
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyFloatSet Name="diffuseColor">
+          <BoundPropertyFloatElement Value="0.75" />
+          <BoundPropertyFloatElement Value="1" />
+          <BoundPropertyFloatElement Value="0" />
+        </BoundPropertyFloatSet>
+        <BoundPropertyFloat Name="transparency" Value="1" />
+      </BoundProperties>
+    </TitleClip>
+    <ImageClip extentID="201" gapBefore="0" mediaItemID="115" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <TitleClip extentID="38" gapBefore="0" duration="3">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyFloatSet Name="diffuseColor">
+          <BoundPropertyFloatElement Value="0" />
+          <BoundPropertyFloatElement Value="0" />
+          <BoundPropertyFloatElement Value="0" />
+        </BoundPropertyFloatSet>
+        <BoundPropertyFloat Name="transparency" Value="0" />
+      </BoundProperties>
+    </TitleClip>
+    <ImageClip extentID="202" gapBefore="0" mediaItemID="116" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <TitleClip extentID="39" gapBefore="5.4000000000000021" duration="3">
+      <Effects>
+        <TextEffect effectTemplateID="TextEffectFadeZoomTemplate" TextScriptId="9">
+          <BoundProperties>
+            <BoundPropertyBool Name="automatic" Value="false" />
+            <BoundPropertyFloatSet Name="color">
+              <BoundPropertyFloatElement Value="1" />
+              <BoundPropertyFloatElement Value="1" />
+              <BoundPropertyFloatElement Value="1" />
+            </BoundPropertyFloatSet>
+            <BoundPropertyStringSet Name="family">
+              <BoundPropertyStringElement Value="Segoe UI" />
+            </BoundPropertyStringSet>
+            <BoundPropertyBool Name="horizontal" Value="true" />
+            <BoundPropertyStringSet Name="justify">
+              <BoundPropertyStringElement Value="MIDDLE" />
+            </BoundPropertyStringSet>
+            <BoundPropertyBool Name="leftToRight" Value="true" />
+            <BoundPropertyFloatSet Name="length" />
+            <BoundPropertyFloat Name="maxExtent" Value="0" />
+            <BoundPropertyFloatSet Name="outlineColor">
+              <BoundPropertyFloatElement Value="0.64705884456634521" />
+              <BoundPropertyFloatElement Value="0.64705884456634521" />
+              <BoundPropertyFloatElement Value="0.64705884456634521" />
+            </BoundPropertyFloatSet>
+            <BoundPropertyInt Name="outlineSizeIndex" Value="0" />
+            <BoundPropertyFloatSet Name="position">
+              <BoundPropertyFloatElement Value="-0.023289680480957031" />
+              <BoundPropertyFloatElement Value="0.53488373756408691" />
+              <BoundPropertyFloatElement Value="0.02500000037252903" />
+            </BoundPropertyFloatSet>
+            <BoundPropertyFloat Name="size" Value="0.80000001192092896" />
+            <BoundPropertyStringSet Name="string">
+              <BoundPropertyStringElement Value="Kookwekker" />
+            </BoundPropertyStringSet>
+            <BoundPropertyString Name="style" Value="Plain" />
+            <BoundPropertyFloat Name="transparency" Value="0" />
+          </BoundProperties>
+        </TextEffect>
+      </Effects>
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyFloatSet Name="diffuseColor">
+          <BoundPropertyFloatElement Value="0.75" />
+          <BoundPropertyFloatElement Value="1" />
+          <BoundPropertyFloatElement Value="0" />
+        </BoundPropertyFloatSet>
+        <BoundPropertyFloat Name="transparency" Value="1" />
+      </BoundProperties>
+    </TitleClip>
+    <ImageClip extentID="203" gapBefore="0" mediaItemID="117" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="40" gapBefore="0" mediaItemID="28" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="204" gapBefore="0" mediaItemID="118" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="41" gapBefore="0" mediaItemID="29" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="205" gapBefore="0" mediaItemID="119" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="42" gapBefore="0" mediaItemID="30" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="206" gapBefore="0" mediaItemID="120" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="43" gapBefore="0" mediaItemID="31" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="207" gapBefore="0" mediaItemID="121" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="44" gapBefore="0" mediaItemID="32" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="208" gapBefore="0" mediaItemID="122" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="45" gapBefore="0" mediaItemID="33" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="209" gapBefore="0" mediaItemID="123" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="46" gapBefore="0" mediaItemID="34" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="210" gapBefore="0" mediaItemID="124" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="47" gapBefore="0" mediaItemID="35" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="211" gapBefore="0" mediaItemID="125" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="48" gapBefore="0" mediaItemID="36" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="212" gapBefore="0" mediaItemID="126" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="49" gapBefore="0" mediaItemID="37" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="213" gapBefore="0" mediaItemID="127" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="50" gapBefore="0" mediaItemID="38" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="214" gapBefore="0" mediaItemID="128" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="51" gapBefore="0" mediaItemID="39" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="215" gapBefore="0" mediaItemID="129" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="52" gapBefore="0" mediaItemID="40" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <TitleClip extentID="216" gapBefore="0" duration="3">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyFloatSet Name="diffuseColor">
+          <BoundPropertyFloatElement Value="0" />
+          <BoundPropertyFloatElement Value="0" />
+          <BoundPropertyFloatElement Value="0" />
+        </BoundPropertyFloatSet>
+        <BoundPropertyFloat Name="transparency" Value="0" />
+      </BoundProperties>
+    </TitleClip>
+    <ImageClip extentID="53" gapBefore="0" mediaItemID="41" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <TitleClip extentID="217" gapBefore="14.399999999999995" duration="3">
+      <Effects>
+        <TextEffect effectTemplateID="TextEffectFadeZoomTemplate" TextScriptId="9">
+          <BoundProperties>
+            <BoundPropertyBool Name="automatic" Value="false" />
+            <BoundPropertyFloatSet Name="color">
+              <BoundPropertyFloatElement Value="1" />
+              <BoundPropertyFloatElement Value="1" />
+              <BoundPropertyFloatElement Value="1" />
+            </BoundPropertyFloatSet>
+            <BoundPropertyStringSet Name="family">
+              <BoundPropertyStringElement Value="Segoe UI" />
+            </BoundPropertyStringSet>
+            <BoundPropertyBool Name="horizontal" Value="true" />
+            <BoundPropertyStringSet Name="justify">
+              <BoundPropertyStringElement Value="MIDDLE" />
+            </BoundPropertyStringSet>
+            <BoundPropertyBool Name="leftToRight" Value="true" />
+            <BoundPropertyFloatSet Name="length" />
+            <BoundPropertyFloat Name="maxExtent" Value="0" />
+            <BoundPropertyFloatSet Name="outlineColor">
+              <BoundPropertyFloatElement Value="0.64705884456634521" />
+              <BoundPropertyFloatElement Value="0.64705884456634521" />
+              <BoundPropertyFloatElement Value="0.64705884456634521" />
+            </BoundPropertyFloatSet>
+            <BoundPropertyInt Name="outlineSizeIndex" Value="0" />
+            <BoundPropertyFloatSet Name="position">
+              <BoundPropertyFloatElement Value="-0.093158721923828125" />
+              <BoundPropertyFloatElement Value="0.30232548713684082" />
+              <BoundPropertyFloatElement Value="0.02500000037252903" />
+            </BoundPropertyFloatSet>
+            <BoundPropertyFloat Name="size" Value="0.80000001192092896" />
+            <BoundPropertyStringSet Name="string">
+              <BoundPropertyStringElement Value="Afrekenen" />
+            </BoundPropertyStringSet>
+            <BoundPropertyString Name="style" Value="Plain" />
+            <BoundPropertyFloat Name="transparency" Value="0" />
+          </BoundProperties>
+        </TextEffect>
+      </Effects>
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyFloatSet Name="diffuseColor">
+          <BoundPropertyFloatElement Value="0.75" />
+          <BoundPropertyFloatElement Value="1" />
+          <BoundPropertyFloatElement Value="0" />
+        </BoundPropertyFloatSet>
+        <BoundPropertyFloat Name="transparency" Value="1" />
+      </BoundProperties>
+    </TitleClip>
+    <ImageClip extentID="54" gapBefore="0" mediaItemID="42" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="218" gapBefore="0" mediaItemID="130" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="55" gapBefore="0" mediaItemID="43" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="219" gapBefore="0" mediaItemID="131" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="56" gapBefore="0" mediaItemID="44" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="220" gapBefore="0" mediaItemID="132" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="57" gapBefore="0" mediaItemID="45" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="221" gapBefore="0" mediaItemID="133" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="58" gapBefore="0" mediaItemID="46" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="222" gapBefore="0" mediaItemID="134" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="59" gapBefore="0" mediaItemID="47" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="223" gapBefore="0" mediaItemID="135" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="60" gapBefore="0" mediaItemID="48" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="224" gapBefore="0" mediaItemID="136" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="61" gapBefore="0" mediaItemID="49" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="225" gapBefore="0" mediaItemID="137" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="62" gapBefore="0" mediaItemID="50" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="226" gapBefore="0" mediaItemID="138" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="63" gapBefore="0" mediaItemID="51" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="227" gapBefore="0" mediaItemID="139" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="64" gapBefore="0" mediaItemID="52" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="228" gapBefore="0" mediaItemID="140" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="65" gapBefore="0" mediaItemID="53" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="229" gapBefore="0" mediaItemID="141" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="66" gapBefore="0" mediaItemID="54" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="230" gapBefore="0" mediaItemID="142" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="67" gapBefore="0" mediaItemID="55" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="231" gapBefore="0" mediaItemID="143" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="68" gapBefore="0" mediaItemID="56" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="232" gapBefore="0" mediaItemID="144" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="69" gapBefore="0" mediaItemID="57" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="233" gapBefore="0" mediaItemID="145" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <TitleClip extentID="70" gapBefore="0" duration="3">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyFloatSet Name="diffuseColor">
+          <BoundPropertyFloatElement Value="0" />
+          <BoundPropertyFloatElement Value="0" />
+          <BoundPropertyFloatElement Value="0" />
+        </BoundPropertyFloatSet>
+        <BoundPropertyFloat Name="transparency" Value="0" />
+      </BoundProperties>
+    </TitleClip>
+    <ImageClip extentID="234" gapBefore="0" mediaItemID="146" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <TitleClip extentID="71" gapBefore="5.9999999999999787" duration="3">
+      <Effects>
+        <TextEffect effectTemplateID="TextEffectFadeZoomTemplate" TextScriptId="9">
+          <BoundProperties>
+            <BoundPropertyBool Name="automatic" Value="false" />
+            <BoundPropertyFloatSet Name="color">
+              <BoundPropertyFloatElement Value="1" />
+              <BoundPropertyFloatElement Value="1" />
+              <BoundPropertyFloatElement Value="1" />
+            </BoundPropertyFloatSet>
+            <BoundPropertyStringSet Name="family">
+              <BoundPropertyStringElement Value="Segoe UI" />
+            </BoundPropertyStringSet>
+            <BoundPropertyBool Name="horizontal" Value="true" />
+            <BoundPropertyStringSet Name="justify">
+              <BoundPropertyStringElement Value="MIDDLE" />
+            </BoundPropertyStringSet>
+            <BoundPropertyBool Name="leftToRight" Value="true" />
+            <BoundPropertyFloatSet Name="length" />
+            <BoundPropertyFloat Name="maxExtent" Value="0" />
+            <BoundPropertyFloatSet Name="outlineColor">
+              <BoundPropertyFloatElement Value="0.64705884456634521" />
+              <BoundPropertyFloatElement Value="0.64705884456634521" />
+              <BoundPropertyFloatElement Value="0.64705884456634521" />
+            </BoundPropertyFloatSet>
+            <BoundPropertyInt Name="outlineSizeIndex" Value="0" />
+            <BoundPropertyFloatSet Name="position">
+              <BoundPropertyFloatElement Value="0.093158721923828125" />
+              <BoundPropertyFloatElement Value="0.41860461235046387" />
+              <BoundPropertyFloatElement Value="0.02500000037252903" />
+            </BoundPropertyFloatSet>
+            <BoundPropertyFloat Name="size" Value="0.80000001192092896" />
+            <BoundPropertyStringSet Name="string">
+              <BoundPropertyStringElement Value="Taart kopen" />
+            </BoundPropertyStringSet>
+            <BoundPropertyString Name="style" Value="Plain" />
+            <BoundPropertyFloat Name="transparency" Value="0" />
+          </BoundProperties>
+        </TextEffect>
+      </Effects>
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyFloatSet Name="diffuseColor">
+          <BoundPropertyFloatElement Value="0.75" />
+          <BoundPropertyFloatElement Value="1" />
+          <BoundPropertyFloatElement Value="0" />
+        </BoundPropertyFloatSet>
+        <BoundPropertyFloat Name="transparency" Value="1" />
+      </BoundProperties>
+    </TitleClip>
+    <ImageClip extentID="235" gapBefore="0" mediaItemID="147" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="236" gapBefore="0" mediaItemID="148" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="237" gapBefore="0" mediaItemID="149" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="238" gapBefore="0" mediaItemID="150" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="239" gapBefore="0" mediaItemID="151" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="240" gapBefore="0" mediaItemID="152" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="241" gapBefore="0" mediaItemID="153" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="242" gapBefore="0" mediaItemID="154" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="243" gapBefore="0" mediaItemID="155" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="244" gapBefore="0" mediaItemID="156" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="245" gapBefore="0" mediaItemID="157" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="246" gapBefore="0" mediaItemID="158" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="247" gapBefore="0" mediaItemID="159" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="248" gapBefore="0" mediaItemID="160" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="249" gapBefore="0" mediaItemID="161" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="250" gapBefore="0" mediaItemID="162" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="251" gapBefore="0" mediaItemID="163" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="253" gapBefore="0" mediaItemID="165" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="254" gapBefore="0" mediaItemID="166" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="255" gapBefore="0" mediaItemID="167" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="256" gapBefore="0" mediaItemID="168" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="257" gapBefore="0" mediaItemID="169" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="258" gapBefore="0" mediaItemID="170" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="259" gapBefore="0" mediaItemID="171" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="260" gapBefore="0" mediaItemID="172" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="261" gapBefore="0" mediaItemID="173" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="262" gapBefore="0" mediaItemID="174" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="263" gapBefore="0" mediaItemID="175" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="264" gapBefore="0" mediaItemID="176" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="265" gapBefore="0" mediaItemID="177" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="266" gapBefore="0" mediaItemID="178" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="267" gapBefore="0" mediaItemID="179" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="268" gapBefore="0" mediaItemID="180" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="269" gapBefore="0" mediaItemID="181" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="270" gapBefore="0" mediaItemID="182" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="271" gapBefore="0" mediaItemID="183" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="272" gapBefore="0" mediaItemID="184" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="273" gapBefore="0" mediaItemID="185" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="274" gapBefore="0" mediaItemID="186" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="275" gapBefore="0" mediaItemID="187" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="276" gapBefore="0" mediaItemID="188" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="277" gapBefore="0" mediaItemID="189" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="278" gapBefore="0" mediaItemID="190" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="279" gapBefore="0" mediaItemID="191" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="280" gapBefore="0" mediaItemID="192" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="281" gapBefore="0" mediaItemID="193" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="282" gapBefore="0" mediaItemID="194" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="283" gapBefore="0" mediaItemID="195" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="284" gapBefore="0" mediaItemID="196" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="285" gapBefore="0" mediaItemID="197" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <TitleClip extentID="286" gapBefore="0" duration="5">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyFloatSet Name="diffuseColor">
+          <BoundPropertyFloatElement Value="0" />
+          <BoundPropertyFloatElement Value="0" />
+          <BoundPropertyFloatElement Value="0" />
+        </BoundPropertyFloatSet>
+        <BoundPropertyFloat Name="transparency" Value="0" />
+      </BoundProperties>
+    </TitleClip>
+    <TitleClip extentID="287" gapBefore="13.433333333333351" duration="4.9666666666668391">
+      <Effects>
+        <TextEffect effectTemplateID="TextEffectScrollTemplate" TextScriptId="7">
+          <BoundProperties>
+            <BoundPropertyBool Name="automatic" Value="false" />
+            <BoundPropertyFloatSet Name="color">
+              <BoundPropertyFloatElement Value="1" />
+              <BoundPropertyFloatElement Value="1" />
+              <BoundPropertyFloatElement Value="1" />
+            </BoundPropertyFloatSet>
+            <BoundPropertyStringSet Name="family">
+              <BoundPropertyStringElement Value="Segoe UI" />
+            </BoundPropertyStringSet>
+            <BoundPropertyBool Name="horizontal" Value="true" />
+            <BoundPropertyStringSet Name="justify">
+              <BoundPropertyStringElement Value="MIDDLE" />
+            </BoundPropertyStringSet>
+            <BoundPropertyBool Name="leftToRight" Value="true" />
+            <BoundPropertyFloatSet Name="length" />
+            <BoundPropertyFloat Name="maxExtent" Value="0" />
+            <BoundPropertyFloatSet Name="outlineColor">
+              <BoundPropertyFloatElement Value="0.64705884456634521" />
+              <BoundPropertyFloatElement Value="0.64705884456634521" />
+              <BoundPropertyFloatElement Value="0.64705884456634521" />
+            </BoundPropertyFloatSet>
+            <BoundPropertyInt Name="outlineSizeIndex" Value="0" />
+            <BoundPropertyFloatSet Name="position">
+              <BoundPropertyFloatElement Value="0" />
+              <BoundPropertyFloatElement Value="1.9069766998291016" />
+              <BoundPropertyFloatElement Value="0.02500000037252903" />
+            </BoundPropertyFloatSet>
+            <BoundPropertyFloat Name="size" Value="0.3333333432674408" />
+            <BoundPropertyStringSet Name="string">
+              <BoundPropertyStringElement Value="Bedankt voor het kijken" />
+              <BoundPropertyStringElement Value="" />
+              <BoundPropertyStringElement Value="Projectgroep 8" />
+              <BoundPropertyStringElement Value="" />
+              <BoundPropertyStringElement Value="Bart Bouten" />
+              <BoundPropertyStringElement Value="Alexander van Cuijk" />
+              <BoundPropertyStringElement Value="Ineke Hendriks" />
+              <BoundPropertyStringElement Value="Diana Hofman" />
+              <BoundPropertyStringElement Value="Melanie Kwetters" />
+            </BoundPropertyStringSet>
+            <BoundPropertyString Name="style" Value="Plain" />
+            <BoundPropertyFloat Name="transparency" Value="0" />
+          </BoundProperties>
+        </TextEffect>
+      </Effects>
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyFloatSet Name="diffuseColor">
+          <BoundPropertyFloatElement Value="0.75" />
+          <BoundPropertyFloatElement Value="1" />
+          <BoundPropertyFloatElement Value="0" />
+        </BoundPropertyFloatSet>
+        <BoundPropertyFloat Name="transparency" Value="1" />
+      </BoundProperties>
+    </TitleClip>
+    <AudioClip extentID="288" gapBefore="0" mediaItemID="198" inTime="0" outTime="0" speed="1">
+      <Effects>
+        <AudioEffect effectTemplateID="AudioFadeEffectTemplate">
+          <BoundProperties>
+            <BoundPropertyFloat Name="AudioFadeInDuration" Value="2.5" />
+            <BoundPropertyFloat Name="AudioFadeOutDuration" Value="5" />
+          </BoundProperties>
+        </AudioEffect>
+      </Effects>
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyBool Name="Mute" Value="false" />
+        <BoundPropertyFloat Name="Volume" Value="1" />
+      </BoundProperties>
+    </AudioClip>
+    <ImageClip extentID="144" gapBefore="0" mediaItemID="58" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="145" gapBefore="0" mediaItemID="59" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="146" gapBefore="0" mediaItemID="60" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="147" gapBefore="0" mediaItemID="61" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="148" gapBefore="0" mediaItemID="62" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="149" gapBefore="0" mediaItemID="63" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="150" gapBefore="0" mediaItemID="64" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="151" gapBefore="0" mediaItemID="65" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="152" gapBefore="0" mediaItemID="66" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="153" gapBefore="0" mediaItemID="67" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="154" gapBefore="0" mediaItemID="68" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="155" gapBefore="0" mediaItemID="69" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="156" gapBefore="0" mediaItemID="70" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="157" gapBefore="0" mediaItemID="71" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="158" gapBefore="0" mediaItemID="72" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="159" gapBefore="0" mediaItemID="73" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="160" gapBefore="0" mediaItemID="74" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="161" gapBefore="0" mediaItemID="75" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ImageClip extentID="162" gapBefore="0" mediaItemID="76" duration="0.20000000000000001">
+      <Effects />
+      <Transitions />
+      <BoundProperties>
+        <BoundPropertyInt Name="rotateStepNinety" Value="0" />
+      </BoundProperties>
+    </ImageClip>
+    <ExtentSelector extentID="1" gapBefore="0" primaryTrack="true">
+      <Effects />
+      <Transitions />
+      <BoundProperties />
+      <ExtentRefs>
+        <ExtentRef id="36" />
+        <ExtentRef id="5" />
+        <ExtentRef id="6" />
+        <ExtentRef id="7" />
+        <ExtentRef id="8" />
+        <ExtentRef id="9" />
+        <ExtentRef id="10" />
+        <ExtentRef id="11" />
+        <ExtentRef id="12" />
+        <ExtentRef id="13" />
+        <ExtentRef id="14" />
+        <ExtentRef id="15" />
+        <ExtentRef id="16" />
+        <ExtentRef id="17" />
+        <ExtentRef id="18" />
+        <ExtentRef id="19" />
+        <ExtentRef id="20" />
+        <ExtentRef id="21" />
+        <ExtentRef id="22" />
+        <ExtentRef id="23" />
+        <ExtentRef id="24" />
+        <ExtentRef id="25" />
+        <ExtentRef id="26" />
+        <ExtentRef id="27" />
+        <ExtentRef id="28" />
+        <ExtentRef id="29" />
+        <ExtentRef id="30" />
+        <ExtentRef id="31" />
+        <ExtentRef id="38" />
+        <ExtentRef id="40" />
+        <ExtentRef id="41" />
+        <ExtentRef id="42" />
+        <ExtentRef id="43" />
+        <ExtentRef id="44" />
+        <ExtentRef id="45" />
+        <ExtentRef id="46" />
+        <ExtentRef id="47" />
+        <ExtentRef id="48" />
+        <ExtentRef id="49" />
+        <ExtentRef id="50" />
+        <ExtentRef id="51" />
+        <ExtentRef id="52" />
+        <ExtentRef id="53" />
+        <ExtentRef id="54" />
+        <ExtentRef id="55" />
+        <ExtentRef id="56" />
+        <ExtentRef id="57" />
+        <ExtentRef id="58" />
+        <ExtentRef id="59" />
+        <ExtentRef id="60" />
+        <ExtentRef id="61" />
+        <ExtentRef id="62" />
+        <ExtentRef id="63" />
+        <ExtentRef id="64" />
+        <ExtentRef id="65" />
+        <ExtentRef id="66" />
+        <ExtentRef id="67" />
+        <ExtentRef id="68" />
+        <ExtentRef id="69" />
+        <ExtentRef id="70" />
+        <ExtentRef id="144" />
+        <ExtentRef id="145" />
+        <ExtentRef id="146" />
+        <ExtentRef id="147" />
+        <ExtentRef id="148" />
+        <ExtentRef id="149" />
+        <ExtentRef id="150" />
+        <ExtentRef id="151" />
+        <ExtentRef id="152" />
+        <ExtentRef id="153" />
+        <ExtentRef id="154" />
+        <ExtentRef id="155" />
+        <ExtentRef id="156" />
+        <ExtentRef id="157" />
+        <ExtentRef id="158" />
+        <ExtentRef id="159" />
+        <ExtentRef id="160" />
+        <ExtentRef id="161" />
+        <ExtentRef id="162" />
+        <ExtentRef id="163" />
+        <ExtentRef id="164" />
+        <ExtentRef id="165" />
+        <ExtentRef id="166" />
+        <ExtentRef id="167" />
+        <ExtentRef id="168" />
+        <ExtentRef id="169" />
+        <ExtentRef id="170" />
+        <ExtentRef id="171" />
+        <ExtentRef id="172" />
+        <ExtentRef id="173" />
+        <ExtentRef id="174" />
+        <ExtentRef id="175" />
+        <ExtentRef id="176" />
+        <ExtentRef id="177" />
+        <ExtentRef id="178" />
+        <ExtentRef id="179" />
+        <ExtentRef id="180" />
+        <ExtentRef id="181" />
+        <ExtentRef id="182" />
+        <ExtentRef id="183" />
+        <ExtentRef id="184" />
+        <ExtentRef id="185" />
+        <ExtentRef id="186" />
+        <ExtentRef id="187" />
+        <ExtentRef id="188" />
+        <ExtentRef id="189" />
+        <ExtentRef id="190" />
+        <ExtentRef id="191" />
+        <ExtentRef id="192" />
+        <ExtentRef id="193" />
+        <ExtentRef id="194" />
+        <ExtentRef id="195" />
+        <ExtentRef id="196" />
+        <ExtentRef id="197" />
+        <ExtentRef id="198" />
+        <ExtentRef id="199" />
+        <ExtentRef id="200" />
+        <ExtentRef id="201" />
+        <ExtentRef id="202" />
+        <ExtentRef id="203" />
+        <ExtentRef id="204" />
+        <ExtentRef id="205" />
+        <ExtentRef id="206" />
+        <ExtentRef id="207" />
+        <ExtentRef id="208" />
+        <ExtentRef id="209" />
+        <ExtentRef id="210" />
+        <ExtentRef id="211" />
+        <ExtentRef id="212" />
+        <ExtentRef id="213" />
+        <ExtentRef id="214" />
+        <ExtentRef id="215" />
+        <ExtentRef id="216" />
+        <ExtentRef id="218" />
+        <ExtentRef id="219" />
+        <ExtentRef id="220" />
+        <ExtentRef id="221" />
+        <ExtentRef id="222" />
+        <ExtentRef id="223" />
+        <ExtentRef id="224" />
+        <ExtentRef id="225" />
+        <ExtentRef id="226" />
+        <ExtentRef id="227" />
+        <ExtentRef id="228" />
+        <ExtentRef id="229" />
+        <ExtentRef id="230" />
+        <ExtentRef id="231" />
+        <ExtentRef id="232" />
+        <ExtentRef id="233" />
+        <ExtentRef id="234" />
+        <ExtentRef id="235" />
+        <ExtentRef id="236" />
+        <ExtentRef id="237" />
+        <ExtentRef id="238" />
+        <ExtentRef id="239" />
+        <ExtentRef id="240" />
+        <ExtentRef id="241" />
+        <ExtentRef id="242" />
+        <ExtentRef id="243" />
+        <ExtentRef id="244" />
+        <ExtentRef id="245" />
+        <ExtentRef id="246" />
+        <ExtentRef id="247" />
+        <ExtentRef id="248" />
+        <ExtentRef id="249" />
+        <ExtentRef id="250" />
+        <ExtentRef id="251" />
+        <ExtentRef id="253" />
+        <ExtentRef id="254" />
+        <ExtentRef id="255" />
+        <ExtentRef id="256" />
+        <ExtentRef id="257" />
+        <ExtentRef id="258" />
+        <ExtentRef id="259" />
+        <ExtentRef id="260" />
+        <ExtentRef id="261" />
+        <ExtentRef id="262" />
+        <ExtentRef id="263" />
+        <ExtentRef id="264" />
+        <ExtentRef id="265" />
+        <ExtentRef id="266" />
+        <ExtentRef id="267" />
+        <ExtentRef id="268" />
+        <ExtentRef id="269" />
+        <ExtentRef id="270" />
+        <ExtentRef id="271" />
+        <ExtentRef id="272" />
+        <ExtentRef id="273" />
+        <ExtentRef id="274" />
+        <ExtentRef id="275" />
+        <ExtentRef id="276" />
+        <ExtentRef id="277" />
+        <ExtentRef id="278" />
+        <ExtentRef id="279" />
+        <ExtentRef id="280" />
+        <ExtentRef id="281" />
+        <ExtentRef id="282" />
+        <ExtentRef id="283" />
+        <ExtentRef id="284" />
+        <ExtentRef id="285" />
+        <ExtentRef id="286" />
+      </ExtentRefs>
+    </ExtentSelector>
+    <ExtentSelector extentID="2" gapBefore="0" primaryTrack="false">
+      <Effects />
+      <Transitions />
+      <BoundProperties />
+      <ExtentRefs>
+        <ExtentRef id="288" />
+      </ExtentRefs>
+    </ExtentSelector>
+    <ExtentSelector extentID="3" gapBefore="0" primaryTrack="false">
+      <Effects />
+      <Transitions />
+      <BoundProperties />
+      <ExtentRefs />
+    </ExtentSelector>
+    <ExtentSelector extentID="4" gapBefore="0" primaryTrack="false">
+      <Effects />
+      <Transitions />
+      <BoundProperties />
+      <ExtentRefs>
+        <ExtentRef id="37" />
+        <ExtentRef id="39" />
+        <ExtentRef id="71" />
+        <ExtentRef id="217" />
+        <ExtentRef id="287" />
+      </ExtentRefs>
+    </ExtentSelector>
+  </Extents>
+  <BoundPlaceholders>
+    <BoundPlaceholder placeholderID="SingleExtentView" extentID="0" />
+    <BoundPlaceholder placeholderID="Main" extentID="1" />
+    <BoundPlaceholder placeholderID="SoundTrack" extentID="2" />
+    <BoundPlaceholder placeholderID="Narration" extentID="3" />
+    <BoundPlaceholder placeholderID="Text" extentID="4" />
+  </BoundPlaceholders>
+  <BoundProperties>
+    <BoundPropertyFloatSet Name="AspectRatio">
+      <BoundPropertyFloatElement Value="1.7777776718139648" />
+    </BoundPropertyFloatSet>
+    <BoundPropertyFloat Name="DuckedNarrationAndSoundTrackMix" Value="1" />
+    <BoundPropertyFloat Name="DuckedVideoAndNarrationMix" Value="0.5" />
+    <BoundPropertyFloat Name="DuckedVideoAndSoundTrackMix" Value="1" />
+    <BoundPropertyFloat Name="SoundTrackMix" Value="1" />
+  </BoundProperties>
+  <ThemeOperationLog themeID="0">
+    <MonolithicThemeOperations />
+  </ThemeOperationLog>
+  <AudioDuckingProperties emphasisPlaceholderID="Narration" />
+</Project>
