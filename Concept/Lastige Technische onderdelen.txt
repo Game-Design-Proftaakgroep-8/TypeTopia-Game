@@ -3,6 +3,6 @@ Per opdracht is niet in te stellen uit hoeveel stappen de opdracht bestaat. De g
 Bij de kookwekker is in te stellen op welke tijd de eerste klok staat, op welke tijd de tweede klok staat en hoe lang het brood in de oven moet.
 Bij het pakken van stukken taart kun je instellen in hoeveel stukken de taart gesneden is, hoeveel stukken er nog over zijn en hoe groot het deel is dat de klant wil.
 Bij het afrekenen kun je instellen wat de originele prijs is, of er korting is en zo ja hoeveel.
-De gegevens kunnen worden opgeslagen in een bestandje. Dit bestandje kan dan met anderen gedeeld worden en kan dan in de applicatie weer ingelezen worden. Het level wordt dan afhankelijk van de informatie in het bestandje.
+De gegevens kunnen worden opgeslagen in een bestandje. Dit bestandje kan dan met anderen gedeeld worden en kan dan in de applicatie weer ingelezen worden. Het level wordt dan afhankelijk van de informatie in het bestandje. Dit bestandje kan eventueel op internet gezet worden en door anderen worden gedownload.
 -- Verschillende lettergroottes
 In Unity 4.6 zit een optie: Best fit. Deze optie zorgt er al voor dat de tekstgrootte wordt aangepast afhankelijk van de hoeveelheid tekst. Dit is dus niet heel moeilijk.
