@@ -1,0 +1,8 @@
+We gaan een leveleditor maken. Een speler kan een aantal instellingen van het level aanpassen: opdrachten voor de ochtend instellen, opdrachten per klant instellen.
+Per opdracht is niet in te stellen uit hoeveel stappen de opdracht bestaat. De getallen van de opdracht zijn wel aan te passen. Indien er genoeg tijd is voor de realisatie is het ook mogelijk om te kiezen waar het een recept voor is. Voorlopig is het altijd een recept voor broden. Bij een recept voor broden kun je instellen voor hoeveel broden het recept is, hoeveel broden je wil maken, de hoeveelheid die per ingrediënt nodig is, welke ingrediënten al toegevoegd zijn.
+Bij de kookwekker is in te stellen op welke tijd de eerste klok staat, op welke tijd de tweede klok staat en hoe lang het brood in de oven moet.
+Bij het pakken van stukken taart kun je instellen in hoeveel stukken de taart gesneden is, hoeveel stukken er nog over zijn en hoe groot het deel is dat de klant wil.
+Bij het afrekenen kun je instellen wat de originele prijs is, of er korting is en zo ja hoeveel.
+De gegevens kunnen worden opgeslagen in een bestandje. Dit bestandje kan dan met anderen gedeeld worden en kan dan in de applicatie weer ingelezen worden. Het level wordt dan afhankelijk van de informatie in het bestandje.
+-- Verschillende lettergroottes
+In Unity 4.6 zit een optie: Best fit. Deze optie zorgt er al voor dat de tekstgrootte wordt aangepast afhankelijk van de hoeveelheid tekst. Dit is dus niet heel moeilijk.
