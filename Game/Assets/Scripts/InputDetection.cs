@@ -16,15 +16,15 @@ public class InputDetection : MonoBehaviour {
 
 	public static GameObject CheckTouch(Vector3 touchPosition)
 	{
-		Vector3 pos = Camera.main.ScreenToWorldPoint (touchPosition);
-		Vector3 touchPos = new Vector3 (pos.x, pos.y, 0f);
-		Collider[] hits = Physics.OverlapSphere (touchPos, 0f);
-		
-		if (hits.Length > 0)
+		Vector2 pos = Camera.main.ScreenToWorldPoint (touchPosition);
+		Vector2 touchPos = new Vector2 (pos.x, pos.y);
+		Collider2D hit = Physics2D.OverlapPoint (touchPos);
+
+		if (hit != null)
 		{
-			return hits [0].gameObject;
+			return hit.gameObject;
 		}
-		
+
 		return null;
 	}
 }
