@@ -46,10 +46,16 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CharacterMovement.cs" />
+     <Compile Include="Assets\Scripts\Bakery\CharacterMovement.cs" />
+     <Compile Include="Assets\Scripts\Bakery\Customer.cs" />
+     <Compile Include="Assets\Scripts\Bakery\LevelManager.cs" />
      <Compile Include="Assets\Scripts\InputDetection.cs" />
      <Compile Include="Assets\Scripts\OvenManager.cs" />
+<<<<<<< HEAD
      <Compile Include="Assets\Scripts\Workbench\WaterController.cs" />
+=======
+     <Compile Include="Assets\Scripts\Workbench\CraneController.cs" />
+>>>>>>> origin/master
      <Compile Include="Assets\Scripts\Workbench\WorkbenchInput.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
