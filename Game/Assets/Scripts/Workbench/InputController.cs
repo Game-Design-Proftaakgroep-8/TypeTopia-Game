@@ -12,7 +12,7 @@ public class InputController : MonoBehaviour {
 	void Update () {
 		if(Input.touchCount == 1) {
 			Touch touch = Input.GetTouch(0);
-			GameObject hit = 
+			//GameObject hit = 
 		}
 	}
 }
