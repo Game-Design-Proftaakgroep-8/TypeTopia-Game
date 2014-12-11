@@ -1,50 +1,74 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class WaterController : MonoBehaviour {
 	public Transform measuringCup;
+
+	private bool gameOver;
 	private bool increasing = false;
 	private bool decreasing = false;
 	private float maxHeight;
 	private float minHeight;
 	private float minRotation;
 	private float maxRotation;
-	private float smooth = 0.005f;
+	private float smoothRotate;
 
 	// Use this for initialization
 	void Start () {
+		this.gameOver = false;
 		maxHeight = 2f;
 		minHeight = 0f;
 		minRotation = 0f;
-		maxRotation = 0.25f;
+		maxRotation = 0.9f;
+		smoothRotate = 2.5f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(increasing) {
-			this.changeWaterLevelTo(maxHeight);
-			this.rotateCupTo(minRotation);
-		} else if (decreasing) {
-			this.changeWaterLevelTo(minHeight);
-			this.rotateCupTo(maxRotation);
+		if(!gameOver){
+			print (this.GetMilliliters ());
+			if(increasing) {
+				this.changeWaterLevelTo(maxHeight);
+			} else if (decreasing) {
+				if(measuringCup.localRotation.z < maxRotation) {
+					measuringCup.Rotate(0f, 0f, smoothRotate);
+				} else {
+					this.changeWaterLevelTo(minHeight);
+				}
+			} else if (!decreasing) {
+				if(measuringCup.localRotation.z > minRotation) {
+					measuringCup.Rotate(0f, 0f, -smoothRotate);
+				} else {
+					measuringCup.rotation = Quaternion.identity;
+				}
+			}
 		}
 	}
 
 	private void changeWaterLevelTo(float height) {
 		Vector3 localScale = this.transform.localScale;
-		this.transform.localScale = new Vector3(localScale.x, Mathf.Lerp (localScale.y, height, smooth), localScale.z);
+		this.transform.localScale = new Vector3(localScale.x, Mathf.Lerp (localScale.y, height, 0.005f), localScale.z);
 	}
 
-	private void rotateCupTo(float rotation) {
-		print (measuringCup.localRotation.z);
-		measuringCup.Rotate (0f, 0f, Mathf.Lerp (measuringCup.localRotation.z, rotation, smooth));
+	public int GetMilliliters() {
+		return Convert.ToInt32(1000f * this.transform.localScale.y / 2f);
 	}
 
 	public void StartStopIncreasing() {
-		increasing = !increasing;
+		if(!decreasing && measuringCup.localRotation.z <= minRotation) {
+			increasing = !increasing;
+		}
 	}
 
 	public void StartStopDecreasing() {
-		decreasing = !decreasing;
+		if(!increasing) {
+			decreasing = !decreasing;
+		}
+	}
+
+	public void GameOver() {
+		// next Game
+		this.gameOver = true;
 	}
 }
