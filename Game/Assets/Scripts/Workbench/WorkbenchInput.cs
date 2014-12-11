@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class WorkbenchInput : MonoBehaviour {
+	public WaterController waterController;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +16,9 @@ public class WorkbenchInput : MonoBehaviour {
 			GameObject hit = InputDetection.CheckTouch(touch.position);
 			if(hit != null && touch.phase == TouchPhase.Began) {
 				if(hit.CompareTag("tap")) {
-					print ("testachtigiets");
+					waterController.StartStopIncreasing();
+				} else if (hit.CompareTag("measuringCup")) {
+					waterController.StartStopDecreasing();
 				}
 			}
 		}
