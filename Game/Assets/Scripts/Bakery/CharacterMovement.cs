@@ -2,7 +2,9 @@
 using System.Collections;
 
 public class CharacterMovement : MonoBehaviour {
-	
+
+	public LevelManager level;
+
 	private GameObject hit; 
 	private Touch touch;
 
@@ -12,17 +14,22 @@ public class CharacterMovement : MonoBehaviour {
 	void Start ()
 	{
 		hit = null;
-		countDown = 0f;
+		countDown = 0;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		if (countDown != 0f)
+		if (hit != null)
 		{
-			if (Time.time > countDown + 1f)
+			LerpCharacter(hit);
+		}
+
+		if (countDown != 0)
+		{
+			if (Time.time > countDown + 2f)
 			{
-				//LevelManager.StartGame(hit);
+				level.StartGame(hit);
 			}
 		}
 		else
@@ -38,16 +45,19 @@ public class CharacterMovement : MonoBehaviour {
 					hit = o;
 				}
 			}
-
-			if (hit != null)
-			{
-				//LevelManager.LerpCharacter(hit);
-			}
 		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		countDown = Time.time;
+	}
+
+	public void LerpCharacter(GameObject touchObject)
+	{
+		Vector2 currentPos = this.transform.position;
+		Vector2 endPos = touchObject.transform.position;
+		
+		this.transform.position = Vector2.Lerp (currentPos, endPos, 0.5f * Time.fixedDeltaTime);
 	}
 }
