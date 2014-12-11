@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CharacterMovement.cs" />
      <Compile Include="Assets\Scripts\InputDetection.cs" />
+     <Compile Include="Assets\Scripts\OvenManager.cs" />
      <Compile Include="Assets\Scripts\Workbench\CraneController.cs" />
      <Compile Include="Assets\Scripts\Workbench\WorkbenchInput.cs" />
  <Reference Include="UnityEngine.UI">

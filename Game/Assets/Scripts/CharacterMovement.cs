@@ -10,25 +10,66 @@ public class CharacterMovement : MonoBehaviour {
 	private GameObject hit; 
 	private Touch touch;
 
+	private float countDown;
+
+	private string ovenScene;
+	private string counterScene;
+	private string workbenchScene;
+
 	// Use this for initialization
 	void Start ()
 	{
 		hit = null;
+		countDown = 0f;
+
+		ovenScene = "Oven";
+		counterScene = "Counter";
+		workbenchScene = "Workbench";
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		//Touch input
-		if(Input.touchCount == 1)
+		if (countDown != 0f)
 		{
-			touch = Input.touches[0];
-			hit = InputDetection.CheckTouch(touch.position);
+			if (Time.time > countDown + 1f)
+			{
+				//start game
+				if (hit == oven)
+				{
+					print("Start game oven");
+					Application.LoadLevel(ovenScene);
+				}
+				else if (hit == counter)
+				{
+					print("Start game counter");
+					Application.LoadLevel(counterScene);
+				}
+				else if (hit == workbench)
+				{
+					print("Start game workbench");
+					Application.LoadLevel(workbenchScene);
+				}
+			}
 		}
-
-		if (hit != null)
+		else
 		{
-			LerpCharacter(hit);
+			//Touch input
+			if(Input.touchCount == 1)
+			{
+				touch = Input.touches[0];
+				GameObject o = InputDetection.CheckTouch(touch.position);
+
+				if (o != null)
+				{
+					hit = o;
+				}
+			}
+
+			if (hit != null)
+			{
+				LerpCharacter(hit);
+			}
 		}
 	}
 
@@ -38,5 +79,13 @@ public class CharacterMovement : MonoBehaviour {
 		Vector2 endPos = touchObject.transform.position;
 
 		this.transform.position = Vector2.Lerp (currentPos, endPos, 0.5f * Time.fixedDeltaTime);
+	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject == oven || other.gameObject == counter || other.gameObject == workbench)
+		{
+			countDown = Time.time;
+		}
 	}
 }
