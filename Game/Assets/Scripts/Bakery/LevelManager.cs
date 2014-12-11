@@ -48,6 +48,11 @@ public class LevelManager : MonoBehaviour {
 				//Get customer number
 				int number = c.GetComponent<Customer>().GetNumber();
 
+				if (number <= 0)
+				{
+					//remove customer from array
+				}
+
 				//Move to position
 				if (c.transform.position != GetCustomerPosition(number))
 				{
@@ -63,7 +68,7 @@ public class LevelManager : MonoBehaviour {
 			GameObject o = InputDetection.CheckTouch(touch.position);
 
 			//If check sprite is touched
-			if (o != null && hit.tag.Equals("button"))
+			if (o != null && o.tag.Equals("button"))
 			{
 				hit = o;
 
@@ -78,6 +83,9 @@ public class LevelManager : MonoBehaviour {
 						if (number == 1)
 						{
 							c.GetComponent<Customer>().Leave();
+
+							//Number of customer to 0
+							c.GetComponent<Customer>().NumberMin();
 						}
 					}
 				}
