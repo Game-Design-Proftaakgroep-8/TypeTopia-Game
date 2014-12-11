@@ -9,7 +9,7 @@ public class Customer : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		nr = level.GetCostumerNr();
+		//nr = level.GetCostumerNr();
 	}
 	
 	// Update is called once per frame

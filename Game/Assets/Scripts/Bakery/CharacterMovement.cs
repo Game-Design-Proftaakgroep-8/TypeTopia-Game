@@ -22,7 +22,7 @@ public class CharacterMovement : MonoBehaviour {
 		{
 			if (Time.time > countDown + 1f)
 			{
-				LevelManager.StartGame(hit);
+				//LevelManager.StartGame(hit);
 			}
 		}
 		else
@@ -41,7 +41,7 @@ public class CharacterMovement : MonoBehaviour {
 
 			if (hit != null)
 			{
-				LevelManager.LerpCharacter(hit);
+				//LevelManager.LerpCharacter(hit);
 			}
 		}
 	}
