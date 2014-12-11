@@ -16,7 +16,6 @@ public class WorkbenchInput : MonoBehaviour {
 			if(hit != null && touch.phase == TouchPhase.Began) {
 				if(hit.CompareTag("tap")) {
 					print ("testachtigiets");
-
 				}
 			}
 		}
