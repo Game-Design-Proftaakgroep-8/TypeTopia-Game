@@ -4,7 +4,9 @@ using System.Collections;
 
 public class OvenManager : MonoBehaviour {
 
-	public Text timer;
+	public Text timerText;
+	public Text timeNeededText;
+	public Text winText;
 	public GameObject ClockNowH;
 	public GameObject ClockNowM;
 	public GameObject ClockThenH;
@@ -17,6 +19,9 @@ public class OvenManager : MonoBehaviour {
 	private float timeThenM;
 	private float timeNeeded;
 	private float timeTimer;
+	private float answer;
+
+	private bool gameOver;
 
 	// Use this for initialization
 	void Start () {
@@ -27,10 +32,17 @@ public class OvenManager : MonoBehaviour {
 		timeThenM = 20;
 
 		timeNeeded = 45;
-
 		timeTimer = 0;
 
+		answer = timeNeeded - (timeNowH - timeThenH) - (timeNowM - timeThenM);
+		print (answer);
+
+		gameOver = false;
+
 		updateTimer ();
+		setTimeNow ();
+		setTimeThen ();
+		setTimeNeeded ();
 	}
 	
 	// Update is called once per frame
@@ -44,27 +56,46 @@ public class OvenManager : MonoBehaviour {
 	}
 
 	void setTimeThen() {
+		ClockThenH.transform.Rotate (Vector3.forward * (timeThenH * -30));
+		ClockThenM.transform.Rotate (Vector3.forward * ((timeThenM/5) * -30));
+	}
 
+	private void setTimeNeeded() {
+		timeNeededText.text = "Time Needed: " + timeNeeded + " min";
 	}
 
 	private void updateTimer() {
 		if(timeTimer < 10)
-			timer.text = "0";
+			timerText.text = "0";
 		else
-			timer.text = "";
+			timerText.text = "";
 
-		timer.text += timeTimer + " min";
+		timerText.text += timeTimer + " min";
 	}
 
 	public void increaseTimerTime() {
-		timeTimer += 5;
-		updateTimer ();
+		if(timeTimer < 95 && !gameOver) {
+			timeTimer += 5;
+			updateTimer ();
+		}
 	}
 
 	public void decreaseTimerTime() {
-		if(timeTimer > 0) {
+		if(timeTimer > 0 && !gameOver) {
 			timeTimer -= 5;
 			updateTimer ();
+		}
+	}
+
+	public void confirm() {
+		print (timeTimer);
+		if(timeTimer == answer) {
+			winText.text = "You Won!";
+			gameOver = true;
+		}
+		else {
+			winText.text = "You Lost!";
+			gameOver = true;
 		}
 	}
 
