@@ -8,6 +8,7 @@ public class AssignmentManager : MonoBehaviour {
 	public WaterController waterController;
 	public Text winLoseText;
 	public Text recipeText;
+	public Text scoreText;
 	
 	private Recipe recipe;
 	private int wanted;
@@ -23,8 +24,8 @@ public class AssignmentManager : MonoBehaviour {
 		recipe = new Recipe (product, amount);
 		recipe.AddRecipeRow (Ingredients.Bloem, 2, true, UnitPrexixes.k, "g");
 		recipe.AddRecipeRow (Ingredients.Water, 800, false, UnitPrexixes.m, "l");
-		recipe.AddRecipeRow (Ingredients.Water, 0.4f, false, UnitPrexixes._, "l");
-		//recipe.AddRecipeRow (Ingredients.Water, 800, false, UnitPrexixes.m, "l");
+		recipe.AddRecipeRow (Ingredients.Water, 0.4f, false, UnitPrexixes.no, "l");
+		recipe.AddRecipeRow (Ingredients.Water, 30, false, UnitPrexixes.d, "l");
 		wanted = 3;
 		marge = 25;
 		recipeText.text = recipe.ToString();
@@ -66,6 +67,7 @@ public class AssignmentManager : MonoBehaviour {
 		}
 		StartCoroutine (this.startNextGame ());
 		recipe.CheckFirst();
+		recipeText.text = recipe.ToString ();
 	}
 
 	private IEnumerator startFirstGame() {
@@ -157,7 +159,7 @@ public enum UnitPrexixes {
 	m = 1,
 	c = 10,
 	d = 100,
-	_ = 1000,
+	no = 1000,
 	da = 10000,
 	h = 100000,
 	k = 1000000

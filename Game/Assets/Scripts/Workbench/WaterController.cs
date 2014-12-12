@@ -5,8 +5,11 @@ using System;
 
 public class WaterController : MonoBehaviour {
 	public Transform measuringCup;
+	public Transform rain;
 	public Text millilitersText;
-	// MeasuringCup is 1 [unitPrefix]l
+	/// <summary>
+	/// MeasuringCup is 1 [unitPrefix]l
+	/// </summary>
 	public UnitPrexixes unitPrefix;
 
 	private bool playing;
@@ -17,9 +20,12 @@ public class WaterController : MonoBehaviour {
 	private bool decreasing = false;
 	private float maxHeight;
 	private float minHeight;
+	private float maxHeightRain;
 	private float minRotation;
 	private float maxRotation;
 	private float smoothRotate;
+	private float visible;
+	private float invisible;
 
 	// Use this for initialization
 	void Start () {
@@ -29,9 +35,12 @@ public class WaterController : MonoBehaviour {
 		smoothMove = 0.1f;
 		maxHeight = 2f;
 		minHeight = 0f;
+		maxHeightRain = 4f;
 		minRotation = 0f;
 		maxRotation = 0.9f;
 		smoothRotate = 2.5f;
+		visible = 0f;
+		invisible = -10f;
 	}
 	
 	// Update is called once per frame
@@ -43,12 +52,14 @@ public class WaterController : MonoBehaviour {
 			} else {
 				millilitersText.text = this.GetMilliliters ().ToString();
 				if(increasing) {
-					this.ChangeWaterLevelTo(maxHeight);
+					this.ChangeWaterLevelTo(this.transform, maxHeight);
+					//this.ChangeWaterLevelTo(rain, maxHeightRain);
 				} else if (decreasing) {
 					if(measuringCup.localRotation.z < maxRotation) {
 						measuringCup.Rotate(0f, 0f, smoothRotate);
 					} else {
-						this.ChangeWaterLevelTo(minHeight);
+						this.ChangeWaterLevelTo(this.transform, minHeight);
+						//this.ChangeWaterLevelTo(rain, minHeight);
 					}
 				} else if (!decreasing) {
 					if(measuringCup.localRotation.z > minRotation) {
@@ -73,9 +84,9 @@ public class WaterController : MonoBehaviour {
 		measuringCup.position = new Vector3(Mathf.Lerp(pos.x, posX, smoothMove), pos.y, pos.z);
 	}
 
-	private void ChangeWaterLevelTo(float height) {
-		Vector3 localScale = this.transform.localScale;
-		this.transform.localScale = new Vector3(localScale.x, Mathf.Lerp (localScale.y, height, 0.005f), localScale.z);
+	private void ChangeWaterLevelTo(Transform waterTransform, float height) {
+		Vector3 localScale = waterTransform.localScale;
+		waterTransform.localScale = new Vector3(localScale.x, Mathf.Lerp (localScale.y, height, 0.005f), localScale.z);
 	}
 
 	public int GetMilliliters() {
@@ -85,6 +96,12 @@ public class WaterController : MonoBehaviour {
 	public void StartStopIncreasing() {
 		if(!decreasing && measuringCup.localRotation.z <= minRotation && measuringCup.position.x < minPosX + smoothMove) {
 			increasing = !increasing;
+		}
+		Vector3 pos = rain.position;
+		if (increasing) {
+			rain.position = new Vector3(pos.x, pos.y, visible);
+		} else {
+			rain.position = new Vector3(pos.x, pos.y, invisible);
 		}
 	}
 
