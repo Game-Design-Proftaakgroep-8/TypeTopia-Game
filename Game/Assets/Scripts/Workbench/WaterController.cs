@@ -46,11 +46,10 @@ public class WaterController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(playing){
-			//print (playing);
 			if(measuringCup.position.x > minPosX + smoothMove) {
 				this.MoveCupTo(minPosX);
 			} else {
-				millilitersText.text = this.GetMilliliters ().ToString();
+				millilitersText.text = this.GetMilliliters ().ToString() + " ml";
 				if(increasing) {
 					this.ChangeWaterLevelTo(this.transform, maxHeight);
 					//this.ChangeWaterLevelTo(rain, maxHeightRain);

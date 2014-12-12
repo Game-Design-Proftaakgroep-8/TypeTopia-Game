@@ -9,6 +9,8 @@ public class AssignmentManager : MonoBehaviour {
 	public Text winLoseText;
 	public Text recipeText;
 	public Text scoreText;
+	public Text wantedText;
+	public Text ProductText;
 	
 	private Recipe recipe;
 	private int wanted;
@@ -25,10 +27,12 @@ public class AssignmentManager : MonoBehaviour {
 		recipe.AddRecipeRow (Ingredients.Bloem, 2, true, UnitPrexixes.k, "g");
 		recipe.AddRecipeRow (Ingredients.Water, 800, false, UnitPrexixes.m, "l");
 		recipe.AddRecipeRow (Ingredients.Water, 0.4f, false, UnitPrexixes.no, "l");
-		recipe.AddRecipeRow (Ingredients.Water, 30, false, UnitPrexixes.d, "l");
+		recipe.AddRecipeRow (Ingredients.Water, 3, false, UnitPrexixes.d, "l");
 		wanted = 3;
 		marge = 25;
 		recipeText.text = recipe.ToString();
+		wantedText.text = wanted.ToString ();
+		ProductText.text = recipe.product;
 		StartCoroutine (this.startFirstGame());
 	}
 	
@@ -142,9 +146,15 @@ public class RecipeRow {
 	}
 
 	public override string ToString() {
-		string text = string.Format ("{0} \t\t\t {1} {2}{3}", ingredient.ToString(), amount, unitPrefix.ToString(), unit);
+		string unitPrefixText = unitPrefix.ToString ();
+		if(unitPrefix == UnitPrexixes.no) {
+			unitPrefixText = "";
+		}
+		string text = string.Format ("{0} \t\t\t {1} {2}{3}", ingredient.ToString(), amount, unitPrefixText, unit);
 		if(finished) {
-			text += " (klaar)";
+			text = "[x] " + text;
+		} else {
+			text = "[-] " + text;
 		}
 		return text;
 	}
