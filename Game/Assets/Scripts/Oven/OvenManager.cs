@@ -24,16 +24,16 @@ public class OvenManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		timeNowH = 6;
-		timeNowM = 40;
+		timeNowH = 7;
+		timeNowM = 5;
 
 		timeThenH = 6;
-		timeThenM = 20;
+		timeThenM = 50;
 
 		timeNeeded = 45;
 		timeTimer = 0;
 
-		answer = timeNeeded - (timeNowH - timeThenH) - (timeNowM - timeThenM);
+		answer = timeNeeded - ((timeNowH * 60) - (timeThenH * 60)) - (timeNowM - timeThenM);
 		print (answer);
 
 		gameOver = false;
