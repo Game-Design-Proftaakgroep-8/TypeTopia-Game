@@ -34,6 +34,7 @@ public class LevelManager : MonoBehaviour {
 		workbenchScene = "Workbench";
 
 		nextCustomerNr = 1;
+		leftCount = 0;
 
 		customerTimer = Time.time + 1f;
 	}
@@ -45,59 +46,12 @@ public class LevelManager : MonoBehaviour {
 		{
 			if (c != null)
 			{
-				//Get customer number
-				int number = c.GetComponent<Customer>().GetNumber();
-
-				if (number <= 0)
-				{
-					//remove customer from array
-				}
+				Vector3 newPos = c.GetComponent<Customer>().GetNewPosition();
 
 				//Move to position
-				if (c.transform.position != GetCustomerPosition(number))
+				if (c.transform.position != newPos)
 				{
-					c.GetComponent<Customer>().MoveToPosition(GetCustomerPosition(number));
-				}
-			}
-		}
-
-		//Touch input
-		if(Input.touchCount == 1)
-		{
-			touch = Input.touches[0];
-			GameObject o = InputDetection.CheckTouch(touch.position);
-
-			//If check sprite is touched
-			if (o != null && o.tag.Equals("button"))
-			{
-				hit = o;
-
-				//Let first person leave
-				foreach (GameObject c in customers)
-				{
-					if (c != null)
-					{
-						int number = c.GetComponent<Customer>().GetNumber();
-
-						//Let customer with number 1 leave
-						if (number == 1)
-						{
-							c.GetComponent<Customer>().Leave();
-
-							//Number of customer to 0
-							c.GetComponent<Customer>().NumberMin();
-						}
-					}
-				}
-
-				//Move other customers forward
-				foreach (GameObject c in customers)
-				{
-					if (c != null)
-					{
-						//Number of customer - 1
-						c.GetComponent<Customer>().NumberMin();
-					}
+					c.GetComponent<Customer>().MoveToPosition();
 				}
 			}
 		}
@@ -109,22 +63,51 @@ public class LevelManager : MonoBehaviour {
 			{
 				if (nextCustomerNr <= nrOfCustomers)
 				{
-					//Vector3 pos = GetCustomerPosition(nextCustomerNr);
 					Vector3 pos =  new Vector3(-1, 6, 0);
 					GameObject cus = (GameObject)ScriptableObject.Instantiate(CustomerPrefab, pos, Quaternion.identity);
 					cus.GetComponent<Customer>().level = this;
+
+					//gaat goed?!
+					int newNr = nextCustomerNr - leftCount;
+					cus.GetComponent<Customer>().SetNewPosition(GetCustomerPosition(newNr));
 					customers[nextCustomerNr - 1] = cus;
 
 					if (nextCustomerNr < nrOfCustomers)
 					{
 						customerTimer = Time.time;
 					}
-					else if (nextCustomerNr == nrOfCustomers)
+					else if (nextCustomerNr >= nrOfCustomers)
 					{
 						customerTimer = 0;
 					}
 				}				
 			}
+		}
+	}
+
+	public void Leave() //when button pressed
+	{
+		if (leftCount < nrOfCustomers)
+		{
+			GameObject c = customers[leftCount];
+
+			if (c != null && c.transform.position.y <= (GetCustomerPosition(1).y + 1f))
+			{
+				c.GetComponent<Customer>().SetNewPosition(new Vector2 (-8f, -3.5f));
+				Destroy(c.gameObject, 5);
+				leftCount ++;
+
+				for (int i = leftCount; i < nextCustomerNr-1; i++)
+				{
+					//Move to the front
+					Vector3 posFront = GetCustomerPosition(i - (leftCount - 1));
+					customers[i].GetComponent<Customer>().SetNewPosition(posFront);
+				}
+			}
+		}
+		else
+		{
+			print("everyone left");
 		}
 	}
 
@@ -135,6 +118,7 @@ public class LevelManager : MonoBehaviour {
 		return nr;
 	}
 
+	//Get starting position of customer
 	public Vector3 GetCustomerPosition(int number)
 	{
 		int nr = number - 1;
@@ -143,8 +127,10 @@ public class LevelManager : MonoBehaviour {
 		return vec;
 	}
 
-	public void StartGame(GameObject hit)
+	public IEnumerator StartGame(GameObject hit)
 	{
+		yield return new WaitForSeconds (3);
+
 		//start game
 		if (hit == oven)
 		{

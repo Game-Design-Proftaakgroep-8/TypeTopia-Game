@@ -8,13 +8,10 @@ public class CharacterMovement : MonoBehaviour {
 	private GameObject hit; 
 	private Touch touch;
 
-	private float countDown;
-
 	// Use this for initialization
 	void Start ()
 	{
 		hit = null;
-		countDown = 0;
 	}
 	
 	// Update is called once per frame
@@ -25,32 +22,22 @@ public class CharacterMovement : MonoBehaviour {
 			LerpCharacter(hit);
 		}
 
-		if (countDown != 0)
+		//Touch input
+		if(Input.touchCount == 1)
 		{
-			if (Time.time > countDown + 2f)
+			touch = Input.touches[0];
+			GameObject o = InputDetection.CheckTouch(touch.position);
+						
+			if (o != null)
 			{
-				level.StartGame(hit);
-			}
-		}
-		else
-		{
-			//Touch input
-			if(Input.touchCount == 1)
-			{
-				touch = Input.touches[0];
-				GameObject o = InputDetection.CheckTouch(touch.position);
-
-				if (o != null)
-				{
-					hit = o;
-				}
+				hit = o;
 			}
 		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		countDown = Time.time;
+		StartCoroutine(level.StartGame(hit));
 	}
 
 	public void LerpCharacter(GameObject touchObject)

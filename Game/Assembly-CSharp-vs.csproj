@@ -49,8 +49,10 @@
      <Compile Include="Assets\Scripts\Bakery\CharacterMovement.cs" />
      <Compile Include="Assets\Scripts\Bakery\Customer.cs" />
      <Compile Include="Assets\Scripts\Bakery\LevelManager.cs" />
+     <Compile Include="Assets\Scripts\Counter\DragManager.cs" />
      <Compile Include="Assets\Scripts\InputDetection.cs" />
      <Compile Include="Assets\Scripts\Oven\OvenManager.cs" />
+     <Compile Include="Assets\Scripts\Workbench\AssignmentManager.cs" />
      <Compile Include="Assets\Scripts\Workbench\WaterController.cs" />
      <Compile Include="Assets\Scripts\Workbench\WorkbenchInput.cs" />
  <Reference Include="UnityEngine.UI">

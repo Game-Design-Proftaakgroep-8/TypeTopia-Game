@@ -6,6 +6,7 @@ public class Customer : MonoBehaviour {
 	public LevelManager level;
 	
 	private int nr;
+	private Vector2 newPosition;
 
 	// Use this for initialization
 	void Start ()
@@ -16,7 +17,6 @@ public class Customer : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-	
 	}
 
 	public int GetNumber()
@@ -29,16 +29,18 @@ public class Customer : MonoBehaviour {
 		this.nr = nr--;
 	}
 
-	public void MoveToPosition(Vector2 newPosition)
+	public Vector3 GetNewPosition()
 	{
-		Vector2 currentPos = this.transform.position;		
-		this.transform.position = Vector2.Lerp (currentPos, newPosition, 0.5f * Time.fixedDeltaTime);
+		return this.newPosition;
 	}
 
-	public void Leave()
+	public void SetNewPosition(Vector2 newPosition)
 	{
-		Vector2 currentPos = this.transform.position;
-		Vector2 newPosition = new Vector2 (-8f, -3.5f);
-		this.transform.position = Vector2.Lerp (currentPos, newPosition, 0.5f * Time.fixedDeltaTime);
+		this.newPosition = newPosition;
+	}
+
+	public void MoveToPosition()
+	{
+		this.transform.position = Vector2.Lerp (this.transform.position, newPosition, 0.5f * Time.fixedDeltaTime);
 	}
 }
