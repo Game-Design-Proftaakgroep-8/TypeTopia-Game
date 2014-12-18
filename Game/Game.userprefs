@@ -1,10 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Workbench\AssignmentManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Bakery\LevelManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\Bakery\LevelManager.cs" Line="150" Column="37" />
-      <File FileName="Assets\Scripts\SavedData.cs" Line="59" Column="25" />
-      <File FileName="Assets\Scripts\Workbench\AssignmentManager.cs" Line="120" Column="1" />
+      <File FileName="Assets\Scripts\Bakery\LevelManager.cs" Line="118" Column="5" />
+      <File FileName="Assets\Scripts\SavedData.cs" Line="8" Column="31" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
