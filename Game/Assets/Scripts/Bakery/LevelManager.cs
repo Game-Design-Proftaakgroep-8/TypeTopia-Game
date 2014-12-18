@@ -5,7 +5,7 @@ public class LevelManager : MonoBehaviour {
 
 	public SavedData data;
 
-	private int nrOfCustomers;
+	public static int nrOfCustomers = 4;
 	private GameObject[] customers;
 	public GameObject CustomerPrefab;
 
@@ -31,39 +31,34 @@ public class LevelManager : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		pauze = false;
-
-		nrOfCustomers = 4;
 		customers = new GameObject[nrOfCustomers];
+		nextCustomerNr = 1;
+		leftCount = 0;
+
+		//Get saved customers from SavedData
+		data = SavedData.getInstance ();
+		customers = data.getCustomers ();
+		
+		foreach (GameObject g in this.customers)
+		{
+			if (g != null)
+			{
+				g.GetComponent<Customer>().SetVisible();
+				nextCustomerNr = data.getNextCustomerNr();
+				leftCount = data.getLeftCount();
+				print(g.transform.position);
+			}
+		}
+
+		pauze = false;
 
 		ovenScene = "Oven";
 		counterScene = "Counter";
 		workbenchScene = "Workbench";
 
-		nextCustomerNr = 1;
-		leftCount = 0;
-
 		customerTimer = Time.time + 1f;
 
 		btnCount = 1;
-
-		//Get saved customers from SavedData
-		data = SavedData.getInstance ();
-		this.customers = data.getCustomers ();
-
-		foreach (GameObject g in this.customers)
-		{
-			if (g == null)
-			{
-				print (null);
-			}
-			else
-			{
-				nextCustomerNr++;
-			}
-		}
-
-		print (nextCustomerNr);
 	}
 	
 	// Update is called once per frame
@@ -99,9 +94,6 @@ public class LevelManager : MonoBehaviour {
 						cus.GetComponent<Customer>().SetNewPosition(GetCustomerPosition(newNr));
 						customers[nextCustomerNr - 1] = cus;
 
-						//Set new value of customers to SavedData
-						data.updateCustomers(this.customers);
-
 						if (nextCustomerNr < nrOfCustomers)
 						{
 							customerTimer = Time.time;
@@ -115,17 +107,20 @@ public class LevelManager : MonoBehaviour {
 			}
 
 			//Set new value of customers to SavedData
-			data.updateCustomers(this.customers);
+			data.updateCustomers(this.customers, this.nextCustomerNr, this.leftCount);
 		}
 	}
 
 	public void Leave() //when button pressed
 	{
+		print ("leave");
+
 		if (leftCount < nrOfCustomers)
 		{
 			GameObject c = customers[leftCount];
+			print (leftCount);
 
-			if (c != null && c.transform.position.y <= (GetCustomerPosition(1).y + 1f))
+			if (c != null && c.transform.position.y <= (GetCustomerPosition(1).y + 2f))
 			{
 				c.GetComponent<Customer>().SetNewPosition(new Vector2 (-8f, -3.5f));
 				Destroy(c.gameObject, 5);
@@ -166,6 +161,18 @@ public class LevelManager : MonoBehaviour {
 		yield return new WaitForSeconds (3);
 
 		this.pauze = true;
+
+		//Set new value of customers to SavedData
+		data.updateCustomers(this.customers, this.nextCustomerNr, this.leftCount);
+
+		//Put customers on background
+		foreach (GameObject g in this.customers)
+		{
+			if (g != null)
+			{
+				g.GetComponent<Customer>().SetInvisible();
+			}
+		}
 
 		//start game
 		if (hit == oven)
