@@ -3,6 +3,8 @@ using System.Collections;
 
 public class LevelManager : MonoBehaviour {
 
+	public SavedData data;
+
 	private int nrOfCustomers;
 	private GameObject[] customers;
 	public GameObject CustomerPrefab;
@@ -22,10 +24,15 @@ public class LevelManager : MonoBehaviour {
 
 	private GameObject hit; 
 	private Touch touch;
+	private bool pauze;
+
+	private int btnCount;
 
 	// Use this for initialization
 	void Start ()
 	{
+		pauze = false;
+
 		nrOfCustomers = 4;
 		customers = new GameObject[nrOfCustomers];
 
@@ -37,51 +44,78 @@ public class LevelManager : MonoBehaviour {
 		leftCount = 0;
 
 		customerTimer = Time.time + 1f;
+
+		btnCount = 1;
+
+		//Get saved customers from SavedData
+		data = SavedData.getInstance ();
+		this.customers = data.getCustomers ();
+
+		foreach (GameObject g in this.customers)
+		{
+			if (g == null)
+			{
+				print (null);
+			}
+			else
+			{
+				nextCustomerNr++;
+			}
+		}
+
+		print (nextCustomerNr);
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		foreach (GameObject c in customers)
+		if (!pauze)
 		{
-			if (c != null)
+			foreach (GameObject c in customers)
 			{
-				Vector3 newPos = c.GetComponent<Customer>().GetNewPosition();
-
-				//Move to position
-				if (c.transform.position != newPos)
+				if (c != null)
 				{
-					c.GetComponent<Customer>().MoveToPosition();
+					Vector3 newPos = c.GetComponent<Customer>().GetNewPosition();
+
+					//Move to position
+					if (c.transform.position != newPos)
+					{
+						c.GetComponent<Customer>().MoveToPosition();
+					}
 				}
 			}
-		}
 
-		//Place customer
-		if (customerTimer != 0)
-		{
-			if (Time.time >= customerTimer + 4f)
+			//Place customer
+			if (customerTimer != 0)
 			{
-				if (nextCustomerNr <= nrOfCustomers)
+				if (Time.time >= customerTimer + 4f)
 				{
-					Vector3 pos =  new Vector3(-1, 6, 0);
-					GameObject cus = (GameObject)ScriptableObject.Instantiate(CustomerPrefab, pos, Quaternion.identity);
-					cus.GetComponent<Customer>().level = this;
-
-					//gaat goed?!
-					int newNr = nextCustomerNr - leftCount;
-					cus.GetComponent<Customer>().SetNewPosition(GetCustomerPosition(newNr));
-					customers[nextCustomerNr - 1] = cus;
-
-					if (nextCustomerNr < nrOfCustomers)
+					if (nextCustomerNr <= nrOfCustomers)
 					{
-						customerTimer = Time.time;
-					}
-					else if (nextCustomerNr >= nrOfCustomers)
-					{
-						customerTimer = 0;
-					}
-				}				
+						Vector3 pos =  new Vector3(-1, 6, 0);
+						GameObject cus = (GameObject)ScriptableObject.Instantiate(CustomerPrefab, pos, Quaternion.identity);
+						cus.GetComponent<Customer>().level = this;
+						int newNr = nextCustomerNr - leftCount;
+						cus.GetComponent<Customer>().SetNewPosition(GetCustomerPosition(newNr));
+						customers[nextCustomerNr - 1] = cus;
+
+						//Set new value of customers to SavedData
+						data.updateCustomers(this.customers);
+
+						if (nextCustomerNr < nrOfCustomers)
+						{
+							customerTimer = Time.time;
+						}
+						else if (nextCustomerNr >= nrOfCustomers)
+						{
+							customerTimer = 0;
+						}
+					}				
+				}
 			}
+
+			//Set new value of customers to SavedData
+			data.updateCustomers(this.customers);
 		}
 	}
 
@@ -131,6 +165,8 @@ public class LevelManager : MonoBehaviour {
 	{
 		yield return new WaitForSeconds (3);
 
+		this.pauze = true;
+
 		//start game
 		if (hit == oven)
 		{
@@ -147,5 +183,24 @@ public class LevelManager : MonoBehaviour {
 			print("Start game workbench");
 			Application.LoadLevel(workbenchScene);
 		}
+	}
+
+	public void setPauze(bool pauze)
+	{
+		this.pauze = pauze;
+	}
+
+	public void buttonPauze()
+	{
+		if (btnCount%2 == 1)
+		{
+			this.pauze = true;
+		}
+		else
+		{
+			this.pauze = false;
+		}
+
+		btnCount++;
 	}
 }
