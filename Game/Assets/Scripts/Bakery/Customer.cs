@@ -8,6 +8,11 @@ public class Customer : MonoBehaviour {
 	private int nr;
 	private Vector2 newPosition;
 
+	void Awake()
+	{
+		DontDestroyOnLoad (transform.gameObject);
+	}
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -42,5 +47,15 @@ public class Customer : MonoBehaviour {
 	public void MoveToPosition()
 	{
 		this.transform.position = Vector2.Lerp (this.transform.position, newPosition, 0.5f * Time.fixedDeltaTime);
+	}
+
+	public void SetInvisible()
+	{
+		this.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, -10);
+	}
+
+	public void SetVisible()
+	{
+		this.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, 0);
 	}
 }

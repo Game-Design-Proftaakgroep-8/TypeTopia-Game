@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Counter\DragManager.cs" />
      <Compile Include="Assets\Scripts\InputDetection.cs" />
      <Compile Include="Assets\Scripts\Oven\OvenManager.cs" />
+     <Compile Include="Assets\Scripts\SavedData.cs" />
      <Compile Include="Assets\Scripts\Workbench\AssignmentManager.cs" />
      <Compile Include="Assets\Scripts\Workbench\WaterController.cs" />
      <Compile Include="Assets\Scripts\Workbench\WorkbenchInput.cs" />
