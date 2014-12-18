@@ -33,7 +33,7 @@ public class WaterController : MonoBehaviour {
 		minPosX = 6.64f;
 		maxPosX = 14f;
 		smoothMove = 0.1f;
-		maxHeight = 2f;
+		maxHeight = 10f;
 		minHeight = 0f;
 		maxHeightRain = 4f;
 		minRotation = 0f;
@@ -89,7 +89,7 @@ public class WaterController : MonoBehaviour {
 	}
 
 	public int GetMilliliters() {
-		return Convert.ToInt32((int)unitPrefix * this.transform.localScale.y / 2f);
+		return Convert.ToInt32((int)unitPrefix * this.transform.localScale.y / maxHeight);
 	}
 
 	public void StartStopIncreasing() {
