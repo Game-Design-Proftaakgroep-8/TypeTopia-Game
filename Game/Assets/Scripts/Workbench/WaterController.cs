@@ -20,7 +20,7 @@ public class WaterController : MonoBehaviour {
 	private bool decreasing = false;
 	private float maxHeight;
 	private float minHeight;
-	private float maxHeightRain;
+	//private float maxHeightRain;
 	private float minRotation;
 	private float maxRotation;
 	private float smoothRotate;
@@ -35,7 +35,7 @@ public class WaterController : MonoBehaviour {
 		smoothMove = 0.1f;
 		maxHeight = 10f;
 		minHeight = 0f;
-		maxHeightRain = 4f;
+		//maxHeightRain = 4f;
 		minRotation = 0f;
 		maxRotation = 0.9f;
 		smoothRotate = 2.5f;
