@@ -2,10 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Bakery\LevelManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\Bakery\LevelManager.cs" Line="33" Column="3" />
-      <File FileName="Assets\Scripts\Bakery\CharacterMovement.cs" Line="14" Column="14" />
-      <File FileName="Assets\Scripts\Bakery\Customer.cs" Line="19" Column="3" />
-      <File FileName="Assets\Scripts\SavedData.cs" Line="21" Column="19" />
+      <File FileName="Assets\Scripts\Bakery\LevelManager.cs" Line="109" Column="21" />
+      <File FileName="Assets\Scripts\SavedData.cs" Line="12" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

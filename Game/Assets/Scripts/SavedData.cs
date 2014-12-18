@@ -5,10 +5,16 @@ public class SavedData {
 
 	private static SavedData instance = null;
 	private GameObject[] customers;
+	private int maxCustomers = 0;
+	private int nextCustomerNr = 1;
+	private int leftCount = 0;
 
 	private SavedData()
 	{
-		customers = new GameObject[4];
+		maxCustomers = LevelManager.nrOfCustomers;
+		nextCustomerNr = 1;
+		leftCount = 0;
+		customers = new GameObject[maxCustomers];
 	}
 
 	public static SavedData getInstance()
@@ -21,7 +27,7 @@ public class SavedData {
 		return instance;
 	}
 
-	public void updateCustomers(GameObject[] cus)
+	public void updateCustomers(GameObject[] cus, int nextNr, int leftNr)
 	{
 		int count = 0;
 
@@ -30,18 +36,26 @@ public class SavedData {
 			if (g != null)
 			{
 				customers[count] = g;
-				Debug.Log(customers[count]);
 				count++;
 			}
-			else
-			{
-				//Debug.Log(null);
-			}
 		}
+
+		this.nextCustomerNr = nextNr;
+		this.leftCount = leftNr;
 	}
 
 	public GameObject[] getCustomers()
 	{
 		return customers;
+	}
+
+	public int getNextCustomerNr()
+	{
+		return this.nextCustomerNr;
+	}
+
+	public int getLeftCount()
+	{
+		return this.leftCount;
 	}
 }

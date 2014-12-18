@@ -12,35 +12,25 @@ public class OvenManager : MonoBehaviour {
 	public GameObject ClockThen;
 
 
-	private float timeNowH;
-	private float timeNowM;
-	private float timeThenH;
-	private float timeThenM;
-	private float timeNeeded;
-	private float timeTimer;
-	private float answer;
+	private int timeNowH;
+    private int timeNowM;
+    private int timeThenH;
+    private int timeThenM;
+    private int timeDifference;
+    private int timeNeeded;
+    private int timeTimer;
+    private int answer;
 
 	private bool gameOver;
 
 	// Use this for initialization
 	void Start () {
-		timeNowH = 7;
-		timeNowM = 5;
-
-		timeThenH = 6;
-		timeThenM = 50;
-
-		timeNeeded = 45;
-		timeTimer = 0;
-
-		answer = timeNeeded - ((timeNowH * 60) - (timeThenH * 60)) - (timeNowM - timeThenM);
-		print (answer);
+        setTime();
 
 		gameOver = false;
 
 		updateTimer ();
-		setTimeNow ();
-		setTimeThen ();
+        
 		setTimeNeeded ();
 	}
 	
@@ -50,17 +40,46 @@ public class OvenManager : MonoBehaviour {
 			ClockThen.transform.Translate(0, -0.1f, 0);
 		}
 
-		if(ClockThen.transform.position.y < 1 && ClockNow.transform.position.y > 3) {
+		if(ClockThen.transform.position.y < 0.5f && ClockNow.transform.position.y > 3) {
 			ClockNow.transform.Translate (0, -0.1f, 0);
 		}
 	}
 
+    void setTime() {
+        setTimeThen ();
+        setTimeNow ();
+        
+        timeDifference = ((timeNowH * 60) - (timeThenH * 60)) - (timeNowM - timeThenM);
+        timeNeeded = Random.Range(timeDifference/5, 13) *5;
+        timeTimer = 0;
+        
+        answer = timeNeeded - ((timeNowH * 60) - (timeThenH * 60)) - (timeNowM - timeThenM);
+        print("difference: " + timeDifference);
+        print("needed: " + timeNeeded);
+        print("answer: " + answer);
+
+        if(answer <= 0 || answer > 95) {
+            setTime();
+        }
+    }
+
 	void setTimeNow() {
+        timeNowH = Random.Range(timeThenH, timeThenH + 3);
+        if(timeNowH <= timeThenH) {
+            timeNowM = Random.Range(timeThenM/5 + 1, 13) * 5;
+        }
+        else {
+            timeNowM = Random.Range(1, 13) * 5;
+        }
+
 		ClockNow.transform.Find("ClockH").transform.Rotate (Vector3.forward * (timeNowH * -30));
 		ClockNow.transform.Find("ClockM").transform.Rotate (Vector3.forward * ((timeNowM/5) * -30));
 	}
 
 	void setTimeThen() {
+        timeThenH = Random.Range(1, 12);
+        timeThenM = Random.Range(1, 12) * 5;
+
 		ClockThen.transform.Find("ClockH").transform.Rotate (Vector3.forward * (timeThenH * -30));
 		ClockThen.transform.Find("ClockM").transform.Rotate (Vector3.forward * ((timeThenM/5) * -30));
 	}
