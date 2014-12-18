@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 public class AssignmentManager : MonoBehaviour {
 	public WaterController waterController;
+	public BalanceController balanceController;
 	public Text winLoseText;
 	public Text recipeText;
 	public Text scoreText;
@@ -24,8 +25,9 @@ public class AssignmentManager : MonoBehaviour {
 		string product = "Brood";
 		int amount = 4;
 		recipe = new Recipe (product, amount);
-		recipe.AddRecipeRow (Ingredients.Bloem, 2, true, UnitPrexixes.k, "g");
+		recipe.AddRecipeRow (Ingredients.Meel, 2, true, UnitPrexixes.k, "g");
 		recipe.AddRecipeRow (Ingredients.Water, 800, false, UnitPrexixes.m, "l");
+		recipe.AddRecipeRow (Ingredients.Gist, 400, false, UnitPrexixes.no, "g");
 		recipe.AddRecipeRow (Ingredients.Water, 0.4f, false, UnitPrexixes.no, "l");
 		recipe.AddRecipeRow (Ingredients.Water, 3, false, UnitPrexixes.d, "l");
 		wanted = 3;
@@ -45,10 +47,11 @@ public class AssignmentManager : MonoBehaviour {
 		currentIngredient = recipe.GetNext();
 		if (currentIngredient != null) {
 			currentAnswer = Convert.ToInt32((currentIngredient.amount * (int)currentIngredient.unitPrefix) / recipe.amount * wanted);
-			switch(currentIngredient.ingredient) {
-				case Ingredients.Water:
-					waterController.StartGame();
-					break;
+			if(currentIngredient.ingredient == Ingredients.Water || currentIngredient.ingredient == Ingredients.Melk) {
+				// Ingredient meegeven
+				waterController.StartGame();
+			} else {
+				balanceController.StartGame ();
 			}
 		} else {
 			winLoseText.text = "Einde van dit spel";
@@ -57,17 +60,19 @@ public class AssignmentManager : MonoBehaviour {
 	}
 
 	public void CheckAssignment() {
-		switch(currentIngredient.ingredient) {
-			case Ingredients.Water:
-				int given = waterController.GetMilliliters();
-				waterController.StopGame();
-				if(given >= currentAnswer - marge && given <= currentAnswer + marge) {
-					winLoseText.text = "GOED!!";
-					// score points?
-				} else {
-					winLoseText.text = "FOUT!!";
-				}
-				break;
+		int given;
+		if (currentIngredient.ingredient == Ingredients.Water || currentIngredient.ingredient == Ingredients.Melk) {
+			given = waterController.GetMilliliters();
+			waterController.StopGame();
+		} else {
+			given = balanceController.GetMilligrams ();
+			balanceController.StopGame ();
+		}
+		if(given >= currentAnswer - marge && given <= currentAnswer + marge) {
+			winLoseText.text = "GOED!!";
+			// score points?
+		} else {
+			winLoseText.text = "FOUT!!";
 		}
 		StartCoroutine (this.startNextGame ());
 		recipe.CheckFirst();
@@ -161,8 +166,12 @@ public class RecipeRow {
 }
 
 public enum Ingredients {
-	Bloem,
-	Water
+	Meel,
+	Gist,
+	Zout,
+	Water,
+	Suiker,
+	Melk
 }
 
 public enum UnitPrexixes {

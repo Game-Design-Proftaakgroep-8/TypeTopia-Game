@@ -3,6 +3,7 @@ using System.Collections;
 
 public class WorkbenchInput : MonoBehaviour {
 	public WaterController waterController;
+	public BalanceController balanceController;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +20,8 @@ public class WorkbenchInput : MonoBehaviour {
 					waterController.StartStopIncreasing();
 				} else if (hit.CompareTag("measuringCup")) {
 					waterController.StartStopDecreasing();
+				} else if (hit.CompareTag("stockContainer")) {
+					balanceController.StartStopIncreasingWeight();
 				}
 			}
 		}
