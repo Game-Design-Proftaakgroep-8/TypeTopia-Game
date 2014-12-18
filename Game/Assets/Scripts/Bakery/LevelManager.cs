@@ -71,12 +71,7 @@ public class LevelManager : MonoBehaviour {
 				if (c != null)
 				{
 					Vector3 newPos = c.GetComponent<Customer>().GetNewPosition();
-
-					//Move to position
-					if (c.transform.position != newPos)
-					{
-						c.GetComponent<Customer>().MoveToPosition();
-					}
+					c.GetComponent<Customer>().MoveToPosition();
 				}
 			}
 
@@ -90,8 +85,8 @@ public class LevelManager : MonoBehaviour {
 						Vector3 pos =  new Vector3(-1, 6, 0);
 						GameObject cus = (GameObject)ScriptableObject.Instantiate(CustomerPrefab, pos, Quaternion.identity);
 						cus.GetComponent<Customer>().level = this;
-						int newNr = nextCustomerNr - leftCount;
-						cus.GetComponent<Customer>().SetNewPosition(GetCustomerPosition(newNr));
+						int nr = nextCustomerNr - leftCount;
+						cus.GetComponent<Customer>().SetNewPosition(GetCustomerPosition(nr));
 						customers[nextCustomerNr - 1] = cus;
 
 						if (nextCustomerNr < nrOfCustomers)
@@ -118,9 +113,8 @@ public class LevelManager : MonoBehaviour {
 		if (leftCount < nrOfCustomers)
 		{
 			GameObject c = customers[leftCount];
-			print (leftCount);
 
-			if (c != null && c.transform.position.y <= (GetCustomerPosition(1).y + 2f))
+			if (c != null && c.transform.position.y <= (GetCustomerPosition(1).y + 1f))
 			{
 				c.GetComponent<Customer>().SetNewPosition(new Vector2 (-8f, -3.5f));
 				Destroy(c.gameObject, 5);
