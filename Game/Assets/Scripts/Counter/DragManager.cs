@@ -3,6 +3,10 @@ using System.Collections;
 
 public class DragManager : MonoBehaviour {
 
+	public GameObject eenEuro;
+	public GameObject tweeEuro;
+	public GameObject vijfEuro;
+
 	private GameObject lastTouched;
 
 	// Use this for initialization
@@ -26,19 +30,25 @@ public class DragManager : MonoBehaviour {
 						hit.transform.position = touchPosition;
 	                }
 				}
+				else if(hit.tag == "1euro") {
+					GameObject geld = eenEuro;
+					geld = (GameObject)Instantiate(eenEuro);
+
+					geld.transform.position = hit.transform.position;
+				}
+				else if(hit.tag == "2euro") {
+					GameObject geld = tweeEuro;
+					geld = (GameObject)Instantiate(tweeEuro);
+
+					geld.transform.position = hit.transform.position;
+				}
+				else if(hit.tag == "5euro") {
+					GameObject geld = vijfEuro;
+					geld = (GameObject)Instantiate(vijfEuro);
+					
+					geld.transform.position = hit.transform.position;
+				}
             }
         }
     }
-
-	void OnTriggerEnter2D(Collider2D col) {
-		if(col.tag == "hand") {
-			lastTouched.transform.SetParent(col.gameObject.transform);
-		}
-	}
-
-	void OnTriggerExit2D(Collider2D col) {
-		if(col.tag == "hand") {
-			lastTouched.transform.SetParent(null);
-		}
-	}
 }

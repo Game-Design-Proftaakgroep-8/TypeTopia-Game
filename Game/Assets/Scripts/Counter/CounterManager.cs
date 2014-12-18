@@ -7,11 +7,13 @@ public class CounterManager : MonoBehaviour {
 	private HandMovement handMovement;
 
 	private bool start;
+	private bool gameOver;
 
 	// Use this for initialization
 	void Start () {
 		handMovement = hand.GetComponent<HandMovement> ();
 		start = true;
+		gameOver = false;
 	}
 	
 	// Update is called once per frame
@@ -21,5 +23,15 @@ public class CounterManager : MonoBehaviour {
 			start = false;
 		}
 
+	}
+
+	public void confirm() {
+		gameOver = true;
+		StartCoroutine (returnToOverview ());
+	}
+
+	public IEnumerator returnToOverview() {
+		yield return new WaitForSeconds(3);
+		Application.LoadLevel ("BakeryOverview");
 	}
 }
