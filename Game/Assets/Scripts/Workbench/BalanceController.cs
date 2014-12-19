@@ -5,6 +5,7 @@ using System;
 
 public class BalanceController : MonoBehaviour {
 	public ContainerManager stockContainer;
+	public ContainerManager mixingBowl;
 	public Transform stockRain;
 	public Text milligramsText;
 	/// <summary>
@@ -12,7 +13,7 @@ public class BalanceController : MonoBehaviour {
 	/// </summary>
 	public UnitPrexixes unitPrefix;
 
-	private int currentWeight;
+	private float currentWeight;
 
 	private bool playing;
 	private bool increasingWeight = false;
@@ -28,31 +29,34 @@ public class BalanceController : MonoBehaviour {
 
 		// Stock Container
 		stockContainer.minPosX = 1f;
-		stockContainer.maxPosX = 14f;
 
-		// Ingredient
-		visible = 0f;
+		// Mixing Bowl
+		mixingBowl.minPosX = -2.95f;
+
+		// Stock Rain
+		visible = 1f;
 		invisible = -10f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (playing) {
-			if(stockContainer.OnMinPosX ()) {
+			if(stockContainer.OnMinPosX () && mixingBowl.OnMinPosX()) {
 				milligramsText.text = GetMilligrams().ToString() + " mg";
 				if(increasingWeight && stockContainer.OnMaxRotation()) {
 					// increase weight
 					Vector3 pos = stockRain.position;
 					stockRain.position = new Vector3(pos.x, pos.y, visible);
 
-					currentWeight++;
+					currentWeight = currentWeight + (1f / (int)unitPrefix);
 				} else if (!increasingWeight) {
 					Vector3 pos = stockRain.position;
 					stockRain.position = new Vector3(pos.x, pos.y, invisible);
-				} else if (decreasingWeight) {
+				}
+				if (decreasingWeight && mixingBowl.OnMaxRotation ()) {
 					// decrease weight
 					if(currentWeight > 0) {
-						currentWeight--;
+						currentWeight = currentWeight - (1f / (int)unitPrefix);
 					}
 				}
 			}
@@ -66,15 +70,16 @@ public class BalanceController : MonoBehaviour {
 	}
 
 	public void StartStopIncreasingWeight() {
-		if (!decreasingWeight && stockContainer.OnMinPosX ()) {
+		if (!decreasingWeight && stockContainer.OnMinPosX () && mixingBowl.OnMinPosX() && mixingBowl.OnMinRotation ()) {
 			increasingWeight = !increasingWeight;
+			stockContainer.StartStopDecreasing ();
 		}
-		stockContainer.StartStopDecreasing ();
 	}
 
 	public void StartStopDecreasingWeight() {
-		if(!increasingWeight && stockContainer.OnMinPosX() && stockContainer.OnMinRotation()) {
+		if(!increasingWeight && stockContainer.OnMinPosX() && mixingBowl.OnMinPosX () && stockContainer.OnMinRotation()) {
 			decreasingWeight = !decreasingWeight;
+			mixingBowl.StartStopDecreasing ();
 		}
 	}
 
@@ -82,6 +87,7 @@ public class BalanceController : MonoBehaviour {
 		if(!playing) {
 			this.playing = true;
 			stockContainer.StartGame();
+			mixingBowl.StartGame ();
 		}
 	}
 	
@@ -91,6 +97,7 @@ public class BalanceController : MonoBehaviour {
 			milligramsText.text = string.Empty;
 			currentWeight = 0;
 			stockContainer.StopGame();
+			mixingBowl.StopGame ();
 		}
 	}
 }
