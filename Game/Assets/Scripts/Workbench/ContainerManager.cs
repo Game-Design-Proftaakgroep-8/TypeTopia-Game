@@ -3,8 +3,8 @@ using System.Collections;
 
 public class ContainerManager : MonoBehaviour {
 	public float minPosX;
-	public float maxPosX;
 
+	private float maxPosX;
 	private float smoothMove;
 	private float minRotation;
 	private float maxRotation;
@@ -15,6 +15,7 @@ public class ContainerManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		maxPosX = 14f;
 		smoothMove = 0.1f;
 		minRotation = 0f;
 		maxRotation = 0.9f;

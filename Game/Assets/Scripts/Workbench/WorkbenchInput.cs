@@ -22,6 +22,8 @@ public class WorkbenchInput : MonoBehaviour {
 					waterController.StartStopDecreasing();
 				} else if (hit.CompareTag("stockContainer")) {
 					balanceController.StartStopIncreasingWeight();
+				} else if (hit.CompareTag("mixingBowl")) {
+					balanceController.StartStopDecreasingWeight ();
 				}
 			}
 		}
