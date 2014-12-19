@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\Workbench\AssignmentManager.cs" />
      <Compile Include="Assets\Scripts\Workbench\BalanceController.cs" />
      <Compile Include="Assets\Scripts\Workbench\ContainerManager.cs" />
+     <Compile Include="Assets\Scripts\Workbench\SpriteManager.cs" />
      <Compile Include="Assets\Scripts\Workbench\WaterController.cs" />
      <Compile Include="Assets\Scripts\Workbench\WorkbenchInput.cs" />
  <Reference Include="UnityEngine.UI">

@@ -9,7 +9,7 @@ public class HighscoreMenu : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		startScene = "Menu";
+		menuScene = "Menu";
 		startScene = "BakeryOverview";
 	}
 	

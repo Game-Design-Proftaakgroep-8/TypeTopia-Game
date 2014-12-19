@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class LevelManager : MonoBehaviour {
@@ -28,6 +29,12 @@ public class LevelManager : MonoBehaviour {
 
 	private int btnCount;
 
+	private bool counterPlayed;
+	private bool workbenchPlayed;
+	private bool ovenPlayed;
+
+	public Text geslaagd;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -38,6 +45,11 @@ public class LevelManager : MonoBehaviour {
 		//Get saved customers from SavedData
 		data = SavedData.getInstance ();
 		customers = data.getCustomers ();
+
+		counterPlayed = data.getCounterPlayed();
+		workbenchPlayed = data.getWorkBenchPlayed();
+		ovenPlayed = data.getOvenPlayed();
+		geslaagd.text = " ";
 		
 		foreach (GameObject g in this.customers)
 		{
@@ -46,7 +58,6 @@ public class LevelManager : MonoBehaviour {
 				g.GetComponent<Customer>().SetVisible();
 				nextCustomerNr = data.getNextCustomerNr();
 				leftCount = data.getLeftCount();
-				print(g.transform.position);
 			}
 		}
 
@@ -64,6 +75,12 @@ public class LevelManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+		if (counterPlayed && workbenchPlayed && ovenPlayed)
+		{
+			geslaagd.text = "Geslaagd";
+			StartCoroutine(StopGame());
+		}
+
 		if (!pauze)
 		{
 			foreach (GameObject c in customers)
@@ -107,8 +124,6 @@ public class LevelManager : MonoBehaviour {
 
 	public void Leave() //when button pressed
 	{
-		print ("leave");
-
 		if (leftCount < nrOfCustomers)
 		{
 			GameObject c = customers[leftCount];
@@ -168,19 +183,22 @@ public class LevelManager : MonoBehaviour {
 		}
 
 		//start game
-		if (hit == oven)
+		if (hit == oven && !ovenPlayed)
 		{
 			print("Start game oven");
+			data.setOvenPlayed(true);
 			Application.LoadLevel(ovenScene);
 		}
-		else if (hit == counter)
+		else if (hit == counter && !counterPlayed)
 		{
 			print("Start game counter");
+			data.setCounterPlayed(true);
 			Application.LoadLevel(counterScene);
 		}
-		else if (hit == workbench)
+		else if (hit == workbench && !workbenchPlayed)
 		{
 			print("Start game workbench");
+			data.setWorkbenchPlayed(true);
 			Application.LoadLevel(workbenchScene);
 		}
 	}
@@ -202,5 +220,22 @@ public class LevelManager : MonoBehaviour {
 		}
 
 		btnCount++;
+	}
+
+	public IEnumerator StopGame()
+	{
+		yield return new WaitForSeconds (3);
+		data.deleteInstance ();
+
+		//Remove customers
+		foreach (GameObject g in this.customers)
+		{
+			if (g != null)
+			{
+				Destroy(g);
+			}
+		}
+
+		Application.LoadLevel("Menu");
 	}
 }
