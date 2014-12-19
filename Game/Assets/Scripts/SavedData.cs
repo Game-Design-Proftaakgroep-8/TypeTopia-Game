@@ -9,12 +9,22 @@ public class SavedData {
 	private int nextCustomerNr = 1;
 	private int leftCount = 0;
 
+	private bool counterPlayed;
+	private bool workbenchPlayed;
+	private bool ovenPlayed;
+
+	private int score = 0;
+
 	private SavedData()
 	{
 		maxCustomers = LevelManager.nrOfCustomers;
 		nextCustomerNr = 1;
 		leftCount = 0;
 		customers = new GameObject[maxCustomers];
+
+		counterPlayed = false;
+		workbenchPlayed = false;
+		ovenPlayed = false;
 	}
 
 	public static SavedData getInstance()
@@ -27,6 +37,12 @@ public class SavedData {
 		return instance;
 	}
 
+	public void deleteInstance()
+	{
+		instance = null;
+	}
+
+	//Get and set Customer data
 	public void updateCustomers(GameObject[] cus, int nextNr, int leftNr)
 	{
 		int count = 0;
@@ -57,5 +73,47 @@ public class SavedData {
 	public int getLeftCount()
 	{
 		return this.leftCount;
+	}
+
+	//Get and set played games
+	public bool getCounterPlayed()
+	{
+		return this.counterPlayed;
+	}
+	
+	public bool getWorkBenchPlayed()
+	{
+		return this.workbenchPlayed;
+	}
+	
+	public bool getOvenPlayed()
+	{
+		return this.ovenPlayed;
+	}
+	
+	public void setCounterPlayed(bool played)
+	{
+		this.counterPlayed = played;
+	}
+	
+	public void setWorkbenchPlayed(bool played)
+	{
+		this.workbenchPlayed = played;
+	}
+	
+	public void setOvenPlayed(bool played)
+	{
+		this.ovenPlayed = played;
+	}
+
+	//Get and set score	
+	public void updateScore(int score)
+	{
+		this.score = score;
+	}
+
+	public int getScore()
+	{
+		return this.score;
 	}
 }
