@@ -12,8 +12,6 @@ public class WaterController : MonoBehaviour {
 	/// </summary>
 	public UnitPrexixes unitPrefix;
 
-	private Transform waterTransform;
-
 	private bool playing;
 	private bool increasing = false;
 	private bool decreasing = false;
@@ -24,11 +22,9 @@ public class WaterController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		waterTransform = null;
-
 		playing = false;
 		// Measuring Cup
-		measuringCup.minPosX = 6.64f;
+		measuringCup.SetValues (6.64f, true); 
 
 		// Water
 		maxHeight = 10f;
@@ -89,7 +85,6 @@ public class WaterController : MonoBehaviour {
 	public void StartGame() {
 		if(!playing) {
 			this.playing = true;
-			waterTransform = GetComponentInChildren<Transform>();
 			measuringCup.StartGame();
 		}
 	}

@@ -28,10 +28,10 @@ public class BalanceController : MonoBehaviour {
 		currentWeight = 0;
 
 		// Stock Container
-		stockContainer.minPosX = 1f;
+		stockContainer.SetValues (1f, true);
 
 		// Mixing Bowl
-		mixingBowl.minPosX = -2.95f;
+		mixingBowl.SetValues(-2.95f, false);
 
 		// Stock Rain
 		visible = 1f;
@@ -42,13 +42,17 @@ public class BalanceController : MonoBehaviour {
 	void Update () {
 		if (playing) {
 			if(stockContainer.OnMinPosX () && mixingBowl.OnMinPosX()) {
-				milligramsText.text = GetMilligrams().ToString() + " mg";
+				String unitPrefixText = unitPrefix.ToString();
+				if(unitPrefix == UnitPrexixes.no) {
+					unitPrefixText = "";
+				}
+				milligramsText.text = currentWeight + " " + unitPrefixText + "g";
 				if(increasingWeight && stockContainer.OnMaxRotation()) {
 					// increase weight
 					Vector3 pos = stockRain.position;
 					stockRain.position = new Vector3(pos.x, pos.y, visible);
 
-					currentWeight = currentWeight + (1f / (int)unitPrefix);
+					currentWeight++;
 				} else if (!increasingWeight) {
 					Vector3 pos = stockRain.position;
 					stockRain.position = new Vector3(pos.x, pos.y, invisible);
@@ -56,7 +60,7 @@ public class BalanceController : MonoBehaviour {
 				if (decreasingWeight && mixingBowl.OnMaxRotation ()) {
 					// decrease weight
 					if(currentWeight > 0) {
-						currentWeight = currentWeight - (1f / (int)unitPrefix);
+						currentWeight--;
 					}
 				}
 			}
