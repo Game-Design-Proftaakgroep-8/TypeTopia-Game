@@ -70,7 +70,6 @@ public class LevelManager : MonoBehaviour {
 			{
 				if (c != null)
 				{
-					Vector3 newPos = c.GetComponent<Customer>().GetNewPosition();
 					c.GetComponent<Customer>().MoveToPosition();
 				}
 			}

@@ -9,6 +9,8 @@ public class SavedData {
 	private int nextCustomerNr = 1;
 	private int leftCount = 0;
 
+	private int score = 0;
+
 	private SavedData()
 	{
 		maxCustomers = LevelManager.nrOfCustomers;
@@ -57,5 +59,15 @@ public class SavedData {
 	public int getLeftCount()
 	{
 		return this.leftCount;
+	}
+
+	public void updateScore(int score)
+	{
+		this.score = score;
+	}
+
+	public int getScore()
+	{
+		return this.score;
 	}
 }
