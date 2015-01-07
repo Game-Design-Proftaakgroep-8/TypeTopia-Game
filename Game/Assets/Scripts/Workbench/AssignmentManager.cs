@@ -27,12 +27,12 @@ public class AssignmentManager : MonoBehaviour {
 		string product = "Brood";
 		int amount = 4;
 		recipe = new Recipe (product, amount);
-		recipe.AddRecipeRow (Ingredients.Meel, 2, true, UnitPrexixes.k, "g");
-		//recipe.AddRecipeRow (Ingredients.Water, 3, false, UnitPrexixes.d, "l");
+		recipe.AddRecipeRow (Ingredients.Zout, 1, true, UnitPrexixes.k, "g");
+		recipe.AddRecipeRow (Ingredients.Meel, 2, false, UnitPrexixes.k, "g");
+		recipe.AddRecipeRow (Ingredients.Water, 3, false, UnitPrexixes.d, "l");
 		recipe.AddRecipeRow (Ingredients.Gist, 400, false, UnitPrexixes.no, "g");
 		recipe.AddRecipeRow (Ingredients.Suiker, 4, false, UnitPrexixes.no, "g");
 		recipe.AddRecipeRow (Ingredients.Melk, 25, false, UnitPrexixes.d, "l");
-		recipe.AddRecipeRow (Ingredients.Zout, 1, false, UnitPrexixes.k, "g");
 		wanted = 3;
 		marge = 0.10f;
 		recipeText.text = recipe.ToString();

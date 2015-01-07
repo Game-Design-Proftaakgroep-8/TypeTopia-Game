@@ -24,10 +24,10 @@ public class WaterController : MonoBehaviour {
 	void Start () {
 		playing = false;
 		// Measuring Cup
-		measuringCup.SetValues (6.64f, true); 
+		measuringCup.SetValues (7.25f, true); 
 
 		// Water
-		maxHeight = 10f;
+		maxHeight = 12.1f;
 		minHeight = 0f;
 
 		// Rain
