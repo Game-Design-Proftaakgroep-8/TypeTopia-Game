@@ -68,9 +68,11 @@ public class AssignmentManager : MonoBehaviour {
 		// check nog verbeteren?
 		if(currentIngredient == null) { return; }
 		if (currentIngredient.ingredient == Ingredients.Water || currentIngredient.ingredient == Ingredients.Melk) {
+			if(!waterController.IsReadyToCheck()) { return; }
 			given = waterController.GetMilliliters();
 			waterController.StopGame();
 		} else {
+			if(!balanceController.IsReadyToCheck()) { return; }
 			given = balanceController.GetMilligrams ();
 			balanceController.StopGame ();
 		}

@@ -87,6 +87,10 @@ public class BalanceController : MonoBehaviour {
 		}
 	}
 
+	public bool IsReadyToCheck() {
+		return !decreasingWeight && !increasingWeight && mixingBowl.OnMinRotation () && mixingBowl.OnMinPosX () && stockContainer.OnMinRotation () && stockContainer.OnMinPosX ();
+	}
+
 	public void StartGame() {
 		if(!playing) {
 			this.playing = true;
