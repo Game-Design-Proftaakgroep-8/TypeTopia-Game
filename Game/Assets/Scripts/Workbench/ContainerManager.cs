@@ -17,7 +17,7 @@ public class ContainerManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		maxPosX = 14f;
+		maxPosX = 15f;
 		smoothMove = 0.1f;
 		minRotation = 0f;
 		maxRotation = 0.9f;
