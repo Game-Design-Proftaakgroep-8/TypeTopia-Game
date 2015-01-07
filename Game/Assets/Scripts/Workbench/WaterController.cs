@@ -82,6 +82,10 @@ public class WaterController : MonoBehaviour {
 		}
 	}
 
+	public bool IsReadyToCheck() {
+		return !decreasing && !increasing && measuringCup.OnMinRotation () && measuringCup.OnMinPosX ();
+	}
+
 	public void StartGame() {
 		if(!playing) {
 			this.playing = true;
