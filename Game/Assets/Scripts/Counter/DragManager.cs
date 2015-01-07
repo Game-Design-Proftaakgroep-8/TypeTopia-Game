@@ -37,21 +37,21 @@ public class DragManager : MonoBehaviour {
 					lastTouched.transform.position = touchPosition;
 				}
 				else if(lastTouched.tag == "1euro" && touch.phase == TouchPhase.Began) {
-					GameObject geld = (GameObject)Instantiate(manager.eenEuro);
+					GameObject money = (GameObject)Instantiate(manager.eenEuro);
 
-					geld.transform.position = hit.transform.position;
+					money.transform.position = hit.transform.position;
 					lastTouched = InputDetection.CheckTouch(touch.position);
 				}
 				else if(lastTouched.tag == "2euro" && touch.phase == TouchPhase.Began) {
-					GameObject geld = (GameObject)Instantiate(manager.tweeEuro);
+					GameObject money = (GameObject)Instantiate(manager.tweeEuro);
 
-					geld.transform.position = hit.transform.position;
+					money.transform.position = hit.transform.position;
 					lastTouched = InputDetection.CheckTouch(touch.position);
 				}
 				else if(lastTouched.tag == "5euro" && touch.phase == TouchPhase.Began) {
-					GameObject geld = (GameObject)Instantiate(manager.vijfEuro);
+					GameObject money = (GameObject)Instantiate(manager.vijfEuro);
 					
-					geld.transform.position = hit.transform.position;
+					money.transform.position = hit.transform.position;
 					lastTouched = InputDetection.CheckTouch(touch.position);
 				}
             }
