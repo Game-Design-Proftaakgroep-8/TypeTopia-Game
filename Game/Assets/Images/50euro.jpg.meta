@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 5175568177a33e544afe350015e7b32d
+guid: e672f24792cff4b47a780c217f1ee955
 TextureImporter:
   fileIDToRecycleName:
-    21300000: 0212449_PE366228_S5
+    21300000: 50euro
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,9 +26,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: 1
+    aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50

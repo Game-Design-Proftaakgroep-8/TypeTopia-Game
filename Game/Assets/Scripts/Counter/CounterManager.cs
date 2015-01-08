@@ -10,6 +10,9 @@ public class CounterManager : MonoBehaviour {
 	public Object eenEuro;
 	public Object tweeEuro;
 	public Object vijfEuro;
+	public Object tienEuro;
+	public Object twintigEuro;
+	public Object vijftigEuro;
 
 	public Text priceText;
 	public Text demandText;
@@ -42,14 +45,10 @@ public class CounterManager : MonoBehaviour {
 		priceBread = Mathf.Round(Random.Range (1, 10));
 		demandCustomer = Mathf.Round(Random.Range (1, 5));
 		cost = priceBread * demandCustomer;
-		moneyCustomer = Mathf.Round(Random.Range (cost + 2, cost + 10));
-		answer = moneyCustomer - cost;
 
 		print ("priceBread: " + priceBread);
 		print ("demandCustomer: " + demandCustomer);
 		print ("cost: " + cost);
-		print ("moneyCustomer: " + moneyCustomer);
-		print ("answer: " + answer);
 
 		updateText ();
 		generateCustomerMoney ();
@@ -68,25 +67,33 @@ public class CounterManager : MonoBehaviour {
 		GameObject money = (GameObject)eenEuro;
 		Vector2 inHand = new Vector2(hand.transform.position.x, hand.transform.position.y);
 
-
-		if(moneyCustomer >= 5) {
-			money = (GameObject)Instantiate(vijfEuro);
-			money.transform.position = inHand;
-			moneyCustomer -= 5;
-        }
-		else if(moneyCustomer >= 2) {
-			money = (GameObject)Instantiate(tweeEuro);
-			money.transform.position = inHand;
-			moneyCustomer -= 2;
-        }
-		else if(moneyCustomer >= 1) {
+		if(cost < 1) {
 			money = (GameObject)Instantiate(eenEuro);
-			money.transform.position = inHand;
-			moneyCustomer -= 1;
-		}
+        }
+		else if(cost < 2) {
+			money = (GameObject)Instantiate(tweeEuro);
+        }
+		else if(cost < 5) {
+			money = (GameObject)Instantiate(vijfEuro);
+        }
+		else if(cost < 10) {
+			money = (GameObject)Instantiate(tienEuro);
+        }
+		else if(cost < 20) {
+			money = (GameObject)Instantiate(twintigEuro);
+        }
+        else if(cost < 50) {
+			money = (GameObject)Instantiate(vijftigEuro);
+        }
 
-		if (moneyCustomer > 0)
-			generateCustomerMoney();
+		money.GetComponent<MoneyManager>().setStartMoney(true);
+		moneyCustomer = money.GetComponent<MoneyManager>().getAmount();
+		money.transform.position = inHand;
+
+		answer = moneyCustomer - cost;
+
+		print ("moneyCustomer: " + moneyCustomer);
+		print ("answer: " + answer);
 	}
 
 	public void addCustomerMoney(float money) {
@@ -97,13 +104,13 @@ public class CounterManager : MonoBehaviour {
 	public void confirm() {
 		gameOver = true;
 
-		if(-cost > moneyCustomer) {
+		if(answer > moneyCustomer) {
 			winText.text = "Je hebt te weinig gegeven";
 		}
-		else if(-cost < moneyCustomer) {
+		else if(answer < moneyCustomer) {
 			winText.text = "Je hebt te veel gegeven";
 		}
-		else if(-cost == moneyCustomer) {
+		else if(answer == moneyCustomer) {
 			winText.text = "Goed Gedaan!";
 		}
 		StartCoroutine (returnToOverview ());
