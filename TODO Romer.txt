@@ -1,4 +1,4 @@
-- Oplichten
+- Oplichten/Hints geven
 - logische volgorde (levels) + weglopen klanten
 - eerst startlevel voor leren gameplay
 - score (topiens?) (1 punt oven, 1 punt afrekenen, 1 punt per ingredient)
