@@ -31,11 +31,11 @@ public class HandMovement : MonoBehaviour {
 	}
 
 	public void MoveIn() {
-		moveDirection = -1;
+		moveDirection = 1;
 	}
 
 	public void MoveOut() {
-		moveDirection = 1;
+		moveDirection = -1;
 	}
 
 	public void StopMoving() {

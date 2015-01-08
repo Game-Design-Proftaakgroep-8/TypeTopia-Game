@@ -2,23 +2,32 @@
 using System.Collections;
 
 public class ContainerManager : MonoBehaviour {
-	public float minPosX;
-	public float maxPosX;
+	private float minPosX;
+	private bool rotateMiddle;
 
+	private float maxPosX;
 	private float smoothMove;
 	private float minRotation;
 	private float maxRotation;
 	private float smoothRotate;
+	private float posY;
 
 	private bool playing = false;
 	private bool decreasing = false;
 
 	// Use this for initialization
 	void Start () {
+		maxPosX = 15f;
 		smoothMove = 0.1f;
 		minRotation = 0f;
 		maxRotation = 0.9f;
 		smoothRotate = 2.5f;
+		posY = transform.position.y;
+	}
+
+	public void SetValues(float minPosX, bool rotateMiddle) {
+		this.minPosX = minPosX;
+		this.rotateMiddle = rotateMiddle;
 	}
 	
 	// Update is called once per frame
@@ -27,15 +36,21 @@ public class ContainerManager : MonoBehaviour {
 			if(transform.position.x > minPosX + smoothMove) {
 				this.MoveContainerTo(minPosX);
 			} else {
+				Vector3 rotationPoint = transform.position;
+				if(!rotateMiddle) {
+					Vector2 size = transform.gameObject.GetComponent<BoxCollider2D>().bounds.size / 2;
+					rotationPoint = new Vector3 (minPosX - (size.x / 2) - 1, posY - (size.y / 2), 0);
+					//print (rotationPoint);
+				}
 				if (decreasing) {
 					if(transform.localRotation.z < maxRotation) {
 						// rotate
-						transform.Rotate(0f, 0f, smoothRotate);
+						transform.RotateAround(rotationPoint, new Vector3(0f, 0f, smoothRotate), 4f);
 					}
 				} else if (!decreasing) {
 					if(transform.localRotation.z > minRotation) {
 						// rotate back
-						transform.Rotate(0f, 0f, -smoothRotate);
+						transform.RotateAround(rotationPoint, new Vector3(0f, 0f, -smoothRotate), 4f);
 					} else {
 						transform.rotation = Quaternion.identity;
 					}

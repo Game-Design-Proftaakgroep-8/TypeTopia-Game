@@ -53,10 +53,17 @@
      <Compile Include="Assets\Scripts\Counter\DragManager.cs" />
      <Compile Include="Assets\Scripts\Counter\HandMovement.cs" />
      <Compile Include="Assets\Scripts\Counter\MoneyManager.cs" />
+     <Compile Include="Assets\Scripts\Database.cs" />
      <Compile Include="Assets\Scripts\InputDetection.cs" />
+     <Compile Include="Assets\Scripts\Menu\HighscoreMenu.cs" />
+     <Compile Include="Assets\Scripts\Menu\Menu.cs" />
+     <Compile Include="Assets\Scripts\Menu\ScoreMenu.cs" />
      <Compile Include="Assets\Scripts\Oven\OvenManager.cs" />
      <Compile Include="Assets\Scripts\SavedData.cs" />
      <Compile Include="Assets\Scripts\Workbench\AssignmentManager.cs" />
+     <Compile Include="Assets\Scripts\Workbench\BalanceController.cs" />
+     <Compile Include="Assets\Scripts\Workbench\ContainerManager.cs" />
+     <Compile Include="Assets\Scripts\Workbench\SpriteManager.cs" />
      <Compile Include="Assets\Scripts\Workbench\WaterController.cs" />
      <Compile Include="Assets\Scripts\Workbench\WorkbenchInput.cs" />
  <Reference Include="UnityEngine.UI">

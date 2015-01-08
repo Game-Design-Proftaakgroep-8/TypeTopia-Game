@@ -12,26 +12,29 @@ public class AssignmentManager : MonoBehaviour {
 	public Text scoreText;
 	public Text wantedText;
 	public Text ProductText;
-	
+
+	private SpriteManager spriteManager;
 	private Recipe recipe;
 	private int wanted;
-	private int marge;
+	private float marge;
 	private RecipeRow currentIngredient;
 	private int currentAnswer;
 
 	// Use this for initialization
 	void Start () {
+		this.spriteManager = GetComponent<SpriteManager> ();
 		// load amount and recipe
 		string product = "Brood";
 		int amount = 4;
 		recipe = new Recipe (product, amount);
-		recipe.AddRecipeRow (Ingredients.Meel, 2, true, UnitPrexixes.k, "g");
-		recipe.AddRecipeRow (Ingredients.Water, 800, false, UnitPrexixes.m, "l");
-		recipe.AddRecipeRow (Ingredients.Gist, 400, false, UnitPrexixes.no, "g");
-		recipe.AddRecipeRow (Ingredients.Water, 0.4f, false, UnitPrexixes.no, "l");
+		recipe.AddRecipeRow (Ingredients.Zout, 1, true, UnitPrexixes.k, "g");
+		recipe.AddRecipeRow (Ingredients.Meel, 2, false, UnitPrexixes.k, "g");
 		recipe.AddRecipeRow (Ingredients.Water, 3, false, UnitPrexixes.d, "l");
+		recipe.AddRecipeRow (Ingredients.Gist, 400, false, UnitPrexixes.no, "g");
+		recipe.AddRecipeRow (Ingredients.Suiker, 4, false, UnitPrexixes.no, "g");
+		recipe.AddRecipeRow (Ingredients.Melk, 25, false, UnitPrexixes.d, "l");
 		wanted = 3;
-		marge = 25;
+		marge = 0.10f;
 		recipeText.text = recipe.ToString();
 		wantedText.text = wanted.ToString ();
 		ProductText.text = recipe.product;
@@ -46,6 +49,7 @@ public class AssignmentManager : MonoBehaviour {
 	private void NextGame() {
 		currentIngredient = recipe.GetNext();
 		if (currentIngredient != null) {
+			spriteManager.SetSprites (currentIngredient.ingredient);
 			currentAnswer = Convert.ToInt32((currentIngredient.amount * (int)currentIngredient.unitPrefix) / recipe.amount * wanted);
 			if(currentIngredient.ingredient == Ingredients.Water || currentIngredient.ingredient == Ingredients.Melk) {
 				// Ingredient meegeven
@@ -61,14 +65,18 @@ public class AssignmentManager : MonoBehaviour {
 
 	public void CheckAssignment() {
 		int given;
+		// check nog verbeteren?
+		if(currentIngredient == null) { return; }
 		if (currentIngredient.ingredient == Ingredients.Water || currentIngredient.ingredient == Ingredients.Melk) {
+			if(!waterController.IsReadyToCheck()) { return; }
 			given = waterController.GetMilliliters();
 			waterController.StopGame();
 		} else {
+			if(!balanceController.IsReadyToCheck()) { return; }
 			given = balanceController.GetMilligrams ();
 			balanceController.StopGame ();
 		}
-		if(given >= currentAnswer - marge && given <= currentAnswer + marge) {
+		if(given >= currentAnswer - (currentAnswer * marge) && given <= currentAnswer + (currentAnswer * marge)) {
 			winLoseText.text = "GOED!!";
 			// score points?
 		} else {

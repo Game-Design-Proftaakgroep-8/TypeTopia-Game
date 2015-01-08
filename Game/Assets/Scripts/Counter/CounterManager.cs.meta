@@ -2,7 +2,11 @@ fileFormatVersion: 2
 guid: c520940d646c17f4dbdb79f39a0ab1ab
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - hand: {instanceID: 0}
+  - eenEuro: {fileID: 100000, guid: e5156e6f380462247842a4c32d8862e3, type: 2}
+  - tweeEuro: {fileID: 100000, guid: eaa41af2207f7774199ac356c1c2324a, type: 2}
+  - vijfEuro: {fileID: 100000, guid: 8f40ba2c75bd36442a6350648af78bd2, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -3,14 +3,17 @@ using System.Collections;
 
 public class DragManager : MonoBehaviour {
 
-	public GameObject eenEuro;
-	public GameObject tweeEuro;
-	public GameObject vijfEuro;
+	private CounterManager manager;
+	private GameObject eenEuro;
+	private GameObject tweeEuro;
+	private GameObject vijfEuro;
 
 	private GameObject lastTouched;
 
 	// Use this for initialization
 	void Start () {
+		manager = GameObject.Find ("Manager").GetComponent<CounterManager> ();
+
 		lastTouched = null;
 	}
 	
@@ -19,34 +22,37 @@ public class DragManager : MonoBehaviour {
 		if (Input.touchCount == 1) {
 			Touch touch = Input.GetTouch(0);
 			GameObject hit = InputDetection.CheckTouch(touch.position);
-			lastTouched = hit;
+
+			if(touch.phase == TouchPhase.Began)
+				lastTouched = hit;
+			else if(touch.phase == TouchPhase.Ended)
+				lastTouched = null;
+
 			Vector2 touchPosition = Vector2.zero;
 			
-			if(hit != null) {
-				if(hit.tag == "money") {
+			if(lastTouched != null) {
+				if(lastTouched.tag == "money") {
 					touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
-					
-					if(touchPosition.x != transform.position.x || touchPosition.y != transform.position.y) {
-						hit.transform.position = touchPosition;
-	                }
-				}
-				else if(hit.tag == "1euro") {
-					GameObject geld = eenEuro;
-					geld = (GameObject)Instantiate(eenEuro);
 
-					geld.transform.position = hit.transform.position;
+					lastTouched.transform.position = touchPosition;
 				}
-				else if(hit.tag == "2euro") {
-					GameObject geld = tweeEuro;
-					geld = (GameObject)Instantiate(tweeEuro);
+				else if(lastTouched.tag == "1euro" && touch.phase == TouchPhase.Began) {
+					GameObject money = (GameObject)Instantiate(manager.eenEuro);
 
-					geld.transform.position = hit.transform.position;
+					money.transform.position = hit.transform.position;
+					lastTouched = InputDetection.CheckTouch(touch.position);
 				}
-				else if(hit.tag == "5euro") {
-					GameObject geld = vijfEuro;
-					geld = (GameObject)Instantiate(vijfEuro);
+				else if(lastTouched.tag == "2euro" && touch.phase == TouchPhase.Began) {
+					GameObject money = (GameObject)Instantiate(manager.tweeEuro);
+
+					money.transform.position = hit.transform.position;
+					lastTouched = InputDetection.CheckTouch(touch.position);
+				}
+				else if(lastTouched.tag == "5euro" && touch.phase == TouchPhase.Began) {
+					GameObject money = (GameObject)Instantiate(manager.vijfEuro);
 					
-					geld.transform.position = hit.transform.position;
+					money.transform.position = hit.transform.position;
+					lastTouched = InputDetection.CheckTouch(touch.position);
 				}
             }
         }
