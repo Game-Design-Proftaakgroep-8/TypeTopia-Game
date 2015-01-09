@@ -40,6 +40,7 @@ public class LevelManager : MonoBehaviour {
 
 	public Text geslaagd;
 	public Text topiansText;
+	public AudioClip audioGood;
 
 	// Use this for initialization
 	void Start ()
@@ -84,6 +85,7 @@ public class LevelManager : MonoBehaviour {
 	{
 		if (counterPlayed && workbenchPlayed && ovenPlayed)
 		{
+			audio.PlayOneShot(audioGood);
 			geslaagd.text = "Geslaagd";
 			StartCoroutine(StopGame());
 		}
@@ -209,7 +211,7 @@ public class LevelManager : MonoBehaviour {
 
 	public IEnumerator StartGame(GameObject hit)
 	{
-		yield return new WaitForSeconds (3);
+		yield return new WaitForSeconds (5);
 
 		this.pauze = true;
 
@@ -274,7 +276,7 @@ public class LevelManager : MonoBehaviour {
 
 	public IEnumerator StopGame()
 	{
-		yield return new WaitForSeconds (3);
+		yield return new WaitForSeconds (5);
 		data.deleteInstance ();
 
 		//Remove customers
