@@ -53,16 +53,26 @@ public class OvenManager : MonoBehaviour {
 		switch (info.sumCommas) {
 		case 0:
 			timeM = 0;
-		default:
-		
-		timeM = Random.Range(0, 4) * 15;
-		if(timeM >= 30)
-			timeHalf = -15;
-		else
-			timeHalf = 0;
+			timeNeeded = Random.Range (1, 4) * 60;
+			break;
+		default:		
+			timeM = Random.Range(0, 4) * 15;
+			if(timeM >= 30)
+				timeHalf = -15;
+			else
+				timeHalf = 0;
 
-		timeNeeded = Random.Range (4, 13) * 5;
-		answer = (timeH * 60) + timeM + timeNeeded;
+			timeNeeded = Random.Range (1, 13) * 15;
+			break;
+		}
+
+		int maximum = 24*60;
+		int time = (timeH * 60) + timeM;
+		answer = time + timeNeeded;
+		if(answer >= maximum) {
+			answer = timeNeeded - (maximum - time);
+		}
+
 		print ("answer: " + answer);
         
 		Clock.transform.Find("ClockH").transform.Rotate (Vector3.forward * (timeH * -30 + timeHalf));
@@ -95,7 +105,7 @@ public class OvenManager : MonoBehaviour {
 	public void increaseHour() {
 		if(!gameOver) {
 			timeTimerH += 1;
-			if(timeTimerH >= 12)
+			if(timeTimerH >= info.maxRange)
 				timeTimerH = 0;
 
 			updateTimer ();
@@ -105,7 +115,7 @@ public class OvenManager : MonoBehaviour {
 	public void decreaseHour() {
 		if(!gameOver) {
 			timeTimerH -= 1;
-			if(timeTimerH <= 0)
+			if(timeTimerH <= info.minRange)
 				timeTimerH = 11;
 
 			updateTimer ();
@@ -114,7 +124,7 @@ public class OvenManager : MonoBehaviour {
 
 	public void increaseMinute() {
 		if(!gameOver) {
-			timeTimerM += 5;
+			timeTimerM += 15;
 			if(timeTimerM >= 60) {
 				timeTimerM = 0;
 			}
@@ -124,7 +134,7 @@ public class OvenManager : MonoBehaviour {
 
 	public void decreaseMinute() {
 		if(!gameOver) {
-			timeTimerM -= 5;
+			timeTimerM -= 15;
 			if(timeTimerM <= 0) {
 				timeTimerM = 55;
 			}
