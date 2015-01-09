@@ -9,9 +9,9 @@ public class AssignmentManager : MonoBehaviour {
 	public BalanceController balanceController;
 	public Text winLoseText;
 	public Text recipeText;
-	public Text scoreText;
+	public Text topiansText;
 	public Text wantedText;
-	public Text ProductText;
+	public Text productText;
 
 	private SpriteManager spriteManager;
 	private Recipe recipe;
@@ -19,6 +19,8 @@ public class AssignmentManager : MonoBehaviour {
 	private float marge;
 	private RecipeRow currentIngredient;
 	private int currentAnswer;
+
+	private SavedData savedData;
 
 	// Use this for initialization
 	void Start () {
@@ -28,7 +30,7 @@ public class AssignmentManager : MonoBehaviour {
 		int amount = 4;
 		recipe = new Recipe (product, amount);
 		recipe.AddRecipeRow (Ingredients.Zout, 1, true, UnitPrexixes.k, "g");
-		recipe.AddRecipeRow (Ingredients.Meel, 2, false, UnitPrexixes.k, "g");
+		recipe.AddRecipeRow (Ingredients.Meel, 1, false, UnitPrexixes.k, "g");
 		recipe.AddRecipeRow (Ingredients.Water, 3, false, UnitPrexixes.d, "l");
 		recipe.AddRecipeRow (Ingredients.Gist, 400, false, UnitPrexixes.no, "g");
 		recipe.AddRecipeRow (Ingredients.Suiker, 4, false, UnitPrexixes.no, "g");
@@ -37,7 +39,9 @@ public class AssignmentManager : MonoBehaviour {
 		marge = 0.10f;
 		recipeText.text = recipe.ToString();
 		wantedText.text = wanted.ToString ();
-		ProductText.text = recipe.product;
+		productText.text = recipe.product;
+		this.savedData = SavedData.getInstance ();
+		topiansText.text = Convert.ToString(savedData.getTopians ());
 		StartCoroutine (this.startFirstGame());
 	}
 	
@@ -78,7 +82,8 @@ public class AssignmentManager : MonoBehaviour {
 		}
 		if(given >= currentAnswer - (currentAnswer * marge) && given <= currentAnswer + (currentAnswer * marge)) {
 			winLoseText.text = "GOED!!";
-			// score points?
+			savedData.increaseTopians(1);
+			topiansText.text = Convert.ToString(savedData.getTopians ());
 		} else {
 			winLoseText.text = "FOUT!!";
 		}

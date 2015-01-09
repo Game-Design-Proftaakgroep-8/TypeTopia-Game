@@ -13,7 +13,7 @@ public class SavedData {
 	private bool workbenchPlayed;
 	private bool ovenPlayed;
 
-	private int score = 0;
+	private int topians = 0;
 
 	private SavedData()
 	{
@@ -107,13 +107,13 @@ public class SavedData {
 	}
 
 	//Get and set score	
-	public void updateScore(int score)
+	public void increaseTopians(int topians)
 	{
-		this.score = score;
+		this.topians += topians;
 	}
 
-	public int getScore()
+	public int getTopians()
 	{
-		return this.score;
+		return this.topians;
 	}
 }

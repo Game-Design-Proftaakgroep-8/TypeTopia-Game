@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System;
 using System.Collections;
 
 public class LevelManager : MonoBehaviour {
@@ -34,6 +35,7 @@ public class LevelManager : MonoBehaviour {
 	private bool ovenPlayed;
 
 	public Text geslaagd;
+	public Text topiansText;
 
 	// Use this for initialization
 	void Start ()
@@ -45,6 +47,7 @@ public class LevelManager : MonoBehaviour {
 		//Get saved customers from SavedData
 		data = SavedData.getInstance ();
 		customers = data.getCustomers ();
+		topiansText.text = Convert.ToString (data.getTopians());
 
 		counterPlayed = data.getCounterPlayed();
 		workbenchPlayed = data.getWorkBenchPlayed();
