@@ -11,12 +11,12 @@ public class Database {
 
 	public Database()
 	{
-		string connectionString =
-			"host=localhost;" +
-				"database=topiatrainer;" +
-				"username=root;" +
-				"password=IJsje!123;" +
-				"port=3306;";
+		MySqlConnectionStringBuilder connectionString = new MySqlConnectionStringBuilder ();
+		connectionString.Server = "localhost";
+		connectionString.Database = "topiatrainer";
+		connectionString.Password = "IJsje!123";
+		connectionString.UserID = "root";
+		connectionString.Port = "3306";
 
 		conn = new MySqlConnection (connectionString);
 	}
