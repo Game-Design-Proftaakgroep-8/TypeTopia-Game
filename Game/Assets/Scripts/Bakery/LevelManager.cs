@@ -9,7 +9,11 @@ public class LevelManager : MonoBehaviour {
 
 	public static int nrOfCustomers = 4;
 	private GameObject[] customers;
-	public GameObject CustomerPrefab;
+
+	public GameObject CustomerPrefab1;
+	public GameObject CustomerPrefab2;
+	public GameObject CustomerPrefab3;
+	public GameObject CustomerPrefab4;
 
 	public GameObject oven;
 	public GameObject counter;
@@ -91,6 +95,12 @@ public class LevelManager : MonoBehaviour {
 				if (c != null)
 				{
 					c.GetComponent<Customer>().MoveToPosition();
+
+					//c.transform.position.x == -8f && c.transform.position.y == -3.5f
+					if (c.transform.position.x <= -7.8f && c.transform.position.y <= -3.3f)
+					{
+						Destroy(c.gameObject, 2);
+					}
 				}
 			}
 
@@ -102,8 +112,12 @@ public class LevelManager : MonoBehaviour {
 					if (nextCustomerNr <= nrOfCustomers)
 					{
 						Vector3 pos =  new Vector3(-1, 6, 0);
-						GameObject cus = (GameObject)ScriptableObject.Instantiate(CustomerPrefab, pos, Quaternion.identity);
+						GameObject cus = (GameObject)ScriptableObject.Instantiate(this.getRandomCustomer(), pos, Quaternion.identity);
 						cus.GetComponent<Customer>().level = this;
+
+						//set order in layer so that the next customer shows up behind the one in front of him
+						cus.renderer.sortingOrder = nrOfCustomers - nextCustomerNr + 1;
+
 						int nr = nextCustomerNr - leftCount;
 						cus.GetComponent<Customer>().SetNewPosition(GetCustomerPosition(nr));
 						customers[nextCustomerNr - 1] = cus;
@@ -134,7 +148,7 @@ public class LevelManager : MonoBehaviour {
 			if (c != null && c.transform.position.y <= (GetCustomerPosition(1).y + 1f))
 			{
 				c.GetComponent<Customer>().SetNewPosition(new Vector2 (-8f, -3.5f));
-				Destroy(c.gameObject, 5);
+
 				leftCount ++;
 
 				for (int i = leftCount; i < nextCustomerNr-1; i++)
@@ -149,6 +163,32 @@ public class LevelManager : MonoBehaviour {
 		{
 			print("everyone left");
 		}
+	}
+
+	//Select prefab
+	public GameObject getRandomCustomer()
+	{
+		System.Random r = new System.Random ();
+		int random = r.Next (0, 4);
+		GameObject prefab = null;
+		
+		switch (random)
+		{
+		case 0:
+			prefab = CustomerPrefab1;
+			break;
+		case 1:
+			prefab = CustomerPrefab2;
+			break;
+		case 2:
+			prefab = CustomerPrefab3;
+			break;
+		case 3:
+			prefab = CustomerPrefab4;
+			break;
+		}
+		
+		return prefab;
 	}
 
 	public int GetNextCustomerNr()
@@ -176,6 +216,33 @@ public class LevelManager : MonoBehaviour {
 		//Set new value of customers to SavedData
 		data.updateCustomers(this.customers, this.nextCustomerNr, this.leftCount);
 
+		//start game
+		if (hit == oven && !ovenPlayed)
+		{
+			print("Start game oven");
+			CustomersToBackground();
+			data.setOvenPlayed(true);
+			Application.LoadLevel(ovenScene);
+		}
+		else if (hit == counter && !counterPlayed)
+		{
+			print("Start game counter");
+			CustomersToBackground();
+			this.Leave();
+			data.setCounterPlayed(true);
+			Application.LoadLevel(counterScene);
+		}
+		else if (hit == workbench && !workbenchPlayed)
+		{
+			print("Start game workbench");
+			CustomersToBackground();
+			data.setWorkbenchPlayed(true);
+			Application.LoadLevel(workbenchScene);
+		}
+	}
+
+	public void CustomersToBackground()
+	{
 		//Put customers on background
 		foreach (GameObject g in this.customers)
 		{
@@ -183,26 +250,6 @@ public class LevelManager : MonoBehaviour {
 			{
 				g.GetComponent<Customer>().SetInvisible();
 			}
-		}
-
-		//start game
-		if (hit == oven && !ovenPlayed)
-		{
-			print("Start game oven");
-			data.setOvenPlayed(true);
-			Application.LoadLevel(ovenScene);
-		}
-		else if (hit == counter && !counterPlayed)
-		{
-			print("Start game counter");
-			data.setCounterPlayed(true);
-			Application.LoadLevel(counterScene);
-		}
-		else if (hit == workbench && !workbenchPlayed)
-		{
-			print("Start game workbench");
-			data.setWorkbenchPlayed(true);
-			Application.LoadLevel(workbenchScene);
 		}
 	}
 
