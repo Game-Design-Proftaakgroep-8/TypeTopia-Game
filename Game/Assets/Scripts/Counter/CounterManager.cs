@@ -6,6 +6,7 @@ public class CounterManager : MonoBehaviour {
 
 	public GameObject hand;
 	private HandMovement handMovement;
+	private SavedData data;
 
 	public Object eenEuro;
 	public Object tweeEuro;
@@ -17,6 +18,7 @@ public class CounterManager : MonoBehaviour {
 	public Text priceText;
 	public Text demandText;
 	public Text winText;
+	public Text topiansText;
 
 	private bool gameOver;
 
@@ -30,8 +32,10 @@ public class CounterManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		handMovement = hand.GetComponent<HandMovement> ();
+		data = SavedData.getInstance ();
 		gameOver = false;
 
+		setTopianText ();
 		setQuestion ();
 		handMovement.MoveIn ();
 	}
@@ -52,6 +56,10 @@ public class CounterManager : MonoBehaviour {
 
 		updateText ();
 		generateCustomerMoney ();
+	}
+
+	private void setTopianText() {
+		topiansText.text = "Topians: " + data.getTopians();
 	}
 
 	private void updateText (){
@@ -112,6 +120,8 @@ public class CounterManager : MonoBehaviour {
 		}
 		else if(answer == moneyCustomer) {
 			winText.text = "Goed Gedaan!";
+			data.increaseTopians(1);
+			setTopianText();
 		}
 		StartCoroutine (returnToOverview ());
 	}

@@ -4,136 +4,139 @@ using System.Collections;
 
 public class OvenManager : MonoBehaviour {
 
+	private SavedData data;
+
 	public Text timerText;
 	public Text timeNeededText;
 	public Text winText;
+	public Text topiansText;
 
-	public GameObject ClockNow;
-	public GameObject ClockThen;
+	public GameObject Clock;
 
-
-	private int timeNowH;
-    private int timeNowM;
-	private int timeNowHalf;
-    private int timeThenH;
-    private int timeThenM;
-	private int timeThenHalf;
-    private int timeDifference;
+	private int timeH;
+    private int timeM;
+	private int timeHalf;
     private int timeNeeded;
-    private int timeTimer;
+    private int timeTimerH;
+	private int timeTimerM;
+	private int givenAnswer;
     private int answer;
 
 	private bool gameOver;
 
 	// Use this for initialization
 	void Start () {
-        setTime();
+		data = SavedData.getInstance ();
+		setTopianText ();
 
 		gameOver = false;
 
-		updateTimer ();
-        
+		setTime();
+		updateTimer ();        
 		setTimeNeeded ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(ClockThen.transform.position.y > 0) {
-			ClockThen.transform.Translate(0, -0.05f, 0);
-		}
 
-		if(ClockThen.transform.position.y < 0.5f && ClockNow.transform.position.y > 3) {
-			ClockNow.transform.Translate (0, -0.05f, 0);
-		}
+	}
+
+	private void setTopianText() {
+		topiansText.text = "Topians: " + data.getTopians();
 	}
 
     void setTime() {
-		timeThenH = Random.Range(1, 12);
-		timeThenM = Random.Range(1, 12) * 5;
-		if(timeThenM >= 30)
-			timeThenHalf = -15;
+		timeH = Random.Range(1, 12);
+		timeM = Random.Range(1, 12) * 5;
+		if(timeM >= 30)
+			timeHalf = -15;
 		else
-			timeThenHalf = 0;
-        
-        timeNowH = Random.Range(timeThenH, timeThenH + 2);
-		if(timeNowH <= timeThenH) {
-			timeNowM = Random.Range(timeThenM/5 + 1, 13) * 5;
-		}
-		else {
-			timeNowM = Random.Range(1, 13) * 5;
-		}
+			timeHalf = 0;
 
-		if(timeNowM >= 30)
-			timeNowHalf = -15;
-		else
-			timeNowHalf = 0;
+		timeNeeded = Random.Range (4, 13) * 5;
+		answer = (timeH * 60) + timeM + timeNeeded;
+		print ("answer: " + answer);
         
-        timeDifference = ((timeNowH * 60) + timeNowM) - ((timeThenH * 60) + timeThenM);
-        timeNeeded = Random.Range(timeDifference/5, 13) *5;
-        timeTimer = 0;
-        
-        answer = timeNeeded - timeDifference;
-        print("difference: " + timeDifference);
-        print("needed: " + timeNeeded);
-        print("answer: " + answer);
-
-        if(answer <= 0 || answer > 95) {
-            setTime();
-        }
-		else {
-			setTimeThen ();
-			setTimeNow ();
-        }
+		Clock.transform.Find("ClockH").transform.Rotate (Vector3.forward * (timeH * -30 + timeHalf));
+		Clock.transform.Find("ClockM").transform.Rotate (Vector3.forward * ((timeM/5) * -30));
     }
-
-	void setTimeNow() {
-		ClockNow.transform.Find("ClockH").transform.Rotate (Vector3.forward * (timeNowH * -30 + timeNowHalf));
-		ClockNow.transform.Find("ClockM").transform.Rotate (Vector3.forward * ((timeNowM/5) * -30));
-	}
-
-	void setTimeThen() {
-		ClockThen.transform.Find("ClockH").transform.Rotate (Vector3.forward * (timeThenH * -30 + timeThenHalf));
-		ClockThen.transform.Find("ClockM").transform.Rotate (Vector3.forward * ((timeThenM/5) * -30));
-	}
 
 	private void setTimeNeeded() {
 		timeNeededText.text = "Tijd in de oven: " + timeNeeded + " min";
 	}
 
+	private void setGivenAnswer() {
+		givenAnswer = (timeTimerH * 60) + timeTimerM;
+		print (givenAnswer);
+	}
+
 	private void updateTimer() {
-		if(timeTimer < 10)
+		if(timeTimerH < 10)
 			timerText.text = "0";
 		else
 			timerText.text = "";
 
-		timerText.text += timeTimer + " min";
+		timerText.text += timeTimerH + ":";
+
+		if(timeTimerM < 10)
+			timerText.text += "0" + timeTimerM;
+		else
+			timerText.text += timeTimerM;
 	}
 
-	public void increaseTimerTime() {
-		if(timeTimer < 95 && !gameOver) {
-			timeTimer += 5;
+	public void increaseHour() {
+		if(!gameOver) {
+			timeTimerH += 1;
+			if(timeTimerH >= 12)
+				timeTimerH = 0;
+
+			updateTimer ();
+		}
+	}
+	
+	public void decreaseHour() {
+		if(!gameOver) {
+			timeTimerH -= 1;
+			if(timeTimerH <= 0)
+				timeTimerH = 11;
+
 			updateTimer ();
 		}
 	}
 
-	public void decreaseTimerTime() {
-		if(timeTimer > 0 && !gameOver) {
-			timeTimer -= 5;
+	public void increaseMinute() {
+		if(!gameOver) {
+			timeTimerM += 5;
+			if(timeTimerM >= 60) {
+				timeTimerM = 0;
+			}
+			updateTimer ();
+		}
+	}
+
+	public void decreaseMinute() {
+		if(!gameOver) {
+			timeTimerM -= 5;
+			if(timeTimerM <= 0) {
+				timeTimerM = 55;
+			}
 			updateTimer ();
 		}
 	}
 
 	public void confirm() {
-		print (timeTimer);
-		if(timeTimer == answer) {
+		setGivenAnswer ();
+		if(givenAnswer == answer) {
 			winText.text = "Goed Gedaan!";
+			data.increaseTopians(1);
+			setTopianText();
 			gameOver = true;
 		}
-		else if(timeTimer < answer) {
+		else if(givenAnswer < answer) {
 			winText.text = "De tijd was te kort!";
 			gameOver = true;
 		}
-		else if(timeTimer > answer) {
+		else if(givenAnswer > answer) {
 			winText.text = "Je hebt het aan laten branden!";
 			gameOver = true;
 		}
