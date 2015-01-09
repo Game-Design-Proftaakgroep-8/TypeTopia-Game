@@ -5,6 +5,8 @@ using System.Collections;
 public class OvenManager : MonoBehaviour {
 
 	private SavedData data;
+	private Database db;
+	private SumInfo info;
 
 	public Text timerText;
 	public Text timeNeededText;
@@ -27,6 +29,7 @@ public class OvenManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		data = SavedData.getInstance ();
+		info = db.GetSumInfo ("time", 1);
 		setTopianText ();
 
 		gameOver = false;
@@ -46,8 +49,13 @@ public class OvenManager : MonoBehaviour {
 	}
 
     void setTime() {
-		timeH = Random.Range(1, 12);
-		timeM = Random.Range(1, 12) * 5;
+		timeH = Random.Range(info.minRange, info.maxRange);
+		switch (info.sumCommas) {
+		case 0:
+			timeM = 0;
+		default:
+		
+		timeM = Random.Range(0, 4) * 15;
 		if(timeM >= 30)
 			timeHalf = -15;
 		else
@@ -58,7 +66,7 @@ public class OvenManager : MonoBehaviour {
 		print ("answer: " + answer);
         
 		Clock.transform.Find("ClockH").transform.Rotate (Vector3.forward * (timeH * -30 + timeHalf));
-		Clock.transform.Find("ClockM").transform.Rotate (Vector3.forward * ((timeM/5) * -30));
+		Clock.transform.Find("ClockM").transform.Rotate (Vector3.forward * ((timeM/15) * -90));
     }
 
 	private void setTimeNeeded() {
@@ -144,7 +152,7 @@ public class OvenManager : MonoBehaviour {
 	}
 
 	private IEnumerator returnToOverview() {
-		yield return new WaitForSeconds(3);
+		yield return new WaitForSeconds(5);
 		Application.LoadLevel ("BakeryOverview");
 	}
 

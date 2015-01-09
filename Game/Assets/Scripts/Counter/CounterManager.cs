@@ -8,6 +8,7 @@ public class CounterManager : MonoBehaviour {
 	private HandMovement handMovement;
 	private SavedData data;
 	private Database db;
+	private SumInfo info;
 
 	public Object eenEuro;
 	public Object tweeEuro;
@@ -36,7 +37,9 @@ public class CounterManager : MonoBehaviour {
 		data = SavedData.getInstance ();
 		db = new Database ();
 		gameOver = false;
-		
+
+		info = db.GetSumInfo ("money", 1);
+		moneyCustomer = 0;
 		setTopianText ();
 		setQuestion ();
 		handMovement.MoveIn ();
@@ -48,8 +51,8 @@ public class CounterManager : MonoBehaviour {
 	}
 
 	private void setQuestion() {
-		priceBread = Mathf.Round(Random.Range (1, 10));
-		demandCustomer = Mathf.Round(Random.Range (1, 5));
+		priceBread = Mathf.Round(Random.Range (info.minRange, info.maxRange + 1));
+		demandCustomer = Mathf.Round(Random.Range (info.minRange, info.maxRange + 1));
 		cost = priceBread * demandCustomer;
 
 		print ("priceBread: " + priceBread);
@@ -97,8 +100,12 @@ public class CounterManager : MonoBehaviour {
         }
 
 		money.GetComponent<MoneyManager>().setStartMoney(true);
-		moneyCustomer = money.GetComponent<MoneyManager>().getAmount();
+		moneyCustomer += money.GetComponent<MoneyManager>().getAmount();
 		money.transform.position = inHand;
+
+		if(moneyCustomer < cost) {
+			generateCustomerMoney();
+		}
 
 		answer = moneyCustomer - cost;
 
@@ -129,7 +136,7 @@ public class CounterManager : MonoBehaviour {
 	}
 
 	public IEnumerator returnToOverview() {
-		yield return new WaitForSeconds(3);
+		yield return new WaitForSeconds(5);
 		Application.LoadLevel ("BakeryOverview");
 	}
 }
