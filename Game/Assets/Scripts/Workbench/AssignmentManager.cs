@@ -19,52 +19,18 @@ public class AssignmentManager : MonoBehaviour {
 	private float marge;
 	private RecipeRow currentIngredient;
 	private int currentAnswer;
+	private int level;
 
 	private SavedData savedData;
 	private Database db;
 
 	// Use this for initialization
 	void Start () {
-		int level = 0;
+		level = 0;
 		this.spriteManager = GetComponent<SpriteManager> ();
-		this.db = new Database ();
-		SumInfo sumInfo = this.db.GetSumInfo ("volume", level);
 
-		// load amount and recipe
-		string product = "Brood";
-		int amount = 0;
-		wanted = 0;
-		switch(level) {
-			case 0:
-				amount = 1;
-				wanted = 1;
-				break;
-			case 1:
-				amount = 1;
-				wanted = 2;
-				break;
-			case 2:
-				amount = 2;
-				wanted = 1;
-				break;
-			case 3:
-				amount = 4;
-				wanted = 3;
-				break;
-		}
+		GenerateRecipe ();
 
-		recipe = new Recipe (product, amount);
-		/*
-		int enumSize = Enum.GetValues (typeof(Ingredients)).Length;
-		for (int i = 0; i < enumSize; i++) {
-			Random.Range(0, enumSize);
-		}*/
-		recipe.AddRecipeRow (Ingredients.Zout, 1, true, UnitPrexixes.k, "g");
-		recipe.AddRecipeRow (Ingredients.Meel, 1, false, UnitPrexixes.k, "g");
-		recipe.AddRecipeRow (Ingredients.Water, 3, false, UnitPrexixes.d, "l");
-		recipe.AddRecipeRow (Ingredients.Gist, 400, false, UnitPrexixes.no, "g");
-		recipe.AddRecipeRow (Ingredients.Suiker, 4, false, UnitPrexixes.no, "g");
-		recipe.AddRecipeRow (Ingredients.Melk, 25, false, UnitPrexixes.d, "l");
 		marge = 0.10f;
 		recipeText.text = recipe.ToString();
 		wantedText.text = wanted.ToString ();
@@ -72,6 +38,95 @@ public class AssignmentManager : MonoBehaviour {
 		this.savedData = SavedData.getInstance ();
 		topiansText.text = Convert.ToString(savedData.getTopians ());
 		StartCoroutine (this.startFirstGame());
+	}
+
+	private void GenerateRecipe() {
+		this.db = new Database ();
+		SumInfo sumInfo = this.db.GetSumInfo ("volume", level);
+		
+		// load amount and recipe
+		string product = "Brood";
+		int amount = 0;
+		wanted = 0;
+		int amountFinished = 0;
+		switch(level) {
+		case 0:
+			amount = 1;
+			wanted = 1;
+			amountFinished = 0;
+			break;
+		case 1:
+			amount = 1;
+			wanted = 2;
+			amountFinished = 4;
+			break;
+		case 2:
+			amount = 2;
+			wanted = 1;
+			amountFinished = 2;
+			break;
+		case 3:
+			amount = 4;
+			wanted = 3;
+			amountFinished = 0;
+			break;
+		}
+		
+		recipe = new Recipe (product, amount);
+		
+		int enumSize = Enum.GetValues (typeof(Ingredients)).Length;
+		for (int i = 0; i < enumSize; i++) {
+			Ingredients ingredient = (Ingredients)UnityEngine.Random.Range(0, enumSize);
+			while(recipe.FindIngredient(ingredient) != null) {
+				ingredient = (Ingredients)UnityEngine.Random.Range(0, enumSize);
+			}
+			float ingredientAmount = UnityEngine.Random.Range(sumInfo.minRange, sumInfo.maxRange + 1);
+			for(int j = 1; j <= sumInfo.sumCommas; j++) {
+				ingredientAmount += UnityEngine.Random.Range(1, 10) / (10 * j);
+			}
+			string unit = "g";
+			if(ingredient == Ingredients.Water || ingredient == Ingredients.Melk) {
+				unit = "l";
+			}
+			UnitPrexixes unitPrefix = UnitPrexixes.no;
+			switch(level){
+			case 0:
+				if(!unit.Equals("g")) {
+					unitPrefix = UnitPrexixes.m;
+				}
+				break;
+			case 1:
+				if(!unit.Equals("g")) {
+					unitPrefix = UnitPrexixes.m;
+				}
+				break;
+			case 2:
+				if(unit.Equals("g")) {
+					unitPrefix = UnitPrexixes.k;
+				} else {
+					// ml cl
+					int randomInt = UnityEngine.Random.Range(0, 2);
+					int unitIndex = 1 * (10 * randomInt);
+					if(unitIndex == 0) { unitIndex = 1; }
+					unitPrefix = (UnitPrexixes)unitIndex;
+				}
+				break;
+			case 3: 
+				if(unit.Equals("g")) {
+					unitPrefix = UnitPrexixes.k;
+				} else {
+					// ml cl dl
+					int randomInt = UnityEngine.Random.Range(0, 3);
+					int unitIndex = 1 * (10 * randomInt);
+					if(unitIndex == 0) { unitIndex = 1; }
+					unitPrefix = (UnitPrexixes)unitIndex;
+				}
+				break;
+			}
+			bool finished = false;
+			if(i <= amountFinished - 1) { finished = true; }
+			recipe.AddRecipeRow(ingredient, ingredientAmount, finished, unitPrefix, unit);
+		}
 	}
 	
 	// Update is called once per frame
@@ -156,6 +211,15 @@ public class Recipe {
 	public RecipeRow GetNext() {
 		foreach(RecipeRow r in ingredients) {
 			if(!r.finished) {
+				return r;
+			}
+		}
+		return null;
+	}
+
+	public RecipeRow FindIngredient(Ingredients ingredient) {
+		foreach (RecipeRow r in this.ingredients) {
+			if(r.ingredient == ingredient) {
 				return r;
 			}
 		}

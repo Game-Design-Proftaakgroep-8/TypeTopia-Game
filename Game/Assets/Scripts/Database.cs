@@ -118,21 +118,25 @@ public class Database {
 		cmd.Parameters.AddWithValue ("@sl", sumLevel);
 
 		SumInfo sumInfo = null;
-		
+		Debug.Log("ik ben hier3");
 		try
 		{
 			if (conn.State == ConnectionState.Closed)
 			{
+				Debug.Log("ik ga nu openen");
 				conn.Open();
+				Debug.Log("geopend");
 			}
-			
+			Debug.Log("ben ik hier?");
 			MySqlDataReader reader = cmd.ExecuteReader ();
+			Debug.Log("ik kan lezen");
 
 			bool commaOptions = false;
 			int sumID = -1;
-			
+			Debug.Log("ik ben hier2");
 			while (reader.Read())
 			{
+				Debug.Log("ik ben hier");
 				sumID = reader.GetInt32("sumID");
 				int minRange = reader.GetInt32("minRange");
 				int maxRange = reader.GetInt32("maxRange");
