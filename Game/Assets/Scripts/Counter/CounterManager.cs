@@ -7,6 +7,7 @@ public class CounterManager : MonoBehaviour {
 	public GameObject hand;
 	private HandMovement handMovement;
 	private SavedData data;
+	private Database db;
 
 	public Object eenEuro;
 	public Object tweeEuro;
@@ -33,8 +34,9 @@ public class CounterManager : MonoBehaviour {
 	void Start () {
 		handMovement = hand.GetComponent<HandMovement> ();
 		data = SavedData.getInstance ();
+		db = new Database ();
 		gameOver = false;
-
+		
 		setTopianText ();
 		setQuestion ();
 		handMovement.MoveIn ();
