@@ -16,9 +16,9 @@ public class Database {
 		connectionString.Database = "topiatrainer";
 		connectionString.Password = "IJsje!123";
 		connectionString.UserID = "root";
-		connectionString.Port = "3306";
+		connectionString.Port = 3306;
 
-		conn = new MySqlConnection (connectionString);
+		conn = new MySqlConnection (connectionString.ToString());
 	}
 
 	public void ConnectionBase(MySqlCommand command)
