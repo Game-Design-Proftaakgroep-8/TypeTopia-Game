@@ -21,21 +21,50 @@ public class AssignmentManager : MonoBehaviour {
 	private int currentAnswer;
 
 	private SavedData savedData;
+	private Database db;
 
 	// Use this for initialization
 	void Start () {
+		int level = 0;
 		this.spriteManager = GetComponent<SpriteManager> ();
+		this.db = new Database ();
+		SumInfo sumInfo = this.db.GetSumInfo ("volume", level);
+
 		// load amount and recipe
 		string product = "Brood";
-		int amount = 4;
+		int amount = 0;
+		wanted = 0;
+		switch(level) {
+			case 0:
+				amount = 1;
+				wanted = 1;
+				break;
+			case 1:
+				amount = 1;
+				wanted = 2;
+				break;
+			case 2:
+				amount = 2;
+				wanted = 1;
+				break;
+			case 3:
+				amount = 4;
+				wanted = 3;
+				break;
+		}
+
 		recipe = new Recipe (product, amount);
+		/*
+		int enumSize = Enum.GetValues (typeof(Ingredients)).Length;
+		for (int i = 0; i < enumSize; i++) {
+			Random.Range(0, enumSize);
+		}*/
 		recipe.AddRecipeRow (Ingredients.Zout, 1, true, UnitPrexixes.k, "g");
 		recipe.AddRecipeRow (Ingredients.Meel, 1, false, UnitPrexixes.k, "g");
 		recipe.AddRecipeRow (Ingredients.Water, 3, false, UnitPrexixes.d, "l");
 		recipe.AddRecipeRow (Ingredients.Gist, 400, false, UnitPrexixes.no, "g");
 		recipe.AddRecipeRow (Ingredients.Suiker, 4, false, UnitPrexixes.no, "g");
 		recipe.AddRecipeRow (Ingredients.Melk, 25, false, UnitPrexixes.d, "l");
-		wanted = 3;
 		marge = 0.10f;
 		recipeText.text = recipe.ToString();
 		wantedText.text = wanted.ToString ();
