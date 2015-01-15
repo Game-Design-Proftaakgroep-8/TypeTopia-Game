@@ -49,7 +49,7 @@ public class Database {
 
 	public bool CheckLogin(string name, string password)
 	{
-		string SQL = "SELECT * FROM topiatrainer.Person WHERE pName=@nm AND pPassword=@pw";
+		string SQL = "SELECT * FROM Person WHERE pName=@nm AND pPassword=@pw";
 		MySqlCommand cmd = new MySqlCommand (SQL, conn);
 		cmd.Parameters.AddWithValue ("@nm", name);
 		cmd.Parameters.AddWithValue ("@pw", password);
@@ -79,6 +79,62 @@ public class Database {
 		conn.Close ();
 
 		return exist;
+	}
+
+	public bool CheckUsernameExists(string name)
+	{
+		string SQL = "SELECT * FROM Person WHERE pName=@nm";
+		MySqlCommand cmd = new MySqlCommand (SQL, conn);
+		cmd.Parameters.AddWithValue ("@nm", name);
+		
+		bool exist = false;
+		
+		try
+		{
+			if (conn.State == ConnectionState.Closed)
+			{
+				conn.Open();
+			}
+			
+			MySqlDataReader reader = cmd.ExecuteReader ();
+			
+			while (reader.Read())
+			{
+				exist = true;
+			}
+			
+			reader.Close();
+		}
+		catch
+		{
+		}
+		
+		conn.Close ();
+		
+		return exist;
+	}
+
+	public void SignIn(string name, string password)
+	{
+		string SQL = "INSERT INTO Person pName=@nm AND pPassword=@pw";
+		MySqlCommand cmd = new MySqlCommand (SQL, conn);
+		cmd.Parameters.AddWithValue ("@nm", name);
+		cmd.Parameters.AddWithValue ("@pw", password);
+		
+		try
+		{
+			if (conn.State == ConnectionState.Closed)
+			{
+				conn.Open();
+			}
+			
+			cmd.ExecuteNonQuery();
+		}
+		catch
+		{
+		}
+		
+		conn.Close ();
 	}
 
 	private void AddCommaOptions(int sumID, SumInfo sumInfo) {
