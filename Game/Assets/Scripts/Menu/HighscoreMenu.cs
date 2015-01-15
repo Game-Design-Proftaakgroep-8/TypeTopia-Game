@@ -43,6 +43,7 @@ public class HighscoreMenu : MonoBehaviour {
 
 	public void StartGame()
 	{
+		data.reset ();
 		Application.LoadLevel(startScene);
 	}
 	

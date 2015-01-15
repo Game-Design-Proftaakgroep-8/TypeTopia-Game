@@ -19,6 +19,7 @@ public class Menu : MonoBehaviour {
 	void Start ()
 	{
 		data = SavedData.getInstance ();
+		data.resetTopians ();
 		startScene = "BakeryOverview";
 		highscoreScene = "Highscore";
 		loginScene = "Login";
@@ -40,6 +41,8 @@ public class Menu : MonoBehaviour {
 
 	public void StartGame()
 	{
+		data.setLevel (level);
+		data.reset ();
 		Application.LoadLevel(startScene);
 	}
 

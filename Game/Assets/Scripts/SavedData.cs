@@ -9,25 +9,39 @@ public class SavedData {
 	private int nextCustomerNr = 1;
 	private int leftCount = 0;
 
-	private bool counterPlayed;
-	private bool workbenchPlayed;
-	private bool ovenPlayed;
+	private int counterPlayed;
+	private int workbenchPlayed;
+	private int ovenPlayed;
 
 	private int topians = 0;
 	private int level = 0;
 	private string user;
-	private int level = 0;
 
 	private SavedData()
 	{
-		maxCustomers = LevelManager.nrOfCustomers;
+		switch (this.level)
+		{
+		case 0:
+			maxCustomers = 1;
+			break;
+		case 1:
+			maxCustomers = 2;
+			break;
+		case 2:
+			maxCustomers = 3;
+			break;
+		case 3:
+			maxCustomers = 4;
+			break;
+		}
+
 		nextCustomerNr = 1;
 		leftCount = 0;
 		customers = new GameObject[maxCustomers];
 
-		counterPlayed = false;
-		workbenchPlayed = false;
-		ovenPlayed = false;
+		counterPlayed = 0;
+		workbenchPlayed = 0;
+		ovenPlayed = 0;
 	}
 
 	public static SavedData getInstance()
@@ -43,6 +57,33 @@ public class SavedData {
 	public void deleteInstance()
 	{
 		instance = null;
+	}
+
+	public void reset()
+	{
+		switch (this.level)
+		{
+		case 0:
+			maxCustomers = 1;
+			break;
+		case 1:
+			maxCustomers = 2;
+			break;
+		case 2:
+			maxCustomers = 3;
+			break;
+		case 3:
+			maxCustomers = 4;
+			break;
+		}
+
+		nextCustomerNr = 1;
+		leftCount = 0;
+		customers = new GameObject[maxCustomers];
+		
+		counterPlayed = 0;
+		workbenchPlayed = 0;
+		ovenPlayed = 0;
 	}
 
 	//Get and set Customer data
@@ -79,32 +120,32 @@ public class SavedData {
 	}
 
 	//Get and set played games
-	public bool getCounterPlayed()
+	public int getCounterPlayed()
 	{
 		return this.counterPlayed;
 	}
 	
-	public bool getWorkBenchPlayed()
+	public int getWorkBenchPlayed()
 	{
 		return this.workbenchPlayed;
 	}
 	
-	public bool getOvenPlayed()
+	public int getOvenPlayed()
 	{
 		return this.ovenPlayed;
 	}
 	
-	public void setCounterPlayed(bool played)
+	public void setCounterPlayed(int played)
 	{
 		this.counterPlayed = played;
 	}
 	
-	public void setWorkbenchPlayed(bool played)
+	public void setWorkbenchPlayed(int played)
 	{
 		this.workbenchPlayed = played;
 	}
 	
-	public void setOvenPlayed(bool played)
+	public void setOvenPlayed(int played)
 	{
 		this.ovenPlayed = played;
 	}

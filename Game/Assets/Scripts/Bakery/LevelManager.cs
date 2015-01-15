@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour {
 
 	public SavedData data;
 
-	public static int nrOfCustomers = 4;
+	public int nrOfCustomers;
 	private GameObject[] customers;
 
 	public GameObject CustomerPrefab1;
@@ -22,9 +22,10 @@ public class LevelManager : MonoBehaviour {
 	private string ovenScene;
 	private string counterScene;
 	private string workbenchScene;
+	private string scoreScene;
 
-	private int nextCustomerNr;
-	private int leftCount;
+	private int nextCustomerNr = 1;
+	private int leftCount = 0;
 
 	private float customerTimer;
 
@@ -32,11 +33,12 @@ public class LevelManager : MonoBehaviour {
 	private Touch touch;
 	private bool pauze;
 
-	private int btnCount;
-
-	private bool counterPlayed;
-	private bool workbenchPlayed;
-	private bool ovenPlayed;
+	private int counterPlayed = 0;
+	private int maxCounter;
+	private int workbenchPlayed = 0;
+	private int maxWorkbench;
+	private int ovenPlayed = 0;
+	private int maxOven;
 
 	public Text geslaagd;
 	public Text topiansText;
@@ -45,12 +47,41 @@ public class LevelManager : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
+		//Get values from SavedData
+		data = SavedData.getInstance ();
+
+		if (data.getLevel() == 0)
+		{
+			nrOfCustomers = 1;
+			maxCounter = 1;
+			maxWorkbench = 1;
+			maxOven = 1;
+		}
+		else if(data.getLevel() == 1)
+		{
+			nrOfCustomers = 2;
+			maxCounter = 2;
+			maxWorkbench = 1;
+			maxOven = 1;
+		}
+		else if(data.getLevel() == 2)
+		{
+			nrOfCustomers = 3;
+			maxCounter = 3;
+			maxWorkbench = 2;
+			maxOven = 2;
+		}
+		else if(data.getLevel() == 3)
+		{
+			nrOfCustomers = 4;
+			maxCounter = 4;
+			maxWorkbench = 2;
+			maxOven = 2;
+		}
+
 		customers = new GameObject[nrOfCustomers];
-		nextCustomerNr = 1;
-		leftCount = 0;
 
 		//Get saved customers from SavedData
-		data = SavedData.getInstance ();
 		customers = data.getCustomers ();
 		topiansText.text = Convert.ToString (data.getTopians());
 
@@ -74,16 +105,15 @@ public class LevelManager : MonoBehaviour {
 		ovenScene = "Oven";
 		counterScene = "Counter";
 		workbenchScene = "Workbench";
+		scoreScene = "Score";
 
 		customerTimer = Time.time + 1f;
-
-		btnCount = 1;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		if (counterPlayed && workbenchPlayed && ovenPlayed)
+		if (counterPlayed == maxCounter && workbenchPlayed == maxWorkbench && ovenPlayed == maxOven)
 		{
 			audio.PlayOneShot(audioGood);
 			geslaagd.text = "Geslaagd";
@@ -122,6 +152,7 @@ public class LevelManager : MonoBehaviour {
 
 						int nr = nextCustomerNr - leftCount;
 						cus.GetComponent<Customer>().SetNewPosition(GetCustomerPosition(nr));
+						print (nextCustomerNr);
 						customers[nextCustomerNr - 1] = cus;
 
 						if (nextCustomerNr < nrOfCustomers)
@@ -219,26 +250,35 @@ public class LevelManager : MonoBehaviour {
 		data.updateCustomers(this.customers, this.nextCustomerNr, this.leftCount);
 
 		//start game
-		if (hit == oven && !ovenPlayed)
+		if (hit == oven && ovenPlayed < maxOven)
 		{
 			print("Start game oven");
+
+			ovenPlayed++;
+			data.setOvenPlayed(ovenPlayed);
 			CustomersToBackground();
-			data.setOvenPlayed(true);
+
 			Application.LoadLevel(ovenScene);
 		}
-		else if (hit == counter && !counterPlayed)
+		else if (hit == counter && counterPlayed < maxCounter)
 		{
 			print("Start game counter");
+
+			counterPlayed++;
+			data.setCounterPlayed(counterPlayed);
 			CustomersToBackground();
 			this.Leave();
-			data.setCounterPlayed(true);
+
 			Application.LoadLevel(counterScene);
 		}
-		else if (hit == workbench && !workbenchPlayed)
+		else if (hit == workbench && workbenchPlayed < maxWorkbench)
 		{
 			print("Start game workbench");
+
+			workbenchPlayed++;
+			data.setWorkbenchPlayed(workbenchPlayed);
 			CustomersToBackground();
-			data.setWorkbenchPlayed(true);
+
 			Application.LoadLevel(workbenchScene);
 		}
 	}
@@ -260,18 +300,20 @@ public class LevelManager : MonoBehaviour {
 		this.pauze = pauze;
 	}
 
-	public void buttonPauze()
+	public void stop()
 	{
-		if (btnCount%2 == 1)
+		data.deleteInstance ();
+		
+		//Remove customers
+		foreach (GameObject g in this.customers)
 		{
-			this.pauze = true;
+			if (g != null)
+			{
+				Destroy(g);
+			}
 		}
-		else
-		{
-			this.pauze = false;
-		}
-
-		btnCount++;
+		
+		Application.LoadLevel("Menu");
 	}
 
 	public IEnumerator StopGame()
@@ -288,6 +330,6 @@ public class LevelManager : MonoBehaviour {
 			}
 		}
 
-		Application.LoadLevel("Menu");
+		Application.LoadLevel(scoreScene);
 	}
 }

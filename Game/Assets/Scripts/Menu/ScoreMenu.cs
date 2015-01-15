@@ -41,6 +41,7 @@ public class ScoreMenu : MonoBehaviour {
 
 	public void StartGame()
 	{
+		data.reset ();
 		Application.LoadLevel(startScene);
 	}
 
