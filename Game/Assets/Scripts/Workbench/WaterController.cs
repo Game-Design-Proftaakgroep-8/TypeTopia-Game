@@ -39,7 +39,7 @@ public class WaterController : MonoBehaviour {
 	void Update () {
 		if(playing){
 			if(measuringCup.OnMinPosX()) {
-				//millilitersText.text = this.GetMilliliters ().ToString() + " ml";
+				millilitersText.text = this.GetMilliliters ().ToString() + " ml";
 				if(increasing) {
 					this.ChangeWaterLevelTo(maxHeight);
 				} else if (decreasing && measuringCup.OnMaxRotation ()) {

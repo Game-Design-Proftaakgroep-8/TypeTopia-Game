@@ -9,7 +9,7 @@ public class BalanceController : MonoBehaviour {
 	public Transform stockRain;
 	public Text milligramsText;
 	/// <summary>
-	/// MeasuringCup is 1 [unitPrefix]l
+	/// unit is [unitPrefix]g
 	/// </summary>
 	public UnitPrexixes unitPrefix;
 

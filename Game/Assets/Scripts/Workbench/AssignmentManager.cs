@@ -13,6 +13,9 @@ public class AssignmentManager : MonoBehaviour {
 	public Text wantedText;
 	public Text productText;
 
+	public AudioClip audioGood;
+	public AudioClip audioBad;
+
 	private SpriteManager spriteManager;
 	private Recipe recipe;
 	private int wanted;
@@ -110,7 +113,6 @@ public class AssignmentManager : MonoBehaviour {
 						// ml cl
 						int randomInt = UnityEngine.Random.Range(0, 2);
 						int unitIndex = 1 * (int) Math.Pow(10, randomInt);
-						print (unitIndex);
 						if(unitIndex == 0) { unitIndex = 1; }
 						unitPrefix = (UnitPrexixes)unitIndex;
 					}
@@ -150,7 +152,7 @@ public class AssignmentManager : MonoBehaviour {
 				balanceController.StartGame ();
 			}
 		} else {
-			winLoseText.text = "Einde van dit spel";
+			//winLoseText.text = "Einde van dit spel";
 			StartCoroutine (this.backToOverview());
 		}
 	}
@@ -163,7 +165,7 @@ public class AssignmentManager : MonoBehaviour {
 		if (currentIngredient.ingredient == Ingredients.Water || currentIngredient.ingredient == Ingredients.Melk) {
 			if(!waterController.IsReadyToCheck()) { return; }
 			given = waterController.GetMilliliters();
-			currentMarge = marge * (int) waterController.unitPrefix;
+			currentMarge = marge;
 			waterController.StopGame();
 		} else {
 			if(!balanceController.IsReadyToCheck()) { return; }
@@ -173,11 +175,13 @@ public class AssignmentManager : MonoBehaviour {
 		}
 		print (currentAnswer);
 		if(given >= currentAnswer - currentMarge && given <= currentAnswer + currentMarge) {
-			winLoseText.text = "GOED!!";
+			//winLoseText.text = "GOED!!";
+			audio.PlayOneShot(audioGood);
 			savedData.increaseTopians(1);
 			topiansText.text = Convert.ToString(savedData.getTopians ());
 		} else {
-			winLoseText.text = "FOUT!!";
+			//winLoseText.text = "FOUT!!";
+			audio.PlayOneShot(audioBad);
 		}
 		StartCoroutine (this.startNextGame ());
 		recipe.CheckFirst();
