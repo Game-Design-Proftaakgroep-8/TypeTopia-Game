@@ -25,7 +25,7 @@ public class HandMovement : MonoBehaviour {
 			break;
 		}
 
-		if(transform.position.y <= 2.5f || transform.position.y >= 7.5f) {
+		if(transform.position.y <= 3f || transform.position.y >= 9f) {
 			StopMoving();
 		}
 	}
