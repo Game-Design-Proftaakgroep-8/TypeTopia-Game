@@ -12,10 +12,10 @@ public class Database {
 	public Database()
 	{
 		string connectionString =
-			"server=127.0.0.1;" +
+			"server=db4free.net;" +
 				"database=topiatrainer;" +
-				"uid=root;" +
-				"pwd=IJsje!123;" +
+				"uid=secretagents;" +
+				"pwd=groep8;" +
 				"port=3306;";
 
 		conn = new MySqlConnection (connectionString);
