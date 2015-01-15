@@ -126,6 +126,9 @@ public class AssignmentManager : MonoBehaviour {
 						int unitIndex = 1 * (int) Math.Pow(10, randomInt);
 						if(unitIndex == 0) { unitIndex = 1; }
 						unitPrefix = (UnitPrexixes)unitIndex;
+						if(unitPrefix == UnitPrexixes.d && ingredientAmount > 10) {
+							ingredientAmount = ingredientAmount / 10;
+						}
 					}
 					break;
 			}
