@@ -137,6 +137,68 @@ public class Database {
 		conn.Close ();
 	}
 
+	public string[] GetHighscore()
+	{
+		string SQL = "SELECT * FROM Score ORDER BY score DESC";
+		MySqlCommand cmd = new MySqlCommand (SQL, conn);
+		
+		string[] scores = new string[5];
+		int count = 0;
+		
+		try
+		{
+			if (conn.State == ConnectionState.Closed)
+			{
+				conn.Open();
+			}
+			
+			MySqlDataReader reader = cmd.ExecuteReader ();
+			
+			while (reader.Read() && count < 5)
+			{
+				string name = reader.GetString("pName");
+				int score = reader.GetInt32("score");
+
+				string total = name + " - " + score;
+				scores[count] = total;
+
+				count++;
+			}
+			
+			reader.Close();
+		}
+		catch
+		{
+		}
+		
+		conn.Close ();
+		
+		return scores;
+	}
+
+	public void AddScore(string name, int score)
+	{
+		string SQL = "INSERT INTO Score pName=@nm AND score=@sc";
+		MySqlCommand cmd = new MySqlCommand (SQL, conn);
+		cmd.Parameters.AddWithValue ("@nm", name);
+		cmd.Parameters.AddWithValue ("@sc", score);
+		
+		try
+		{
+			if (conn.State == ConnectionState.Closed)
+			{
+				conn.Open();
+			}
+			
+			cmd.ExecuteNonQuery();
+		}
+		catch
+		{
+		}
+		
+		conn.Close ();
+	}
+
 	private void AddCommaOptions(int sumID, SumInfo sumInfo) {
 		string SQL = "SELECT * FROM CommaOption WHERE commaID IN (SELET commaID FROM SumComma WHERE sumID = @si)";
 		MySqlCommand cmd = new MySqlCommand (SQL, conn);

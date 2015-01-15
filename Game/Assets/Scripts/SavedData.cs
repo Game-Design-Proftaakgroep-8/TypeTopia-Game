@@ -15,6 +15,7 @@ public class SavedData {
 
 	private int topians = 0;
 	private string user;
+	private int level = 0;
 
 	private SavedData()
 	{
@@ -118,6 +119,11 @@ public class SavedData {
 		return this.topians;
 	}
 
+	public void resetTopians()
+	{
+		this.topians = 0;
+	}
+
 	public void login(string name)
 	{
 		this.user = name;
@@ -126,5 +132,15 @@ public class SavedData {
 	public string getUser()
 	{
 		return this.user;
+	}
+
+	public void setLevel(int level)
+	{
+		this.level = level;
+	}
+
+	public int getLevel()
+	{
+		return this.level;
 	}
 }
