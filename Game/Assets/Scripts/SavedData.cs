@@ -14,6 +14,7 @@ public class SavedData {
 	private bool ovenPlayed;
 
 	private int topians = 0;
+	private int level = 0;
 	private string user;
 
 	private SavedData()
@@ -116,6 +117,16 @@ public class SavedData {
 	public int getTopians()
 	{
 		return this.topians;
+	}
+
+	public int getLevel() 
+	{
+		return this.level;
+	}
+
+	public void setLevel(int level) 
+	{
+		this.level = level;
 	}
 
 	public void login(string name)

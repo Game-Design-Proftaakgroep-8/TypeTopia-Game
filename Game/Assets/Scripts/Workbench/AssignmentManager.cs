@@ -26,16 +26,16 @@ public class AssignmentManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		level = 0;
+		this.savedData = SavedData.getInstance ();
+		level = savedData.getLevel();
 		this.spriteManager = GetComponent<SpriteManager> ();
 
 		GenerateRecipe ();
 
-		marge = 0.10f;
+		marge = 10f;
 		recipeText.text = recipe.ToString();
 		wantedText.text = wanted.ToString ();
 		productText.text = recipe.product;
-		this.savedData = SavedData.getInstance ();
 		topiansText.text = Convert.ToString(savedData.getTopians ());
 		StartCoroutine (this.startFirstGame());
 	}
@@ -82,46 +82,50 @@ public class AssignmentManager : MonoBehaviour {
 			}
 			float ingredientAmount = UnityEngine.Random.Range(sumInfo.minRange, sumInfo.maxRange + 1);
 			for(int j = 1; j <= sumInfo.sumCommas; j++) {
-				ingredientAmount += UnityEngine.Random.Range(1, 10) / (10 * j);
+				if(ingredient != Ingredients.Water && ingredient != Ingredients.Melk) {
+					ingredientAmount = 0;
+				}
+				ingredientAmount += (float) UnityEngine.Random.Range(1, 10) / (10 * j);
 			}
 			string unit = "g";
 			if(ingredient == Ingredients.Water || ingredient == Ingredients.Melk) {
 				unit = "l";
-			}
+			} 
 			UnitPrexixes unitPrefix = UnitPrexixes.no;
 			switch(level){
-			case 0:
-				if(!unit.Equals("g")) {
-					unitPrefix = UnitPrexixes.m;
-				}
-				break;
-			case 1:
-				if(!unit.Equals("g")) {
-					unitPrefix = UnitPrexixes.m;
-				}
-				break;
-			case 2:
-				if(unit.Equals("g")) {
-					unitPrefix = UnitPrexixes.k;
-				} else {
-					// ml cl
-					int randomInt = UnityEngine.Random.Range(0, 2);
-					int unitIndex = 1 * (10 * randomInt);
-					if(unitIndex == 0) { unitIndex = 1; }
-					unitPrefix = (UnitPrexixes)unitIndex;
-				}
-				break;
-			case 3: 
-				if(unit.Equals("g")) {
-					unitPrefix = UnitPrexixes.k;
-				} else {
-					// ml cl dl
-					int randomInt = UnityEngine.Random.Range(0, 3);
-					int unitIndex = 1 * (10 * randomInt);
-					if(unitIndex == 0) { unitIndex = 1; }
-					unitPrefix = (UnitPrexixes)unitIndex;
-				}
-				break;
+				case 0:
+					if(!unit.Equals("g")) {
+						unitPrefix = UnitPrexixes.m;
+					}
+					break;
+				case 1:
+					if(!unit.Equals("g")) {
+						unitPrefix = UnitPrexixes.m;
+					}
+					break;
+				case 2:
+					if(unit.Equals("g")) {
+						unitPrefix = UnitPrexixes.k;
+					} else {
+						// ml cl
+						int randomInt = UnityEngine.Random.Range(0, 2);
+						int unitIndex = 1 * (int) Math.Pow(10, randomInt);
+						print (unitIndex);
+						if(unitIndex == 0) { unitIndex = 1; }
+						unitPrefix = (UnitPrexixes)unitIndex;
+					}
+					break;
+				case 3: 
+					if(unit.Equals("g")) {
+						unitPrefix = UnitPrexixes.k;
+					} else {
+						// ml cl dl
+						int randomInt = UnityEngine.Random.Range(0, 3);
+						int unitIndex = 1 * (int) Math.Pow(10, randomInt);
+						if(unitIndex == 0) { unitIndex = 1; }
+						unitPrefix = (UnitPrexixes)unitIndex;
+					}
+					break;
 			}
 			bool finished = false;
 			if(i <= amountFinished - 1) { finished = true; }
@@ -153,18 +157,22 @@ public class AssignmentManager : MonoBehaviour {
 
 	public void CheckAssignment() {
 		int given;
+		float currentMarge;
 		// check nog verbeteren?
 		if(currentIngredient == null) { return; }
 		if (currentIngredient.ingredient == Ingredients.Water || currentIngredient.ingredient == Ingredients.Melk) {
 			if(!waterController.IsReadyToCheck()) { return; }
 			given = waterController.GetMilliliters();
+			currentMarge = marge * (int) waterController.unitPrefix;
 			waterController.StopGame();
 		} else {
 			if(!balanceController.IsReadyToCheck()) { return; }
 			given = balanceController.GetMilligrams ();
+			currentMarge = marge * (int) balanceController.unitPrefix;
 			balanceController.StopGame ();
 		}
-		if(given >= currentAnswer - (currentAnswer * marge) && given <= currentAnswer + (currentAnswer * marge)) {
+		print (currentAnswer);
+		if(given >= currentAnswer - currentMarge && given <= currentAnswer + currentMarge) {
 			winLoseText.text = "GOED!!";
 			savedData.increaseTopians(1);
 			topiansText.text = Convert.ToString(savedData.getTopians ());
