@@ -47,111 +47,41 @@ public class Database {
 
 	public bool CheckLogin(string name, string password)
 	{
-//		string SQL = "SELECT * FROM Person WHERE pName=@nm AND pPassword=@pw";
-//		MySqlCommand cmd = new MySqlCommand (SQL, conn);
-//		cmd.Parameters.AddWithValue ("@nm", name);
-//		cmd.Parameters.AddWithValue ("@pw", password);
-//
-//		bool exist = false;
-//
-//		try
-//		{
-//			if (conn.State == ConnectionState.Closed)
-//			{
-//				conn.Open();
-//			}
-//
-//			MySqlDataReader reader = cmd.ExecuteReader ();
-//
-//			while (reader.Read())
-//			{
-//				exist = true;
-//			}
-//
-//			reader.Close();
-//		}
-//		catch
-//		{
-//		}
-//
-//		conn.Close ();
-//
-//		return exist;
+		Person pers = null;
+
+		foreach (Person p in persons)
+		{
+			if (p.name.Equals(name) && p.password.Equals(password))
+			{
+				return true;
+			}
+		}
+
 		return false;
 	}
-//
+
 	public bool CheckUsernameExists(string name)
-	{
-//		string SQL = "SELECT * FROM Person WHERE pName=@nm";
-//		MySqlCommand cmd = new MySqlCommand (SQL, conn);
-//		cmd.Parameters.AddWithValue ("@nm", name);
-//		
-//		bool exist = false;
-//		
-//		try
-//		{
-//			if (conn.State == ConnectionState.Closed)
-//			{
-//				conn.Open();
-//			}
-//			
-//			MySqlDataReader reader = cmd.ExecuteReader ();
-//			
-//			while (reader.Read())
-//			{
-//				exist = true;
-//			}
-//			
-//			reader.Close();
-//		}
-//		catch
-//		{
-//		}
-//		
-//		conn.Close ();
-//		
-//		return exist;
+	{		
+		foreach (Person p in persons)
+		{
+			if (p.name.Equals(name))
+			{
+				return true;
+			}
+		}
+		
 		return false;
 	}
-//
+
 	public void SignIn(string name, string password)
-	{
-//		string SQL = "INSERT INTO Person pName=@nm AND pPassword=@pw";
-//		MySqlCommand cmd = new MySqlCommand (SQL, conn);
-//		cmd.Parameters.AddWithValue ("@nm", name);
-//		cmd.Parameters.AddWithValue ("@pw", password);
-//		
-//		try
-//		{
-//			if (conn.State == ConnectionState.Closed)
-//			{
-//				conn.Open();
-//			}
-//			
-//			cmd.ExecuteNonQuery();
-//		}
-//		catch
-//		{
-//		}
-//		
-//		conn.Close ();
+	{		
+		persons.Add (new Person(name, password));
 	}
-//
+
 	public string[] GetHighscore()
 	{
-//		string SQL = "SELECT * FROM Score ORDER BY score DESC";
-//		MySqlCommand cmd = new MySqlCommand (SQL, conn);
-//		
-//		string[] scores = new string[5];
-//		int count = 0;
-//		
-//		try
-//		{
-//			if (conn.State == ConnectionState.Closed)
-//			{
-//				conn.Open();
-//			}
-//			
+
+
 //			MySqlDataReader reader = cmd.ExecuteReader ();
 //			
 //			while (reader.Read() && count < 5)
@@ -164,40 +94,11 @@ public class Database {
 //
 //				count++;
 //			}
-//			
-//			reader.Close();
-//		}
-//		catch
-//		{
-//		}
-//		
-//		conn.Close ();
-//		
-//		return scores;
-		return null;
 	}
-//
+
 	public void AddScore(string name, int score)
 	{
-//		string SQL = "INSERT INTO Score pName=@nm AND score=@sc";
-//		MySqlCommand cmd = new MySqlCommand (SQL, conn);
-//		cmd.Parameters.AddWithValue ("@nm", name);
-//		cmd.Parameters.AddWithValue ("@sc", score);
-//		
-//		try
-//		{
-//			if (conn.State == ConnectionState.Closed)
-//			{
-//				conn.Open();
-//			}
-//			
-//			cmd.ExecuteNonQuery();
-//		}
-//		catch
-//		{
-//		}
-//		
-//		conn.Close ();
+		scores.Add (new Score (name, score));
 	}
 
 	public SumInfo GetSumInfo(string sumType, int sumLevel)
