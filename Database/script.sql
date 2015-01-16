@@ -1,7 +1,6 @@
 SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE if exists Person;
 DROP TABLE if exists Score;
-DROP TABLE if exists Game;
 DROP TABLE if exists CommaOption;
 DROP TABLE if exists SumComma;
 DROP TABLE if exists Sums;
@@ -20,12 +19,6 @@ CREATE TABLE Score
 	score int(100) NOT NULL,
 
 	CONSTRAINT FK_pName FOREIGN KEY (pName) REFERENCES Person(pName) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
-CREATE TABLE Game
-(
-	gameID int(100) PRIMARY KEY auto_increment,
-	gamename varchar(50) NOT NULL
 );
 
 CREATE TABLE CommaOption
@@ -72,13 +65,6 @@ VALUES('alex', 1450);
 INSERT INTO Score(pName, score)
 VALUES('bart', 760);
 
-INSERT INTO Game(gamename)
-VALUES('workbench');
-INSERT INTO Game(gamename)
-VALUES('oven');
-INSERT INTO Game(gamename)
-VALUES('counter');
-
 INSERT INTO Sums(sumType, sumLevel, minRange, maxRange, sumCommas, commaOptions)
 VALUES('money',0,1,10,0,false);
 INSERT INTO Sums(sumType, sumLevel, minRange, maxRange, sumCommas, commaOptions)
@@ -98,13 +84,13 @@ INSERT INTO Sums(sumType, sumLevel, minRange, maxRange, sumCommas, commaOptions)
 VALUES('time',3,0,23,2,false);
 
 INSERT INTO Sums(sumType, sumLevel, minRange, maxRange, sumCommas, commaOptions)
-VALUES('volume',0,0,10,0,false);
+VALUES('volume',0,1,100,0,false);
 INSERT INTO Sums(sumType, sumLevel, minRange, maxRange, sumCommas, commaOptions)
-VALUES('volume',1,0,100,0,false);
+VALUES('volume',1,1,999,0,false);
 INSERT INTO Sums(sumType, sumLevel, minRange, maxRange, sumCommas, commaOptions)
-VALUES('volume',2,0,10,1,false);
+VALUES('volume',2,0,100,1,false);
 INSERT INTO Sums(sumType, sumLevel, minRange, maxRange, sumCommas, commaOptions)
-VALUES('volume',3,0,10,1,false);
+VALUES('volume',3,0,100,1,false);
 
 INSERT INTO CommaOption(commaValue)
 VALUES (0.25);
