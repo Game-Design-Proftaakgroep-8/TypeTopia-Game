@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using System;
+//using System;
 
 public class BalanceController : MonoBehaviour {
 	public ContainerManager stockContainer;
@@ -28,10 +28,10 @@ public class BalanceController : MonoBehaviour {
 		currentWeight = 0;
 
 		// Stock Container
-		stockContainer.SetValues (1f, true);
+		stockContainer.SetValues (1.85f, true);
 
 		// Mixing Bowl
-		mixingBowl.SetValues(-2.95f, false);
+		mixingBowl.SetValues(-1.16f, false);
 
 		// Stock Rain
 		visible = 1f;
@@ -42,7 +42,7 @@ public class BalanceController : MonoBehaviour {
 	void Update () {
 		if (playing) {
 			if(stockContainer.OnMinPosX () && mixingBowl.OnMinPosX()) {
-				String unitPrefixText = unitPrefix.ToString();
+				string unitPrefixText = unitPrefix.ToString();
 				if(unitPrefix == UnitPrexixes.no) {
 					unitPrefixText = "";
 				}
@@ -70,7 +70,7 @@ public class BalanceController : MonoBehaviour {
 	}
 
 	public int GetMilligrams() {
-		return Convert.ToInt32((int)unitPrefix * currentWeight);
+		return (int) ((int)unitPrefix * currentWeight);
 	}
 
 	public void StartStopIncreasingWeight() {

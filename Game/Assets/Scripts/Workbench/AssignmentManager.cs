@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System;
+//using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -11,7 +11,6 @@ public class AssignmentManager : MonoBehaviour {
 	public Text recipeText;
 	public Text topiansText;
 	public Text wantedText;
-	public Text productText;
 
 	public AudioClip audioGood;
 	public AudioClip audioBad;
@@ -37,9 +36,9 @@ public class AssignmentManager : MonoBehaviour {
 
 		marge = 10f;
 		recipeText.text = recipe.ToString();
-		wantedText.text = wanted.ToString ();
-		productText.text = recipe.product;
-		topiansText.text = Convert.ToString(savedData.getTopians ());
+		wantedText.text = "Ik wil " + wanted.ToString () + "x " + recipe.product;
+		//productText.text = recipe.product;
+		topiansText.text = "Topians: " + savedData.getTopians ().ToString();
 		StartCoroutine (this.startFirstGame());
 	}
 
@@ -52,48 +51,48 @@ public class AssignmentManager : MonoBehaviour {
 		int amount = 0;
 		wanted = 0;
 		int amountFinished = 0;
+		// Set amount, wanted & amountFinished
 		switch(level) {
-		case 0:
-			amount = 1;
-			wanted = 1;
-			amountFinished = 0;
-			break;
-		case 1:
-			amount = 1;
-			wanted = 2;
-			amountFinished = 4;
-			break;
-		case 2:
-			amount = 2;
-			wanted = 1;
-			amountFinished = 2;
-			break;
-		case 3:
-			amount = 4;
-			wanted = 3;
-			amountFinished = 0;
-			break;
+			case 0:
+				amount = 1;
+				wanted = 1;
+				amountFinished = 0;
+				break;
+			case 1:
+				amount = 1;
+				wanted = 2;
+				amountFinished = 4;
+				break;
+			case 2:
+				amount = 2;
+				wanted = 1;
+				amountFinished = 2;
+				break;
+			case 3:
+				amount = 4;
+				wanted = 3;
+				amountFinished = 0;
+				break;
 		}
 		
 		recipe = new Recipe (product, amount);
 		
-		int enumSize = Enum.GetValues (typeof(Ingredients)).Length;
+		//int enumSize = Enum.GetValues (typeof(Ingredients)).Length;
+		//??
+		int enumSize = 6;
 		for (int i = 0; i < enumSize; i++) {
+			// Generate ingredient
 			Ingredients ingredient = (Ingredients)UnityEngine.Random.Range(0, enumSize);
 			while(recipe.FindIngredient(ingredient) != null) {
-				ingredient = (Ingredients)UnityEngine.Random.Range(0, enumSize);
+				ingredient = (Ingredients)Random.Range(0, enumSize);
 			}
-			float ingredientAmount = UnityEngine.Random.Range(sumInfo.minRange, sumInfo.maxRange + 1);
-			for(int j = 1; j <= sumInfo.sumCommas; j++) {
-				if(ingredient != Ingredients.Water && ingredient != Ingredients.Melk) {
-					ingredientAmount = 0;
-				}
-				ingredientAmount += (float) UnityEngine.Random.Range(1, 10) / (10 * j);
-			}
+			float answer = 0.1f;
+			// Generate unit
 			string unit = "g";
 			if(ingredient == Ingredients.Water || ingredient == Ingredients.Melk) {
 				unit = "l";
 			} 
+			// Generate unitPrefix
 			UnitPrexixes unitPrefix = UnitPrexixes.no;
 			switch(level){
 				case 0:
@@ -111,9 +110,8 @@ public class AssignmentManager : MonoBehaviour {
 						unitPrefix = UnitPrexixes.k;
 					} else {
 						// ml cl
-						int randomInt = UnityEngine.Random.Range(0, 2);
-						int unitIndex = 1 * (int) Math.Pow(10, randomInt);
-						if(unitIndex == 0) { unitIndex = 1; }
+						int randomInt = Random.Range(0, 2);
+						int unitIndex = 1 * (int) Mathf.Pow(10, randomInt);
 						unitPrefix = (UnitPrexixes)unitIndex;
 					}
 					break;
@@ -122,18 +120,40 @@ public class AssignmentManager : MonoBehaviour {
 						unitPrefix = UnitPrexixes.k;
 					} else {
 						// ml cl dl
-						int randomInt = UnityEngine.Random.Range(0, 3);
-						int unitIndex = 1 * (int) Math.Pow(10, randomInt);
-						if(unitIndex == 0) { unitIndex = 1; }
+						int randomInt = Random.Range(0, 3);
+						int unitIndex = 1 * (int) Mathf.Pow(10, randomInt);
 						unitPrefix = (UnitPrexixes)unitIndex;
-						if(unitPrefix == UnitPrexixes.d && ingredientAmount > 10) {
-							ingredientAmount = ingredientAmount / 10;
-						}
 					}
 					break;
 			}
+			float ingredientAmount = -1f;
+			// Generate finished
 			bool finished = false;
 			if(i <= amountFinished - 1) { finished = true; }
+			// Generate sum
+			//do {
+				ingredientAmount = Random.Range(sumInfo.minRange, sumInfo.maxRange + 1);
+				for(int j = 1; j <= sumInfo.sumCommas; j++) {
+					if(j == 1 && ingredient != Ingredients.Water && ingredient != Ingredients.Melk) {
+						ingredientAmount = 0;
+					}
+					ingredientAmount += (float) Random.Range(1, 10) / (10 * j);
+				}
+				// answer cannot be to high
+				if((level == 3 && unitPrefix == UnitPrexixes.d && (ingredientAmount * (int)unitPrefix) > (int)UnitPrexixes.no) 
+				   || level == 1 && unit == "l" && (ingredientAmount * (int)unitPrefix) > ((int)UnitPrexixes.no / 2)) {
+					//??	
+					ingredientAmount *= 10;
+					ingredientAmount = (float) Mathf.Round (ingredientAmount);
+					ingredientAmount /= 100;
+				}
+				answer = (ingredientAmount * (int)unitPrefix) / amount * wanted;
+				if(!finished && answer % 1 != 0) {
+					answer = (float) Mathf.Round(answer);
+					ingredientAmount = answer * amount / wanted / (int)unitPrefix;
+				}
+			//} while ((ingredientAmount * (int)unitPrefix) % 1 != 0);
+			// Add reciperow
 			recipe.AddRecipeRow(ingredient, ingredientAmount, finished, unitPrefix, unit);
 		}
 	}
@@ -147,7 +167,7 @@ public class AssignmentManager : MonoBehaviour {
 		currentIngredient = recipe.GetNext();
 		if (currentIngredient != null) {
 			spriteManager.SetSprites (currentIngredient.ingredient);
-			currentAnswer = Convert.ToInt32((currentIngredient.amount * (int)currentIngredient.unitPrefix) / recipe.amount * wanted);
+			currentAnswer = (int) ((currentIngredient.amount * (int)currentIngredient.unitPrefix) / recipe.amount * wanted);
 			if(currentIngredient.ingredient == Ingredients.Water || currentIngredient.ingredient == Ingredients.Melk) {
 				// Ingredient meegeven
 				waterController.StartGame();
@@ -155,7 +175,7 @@ public class AssignmentManager : MonoBehaviour {
 				balanceController.StartGame ();
 			}
 		} else {
-			//winLoseText.text = "Einde van dit spel";
+			winLoseText.text = "Einde van dit spel";
 			StartCoroutine (this.backToOverview());
 		}
 	}
@@ -163,7 +183,6 @@ public class AssignmentManager : MonoBehaviour {
 	public void CheckAssignment() {
 		int given;
 		float currentMarge;
-		// check nog verbeteren?
 		if(currentIngredient == null) { return; }
 		if (currentIngredient.ingredient == Ingredients.Water || currentIngredient.ingredient == Ingredients.Melk) {
 			if(!waterController.IsReadyToCheck()) { return; }
@@ -176,14 +195,13 @@ public class AssignmentManager : MonoBehaviour {
 			currentMarge = marge * (int) balanceController.unitPrefix;
 			balanceController.StopGame ();
 		}
-		print (currentAnswer);
 		if(given >= currentAnswer - currentMarge && given <= currentAnswer + currentMarge) {
-			//winLoseText.text = "GOED!!";
+			winLoseText.text = "GOED!!";
 			audio.PlayOneShot(audioGood);
-			savedData.increaseTopians(1);
-			topiansText.text = Convert.ToString(savedData.getTopians ());
+			savedData.increaseTopians(this.level);
+			topiansText.text = "Topians: " + savedData.getTopians ().ToString();
 		} else {
-			//winLoseText.text = "FOUT!!";
+			winLoseText.text = "FOUT!!";
 			audio.PlayOneShot(audioBad);
 		}
 		StartCoroutine (this.startNextGame ());

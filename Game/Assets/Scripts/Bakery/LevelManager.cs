@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System;
+//using System;
 using System.Collections;
 
 public class LevelManager : MonoBehaviour {
@@ -83,7 +83,8 @@ public class LevelManager : MonoBehaviour {
 
 		//Get saved customers from SavedData
 		customers = data.getCustomers ();
-		topiansText.text = Convert.ToString (data.getTopians());
+		//topiansText.text = Convert.ToString (data.getTopians());
+		topiansText.text = data.getTopians ().ToString ();
 
 		counterPlayed = data.getCounterPlayed();
 		workbenchPlayed = data.getWorkBenchPlayed();
@@ -242,7 +243,7 @@ public class LevelManager : MonoBehaviour {
 
 	public IEnumerator StartGame(GameObject hit)
 	{
-		yield return new WaitForSeconds (5);
+		yield return new WaitForSeconds (0);
 
 		this.pauze = true;
 

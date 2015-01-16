@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using System;
+//using System;
 
 public class WaterController : MonoBehaviour {
 	public ContainerManager measuringCup;
@@ -24,7 +24,7 @@ public class WaterController : MonoBehaviour {
 	void Start () {
 		playing = false;
 		// Measuring Cup
-		measuringCup.SetValues (7.34f, true); 
+		measuringCup.SetValues (5.55f, true); 
 
 		// Water
 		maxHeight = 16.8f;
@@ -60,7 +60,7 @@ public class WaterController : MonoBehaviour {
 	}
 
 	public int GetMilliliters() {
-		return Convert.ToInt32((int)unitPrefix * this.transform.localScale.y / maxHeight);
+		return (int) ((int)unitPrefix * this.transform.localScale.y / maxHeight);
 	}
 
 	public void StartStopIncreasing() {
