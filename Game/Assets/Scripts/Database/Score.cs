@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Score : MonoBehaviour {
+public class Score
+{
+	public string name {get; private set;}
+	public int score {get; private set;}
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	public Score(string name, int score)
+	{
+		this.name = name;
+		this.score = score;
 	}
 }

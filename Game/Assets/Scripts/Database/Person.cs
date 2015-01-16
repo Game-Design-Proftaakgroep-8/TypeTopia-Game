@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Person : MonoBehaviour {
+public class Person
+{
+	public string name {get; private set;}
+	public string password {get; private set;}
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	public Person(string name, string password)
+	{
+		this.name = name;
+		this.password = password;
 	}
 }

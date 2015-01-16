@@ -3,21 +3,28 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Database {
+	
+	List<Person> persons;
+	List<Score> scores;
+	List<SumInfo> sums;
 
-//	//fields
-//	private MySqlConnection conn;
-//
-//	public Database()
-//	{
-//		string connectionString =
-//			"server=db4free.net;" +
-//				"database=topiatrainer;" +
-//				"uid=secretagents;" +
-//				"pwd=groep8;" +
-//				"port=3306;";
-//
-//		conn = new MySqlConnection (connectionString);
-//	}
+	public Database()
+	{
+		persons = new List<Person>();
+		scores = new List<Score>();
+		sums = new List<SumInfo>();
+	}
+
+	public void insertTestData()
+	{
+		persons.Add (new Person ("mel", "ww"));
+		persons.Add (new Person ("alex", "123"));
+		persons.Add (new Person ("bart", "bb"));
+
+		scores.Add ("mel", 1100);
+		scores.Add ("alex", 1450);
+		scores.Add ("bart", 760);
+	}
 //
 //	public void ConnectionBase(MySqlCommand command)
 //	{
@@ -670,20 +677,4 @@ public class Database {
 //}
 
 
-public class SumInfo {
-	public int minRange { get; private set; }
-	public int maxRange { get; private set; }
-	public int sumCommas { get; private set; }
-	public List<int> commaOptions { get; private set; }
-	
-	public SumInfo(int minRange, int maxRange, int sumCommas) {
-		this.minRange = minRange;
-		this.maxRange = maxRange;
-		this.sumCommas = sumCommas;
-		this.commaOptions = new List<int>();
-	}
-	
-	public void AddCommaOption(int commaOption) {
-		this.commaOptions.Add(commaOption);
-	}
-}
+
