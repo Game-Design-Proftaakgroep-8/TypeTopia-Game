@@ -94,6 +94,8 @@ public class Database : ISerializable {
 //
 //				count++;
 //			}
+
+		return null;
 	}
 
 	public void AddScore(string name, int score)
