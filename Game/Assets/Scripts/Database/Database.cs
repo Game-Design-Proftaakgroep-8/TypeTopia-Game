@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
-public class Database {
-	
-	List<Person> persons;
-	List<Score> scores;
-	List<SumInfo> sums;
+public class Database : ISerializable {
+	private List<Person> persons;
+	private List<Score> scores;
+	private List<SumInfo> sums;
 
 	public Database()
 	{
