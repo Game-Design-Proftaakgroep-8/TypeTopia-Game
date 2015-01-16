@@ -44,6 +44,7 @@ public class Database {
 		sums.Add (new SumInfo ("volume", 1, 1, 999, 0));
 		sums.Add (new SumInfo ("volume", 2, 0, 100, 1));
 		sums.Add (new SumInfo ("volume", 3, 0, 100, 1));
+		DatabaseHandler.Save (this);
 	}
 
 	public bool CheckLogin(string name, string password)
@@ -77,6 +78,7 @@ public class Database {
 	public void SignIn(string name, string password)
 	{		
 		persons.Add (new Person(name, password));
+		DatabaseHandler.Save (this);
 	}
 
 	public string[] GetHighscore()
@@ -95,13 +97,12 @@ public class Database {
 //
 //				count++;
 //			}
-
-		return null;
 	}
 
 	public void AddScore(string name, int score)
 	{
 		scores.Add (new Score (name, score));
+		DatabaseHandler.Save (this);
 	}
 
 	public SumInfo GetSumInfo(string sumType, int sumLevel)

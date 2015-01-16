@@ -84,7 +84,7 @@ public class LevelManager : MonoBehaviour {
 		//Get saved customers from SavedData
 		customers = data.getCustomers ();
 		//topiansText.text = Convert.ToString (data.getTopians());
-		topiansText.text = data.getTopians ().ToString ();
+		topiansText.text = "Topians: " + data.getTopians ().ToString ();
 
 		counterPlayed = data.getCounterPlayed();
 		workbenchPlayed = data.getWorkBenchPlayed();
@@ -243,6 +243,7 @@ public class LevelManager : MonoBehaviour {
 
 	public IEnumerator StartGame(GameObject hit)
 	{
+		//??
 		yield return new WaitForSeconds (0);
 
 		this.pauze = true;
@@ -253,8 +254,6 @@ public class LevelManager : MonoBehaviour {
 		//start game
 		if (hit == oven && ovenPlayed < maxOven)
 		{
-			print("Start game oven");
-
 			ovenPlayed++;
 			data.setOvenPlayed(ovenPlayed);
 			CustomersToBackground();
@@ -263,8 +262,6 @@ public class LevelManager : MonoBehaviour {
 		}
 		else if (hit == counter && counterPlayed < maxCounter)
 		{
-			print("Start game counter");
-
 			counterPlayed++;
 			data.setCounterPlayed(counterPlayed);
 			CustomersToBackground();
@@ -274,8 +271,6 @@ public class LevelManager : MonoBehaviour {
 		}
 		else if (hit == workbench && workbenchPlayed < maxWorkbench)
 		{
-			print("Start game workbench");
-
 			workbenchPlayed++;
 			data.setWorkbenchPlayed(workbenchPlayed);
 			CustomersToBackground();

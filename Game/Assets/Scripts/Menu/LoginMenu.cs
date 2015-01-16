@@ -16,7 +16,7 @@ public class LoginMenu : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		database = new Database ();
+		database = DatabaseHandler.Load ();
 		data = SavedData.getInstance ();
 		menuScene = "Menu";
 	}

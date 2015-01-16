@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-//using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -77,14 +77,12 @@ public class AssignmentManager : MonoBehaviour {
 		
 		recipe = new Recipe (product, amount);
 		
-		//int enumSize = Enum.GetValues (typeof(Ingredients)).Length;
-		//??
-		int enumSize = 6;
+		int enumSize = Enum.GetValues (typeof(Ingredients)).Length;
 		for (int i = 0; i < enumSize; i++) {
 			// Generate ingredient
 			Ingredients ingredient = (Ingredients)UnityEngine.Random.Range(0, enumSize);
 			while(recipe.FindIngredient(ingredient) != null) {
-				ingredient = (Ingredients)Random.Range(0, enumSize);
+				ingredient = (Ingredients)UnityEngine.Random.Range(0, enumSize);
 			}
 			float answer = 0.1f;
 			// Generate unit
@@ -107,20 +105,28 @@ public class AssignmentManager : MonoBehaviour {
 					break;
 				case 2:
 					if(unit.Equals("g")) {
-						unitPrefix = UnitPrexixes.k;
+						// g kg
+						int randomInt = UnityEngine.Random.Range(0, 2);
+						if(randomInt == 1) {
+							unitPrefix = UnitPrexixes.k;
+						}
 					} else {
 						// ml cl
-						int randomInt = Random.Range(0, 2);
+						int randomInt = UnityEngine.Random.Range(0, 2);
 						int unitIndex = 1 * (int) Mathf.Pow(10, randomInt);
 						unitPrefix = (UnitPrexixes)unitIndex;
 					}
 					break;
 				case 3: 
 					if(unit.Equals("g")) {
-						unitPrefix = UnitPrexixes.k;
+						// g kg
+						int randomInt = UnityEngine.Random.Range(0, 2);
+						if(randomInt == 1) {
+							unitPrefix = UnitPrexixes.k;
+						}
 					} else {
 						// ml cl dl
-						int randomInt = Random.Range(0, 3);
+						int randomInt = UnityEngine.Random.Range(0, 3);
 						int unitIndex = 1 * (int) Mathf.Pow(10, randomInt);
 						unitPrefix = (UnitPrexixes)unitIndex;
 					}
@@ -131,28 +137,26 @@ public class AssignmentManager : MonoBehaviour {
 			bool finished = false;
 			if(i <= amountFinished - 1) { finished = true; }
 			// Generate sum
-			//do {
-				ingredientAmount = Random.Range(sumInfo.minRange, sumInfo.maxRange + 1);
-				for(int j = 1; j <= sumInfo.sumCommas; j++) {
-					if(j == 1 && ingredient != Ingredients.Water && ingredient != Ingredients.Melk) {
+			do {
+				ingredientAmount = UnityEngine.Random.Range(sumInfo.minRange, sumInfo.maxRange + 1);
+				for(int j = 1; j <= sumInfo.sumCommas && unitPrefix != UnitPrexixes.no; j++) {
+					if(j == 1 && unit == "g" && unitPrefix == UnitPrexixes.k) {
 						ingredientAmount = 0;
 					}
-					ingredientAmount += (float) Random.Range(1, 10) / (10 * j);
+					ingredientAmount += (float) UnityEngine.Random.Range(1, 10) / (10 * j);
 				}
 				// answer cannot be to high
 				if((level == 3 && unitPrefix == UnitPrexixes.d && (ingredientAmount * (int)unitPrefix) > (int)UnitPrexixes.no) 
 				   || level == 1 && unit == "l" && (ingredientAmount * (int)unitPrefix) > ((int)UnitPrexixes.no / 2)) {
-					//??	
-					ingredientAmount *= 10;
-					ingredientAmount = (float) Mathf.Round (ingredientAmount);
-					ingredientAmount /= 100;
+					ingredientAmount /= 10;
+					ingredientAmount = (float) Math.Round (ingredientAmount, 1);
 				}
 				answer = (ingredientAmount * (int)unitPrefix) / amount * wanted;
 				if(!finished && answer % 1 != 0) {
 					answer = (float) Mathf.Round(answer);
 					ingredientAmount = answer * amount / wanted / (int)unitPrefix;
 				}
-			//} while ((ingredientAmount * (int)unitPrefix) % 1 != 0);
+			} while ((float)(ingredientAmount * (int)unitPrefix) % 1 != 0);
 			// Add reciperow
 			recipe.AddRecipeRow(ingredient, ingredientAmount, finished, unitPrefix, unit);
 		}
@@ -294,7 +298,11 @@ public class RecipeRow {
 		if(unitPrefix == UnitPrexixes.no) {
 			unitPrefixText = "";
 		}
-		string text = string.Format ("{0} \t\t\t {1} {2}{3}", ingredient.ToString(), amount, unitPrefixText, unit);
+		string tabs = "\t\t\t";
+		if (ingredient == Ingredients.Suiker || ingredient == Ingredients.Water) {
+			tabs = "\t\t";
+		}
+		string text = string.Format ("{0} {1} {2} {3}{4}", ingredient.ToString(), tabs, amount, unitPrefixText, unit);
 		if(finished) {
 			text = "[x] " + text;
 		} else {

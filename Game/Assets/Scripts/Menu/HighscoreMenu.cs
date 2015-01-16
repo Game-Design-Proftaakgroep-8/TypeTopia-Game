@@ -19,7 +19,7 @@ public class HighscoreMenu : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		database = new Database ();
+		database = DatabaseHandler.Load ();
 		menuScene = "Menu";
 		startScene = "BakeryOverview";
 

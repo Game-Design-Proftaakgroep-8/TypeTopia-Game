@@ -2,6 +2,7 @@
 using System.Collections;
 using System;
 
+[Serializable]
 public class Score : IComparable<Score>
 {
 	public string name {get; private set;}
