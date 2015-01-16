@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
+using System;
 
-public class Database : ISerializable {
+[Serializable]
+public class Database {
 	private List<Person> persons;
 	private List<Score> scores;
 	private List<SumInfo> sums;
@@ -81,7 +82,7 @@ public class Database : ISerializable {
 	public string[] GetHighscore()
 	{
 
-
+		return null;
 //			MySqlDataReader reader = cmd.ExecuteReader ();
 //			
 //			while (reader.Read() && count < 5)

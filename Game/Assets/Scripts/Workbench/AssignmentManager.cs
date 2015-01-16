@@ -43,7 +43,7 @@ public class AssignmentManager : MonoBehaviour {
 	}
 
 	private void GenerateRecipe() {
-		this.db = new Database ();
+		this.db = DatabaseHandler.Load ();
 		SumInfo sumInfo = this.db.GetSumInfo ("volume", level);
 		
 		// load amount and recipe
