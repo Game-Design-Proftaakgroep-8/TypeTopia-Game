@@ -20,6 +20,8 @@ public class WaterController : MonoBehaviour {
 	private float visible;
 	private float invisible;
 
+	private float speedPerSecond = 0.005f * 60;
+
 	// Use this for initialization
 	void Start () {
 		playing = false;
@@ -56,7 +58,7 @@ public class WaterController : MonoBehaviour {
 
 	private void ChangeWaterLevelTo(float height) {
 		Vector3 localScale = transform.localScale;
-		transform.localScale = new Vector3(localScale.x, Mathf.Lerp (localScale.y, height, 0.005f), localScale.z);
+		transform.localScale = new Vector3(localScale.x, Mathf.Lerp (localScale.y, height, speedPerSecond * Time.deltaTime), localScale.z);
 	}
 
 	public int GetMilliliters() {

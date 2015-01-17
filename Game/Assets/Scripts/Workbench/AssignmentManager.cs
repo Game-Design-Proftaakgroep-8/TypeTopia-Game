@@ -47,7 +47,7 @@ public class AssignmentManager : MonoBehaviour {
 		SumInfo sumInfo = this.db.GetSumInfo ("volume", level);
 		
 		// load amount and recipe
-		string product = "Brood";
+		string product = "brood";
 		int amount = 0;
 		wanted = 0;
 		int amountFinished = 0;
@@ -139,7 +139,7 @@ public class AssignmentManager : MonoBehaviour {
 			// Generate sum
 			do {
 				ingredientAmount = UnityEngine.Random.Range(sumInfo.minRange, sumInfo.maxRange + 1);
-				for(int j = 1; j <= sumInfo.sumCommas && unitPrefix != UnitPrexixes.no; j++) {
+				for(int j = 1; j <= sumInfo.sumCommas && unitPrefix != UnitPrexixes.no && unitPrefix != UnitPrexixes.m; j++) {
 					if(j == 1 && unit == "g" && unitPrefix == UnitPrexixes.k) {
 						ingredientAmount = 0;
 					}
@@ -151,12 +151,17 @@ public class AssignmentManager : MonoBehaviour {
 					ingredientAmount /= 10;
 					ingredientAmount = (float) Math.Round (ingredientAmount, 1);
 				}
-				answer = (ingredientAmount * (int)unitPrefix) / amount * wanted;
+				if(unit == "l") {
+					answer = (ingredientAmount * (int)unitPrefix) / amount * wanted;
+				} else if (unit == "g") {
+					answer = (ingredientAmount * (int)unitPrefix / (int)UnitPrexixes.no) / amount * wanted;
+				}
 				if(!finished && answer % 1 != 0) {
 					answer = (float) Mathf.Round(answer);
 					ingredientAmount = answer * amount / wanted / (int)unitPrefix;
 				}
-			} while ((float)(ingredientAmount * (int)unitPrefix) % 1 != 0);
+			} while ((unit == "l" && (float)(ingredientAmount * (int)unitPrefix) % 1 != 0) || 
+			         (unit == "g" && (float)(ingredientAmount * (int)unitPrefix / (int)UnitPrexixes.no) % 1 != 0));
 			// Add reciperow
 			recipe.AddRecipeRow(ingredient, ingredientAmount, finished, unitPrefix, unit);
 		}
@@ -298,9 +303,12 @@ public class RecipeRow {
 		if(unitPrefix == UnitPrexixes.no) {
 			unitPrefixText = "";
 		}
-		string tabs = "\t\t\t";
-		if (ingredient == Ingredients.Suiker || ingredient == Ingredients.Water) {
-			tabs = "\t\t";
+		string tabs = "\t\t";
+		if (ingredient == Ingredients.Gist && !finished) {
+			tabs += "\t";
+		}
+		if (ingredient != Ingredients.Suiker || (ingredient == Ingredients.Suiker && !finished)) {
+			tabs += "\t";
 		}
 		string text = string.Format ("{0} {1} {2} {3}{4}", ingredient.ToString(), tabs, amount, unitPrefixText, unit);
 		if(finished) {

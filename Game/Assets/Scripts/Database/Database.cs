@@ -42,8 +42,8 @@ public class Database {
 		sums.Add (new SumInfo ("time", 3, 0, 23, 2));
 		sums.Add (new SumInfo ("volume", 0, 1, 100, 0));
 		sums.Add (new SumInfo ("volume", 1, 1, 999, 0));
-		sums.Add (new SumInfo ("volume", 2, 0, 100, 1));
-		sums.Add (new SumInfo ("volume", 3, 0, 100, 1));
+		sums.Add (new SumInfo ("volume", 2, 1, 100, 1));
+		sums.Add (new SumInfo ("volume", 3, 1, 100, 1));
 		DatabaseHandler.Save (this);
 	}
 

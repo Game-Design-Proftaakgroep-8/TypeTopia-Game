@@ -22,6 +22,8 @@ public class BalanceController : MonoBehaviour {
 	private float visible;
 	private float invisible;
 
+	private int speedPerSecond = 60;
+
 	// Use this for initialization
 	void Start () {
 		playing = false;
@@ -31,7 +33,7 @@ public class BalanceController : MonoBehaviour {
 		stockContainer.SetValues (1.85f, true);
 
 		// Mixing Bowl
-		mixingBowl.SetValues(-1.16f, false);
+		mixingBowl.SetValues(-1.19f, false);
 
 		// Stock Rain
 		visible = 1f;
@@ -52,7 +54,7 @@ public class BalanceController : MonoBehaviour {
 					Vector3 pos = stockRain.position;
 					stockRain.position = new Vector3(pos.x, pos.y, visible);
 
-					currentWeight++;
+					currentWeight += Mathf.Round(Time.deltaTime * speedPerSecond);
 				} else if (!increasingWeight) {
 					Vector3 pos = stockRain.position;
 					stockRain.position = new Vector3(pos.x, pos.y, invisible);
@@ -60,7 +62,7 @@ public class BalanceController : MonoBehaviour {
 				if (decreasingWeight && mixingBowl.OnMaxRotation ()) {
 					// decrease weight
 					if(currentWeight > 0) {
-						currentWeight--;
+						currentWeight -= Mathf.Round(Time.deltaTime * speedPerSecond);
 					}
 				}
 			}

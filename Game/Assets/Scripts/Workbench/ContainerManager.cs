@@ -7,6 +7,7 @@ public class ContainerManager : MonoBehaviour {
 
 	private float maxPosX;
 	private float smoothMove;
+	private float smoothMovePerSecond;
 	private float minRotation;
 	private float maxRotation;
 	private float smoothRotate;
@@ -15,13 +16,17 @@ public class ContainerManager : MonoBehaviour {
 	private bool playing = false;
 	private bool decreasing = false;
 
+	private Vector3 rotationPoint = Vector3.zero;
+	private Vector3 oldPosition = Vector3.zero;
+
 	// Use this for initialization
 	void Start () {
 		maxPosX = 15f;
 		smoothMove = 0.1f;
+		smoothMovePerSecond = smoothMove * 60;
 		minRotation = 0f;
 		maxRotation = 0.9f;
-		smoothRotate = 2.5f;
+		smoothRotate = 2.5f * 60;
 		posY = transform.position.y;
 	}
 
@@ -36,23 +41,26 @@ public class ContainerManager : MonoBehaviour {
 			if(transform.position.x > minPosX + smoothMove) {
 				this.MoveContainerTo(minPosX);
 			} else {
-				Vector3 rotationPoint = transform.position;
-				if(!rotateMiddle) {
-					Vector2 size = transform.gameObject.GetComponent<BoxCollider2D>().bounds.size / 2;
-					rotationPoint = new Vector3 (minPosX - (size.x / 2) - 1, posY - (size.y / 2), 0);
-					//print (rotationPoint);
+				if(oldPosition == Vector3.zero && rotationPoint == Vector3.zero) {
+					rotationPoint = transform.position;
+					oldPosition = transform.position;
+					if(!rotateMiddle) {
+						Vector2 size = transform.gameObject.GetComponent<BoxCollider2D>().bounds.size / 2;
+						rotationPoint = new Vector3 (minPosX - (size.x / 2) - 1, posY - (size.y / 2), 0);
+					}
 				}
 				if (decreasing) {
 					if(transform.localRotation.z < maxRotation) {
 						// rotate
-						transform.RotateAround(rotationPoint, new Vector3(0f, 0f, smoothRotate), 4f);
+						transform.RotateAround(rotationPoint, new Vector3(0f, 0f, smoothRotate * Time.deltaTime), 4f);
 					}
 				} else if (!decreasing) {
 					if(transform.localRotation.z > minRotation) {
 						// rotate back
-						transform.RotateAround(rotationPoint, new Vector3(0f, 0f, -smoothRotate), 4f);
+						transform.RotateAround(rotationPoint, new Vector3(0f, 0f, -smoothRotate * Time.deltaTime), 4f);
 					} else {
 						transform.rotation = Quaternion.identity;
+						transform.position = oldPosition;
 					}
 				}
 			}
@@ -65,7 +73,7 @@ public class ContainerManager : MonoBehaviour {
 
 	private void MoveContainerTo(float posX) {
 		Vector3 pos = transform.position;
-		transform.position = new Vector3(Mathf.Lerp(pos.x, posX, smoothMove), pos.y, pos.z);
+		transform.position = new Vector3(Mathf.Lerp(pos.x, posX, smoothMovePerSecond * Time.deltaTime), pos.y, pos.z);
 	}
 
 	public bool OnMinPosX() {
