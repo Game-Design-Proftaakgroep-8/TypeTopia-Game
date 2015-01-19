@@ -10,6 +10,7 @@ public class OvenManager : MonoBehaviour {
 
 	public Text timerText;
 	public Text timeNeededText;
+	public Text dagdeelText;
 	public Text winText;
 	public Text topiansText;
 
@@ -29,6 +30,7 @@ public class OvenManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		data = SavedData.getInstance ();
+		db = DatabaseHandler.Load ();
 		info = db.GetSumInfo ("time", 1);
 		setTopianText ();
 
@@ -50,6 +52,15 @@ public class OvenManager : MonoBehaviour {
 
     void setTime() {
 		timeH = Random.Range(info.minRange, info.maxRange);
+		if(timeH >= 0 && timeH <= 5)
+			dagdeelText.text = "'s Nachts";
+		else if(timeH >= 6 && timeH <= 11)
+			dagdeelText.text = "'s Morgens";
+		else if(timeH >= 12 && timeH <= 17)
+			dagdeelText.text = "'s Middags";
+		else if(timeH >= 18 && timeH <= 23)
+			dagdeelText.text = "'s Avonds";
+
 		switch (info.sumCommas) {
 		case 0:
 			timeM = 0;
@@ -116,7 +127,7 @@ public class OvenManager : MonoBehaviour {
 		if(!gameOver) {
 			timeTimerH -= 1;
 			if(timeTimerH <= info.minRange)
-				timeTimerH = 11;
+				timeTimerH = 23;
 
 			updateTimer ();
 		}
@@ -136,7 +147,7 @@ public class OvenManager : MonoBehaviour {
 		if(!gameOver) {
 			timeTimerM -= 15;
 			if(timeTimerM <= 0) {
-				timeTimerM = 55;
+				timeTimerM = 45;
 			}
 			updateTimer ();
 		}

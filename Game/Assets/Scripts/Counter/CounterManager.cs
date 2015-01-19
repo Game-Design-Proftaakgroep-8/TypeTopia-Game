@@ -35,7 +35,7 @@ public class CounterManager : MonoBehaviour {
 	void Start () {
 		handMovement = hand.GetComponent<HandMovement> ();
 		data = SavedData.getInstance ();
-		db = new Database ();
+		db = DatabaseHandler.Load ();
 		gameOver = false;
 
 		info = db.GetSumInfo ("money", 1);
