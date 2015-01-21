@@ -306,11 +306,8 @@ public class RecipeRow {
 		if(unitPrefix == UnitPrexixes.no) {
 			unitPrefixText = "";
 		}
-		string tabs = "\t\t";
+		string tabs = "\t\t\t";
 		if (ingredient == Ingredients.Gist && !finished) {
-			tabs += "\t";
-		}
-		if (ingredient != Ingredients.Suiker || !finished) {
 			tabs += "\t";
 		}
 		string text = string.Format ("{0} {1} {2} {3}{4}", ingredient.ToString(), tabs, amount, unitPrefixText, unit);
