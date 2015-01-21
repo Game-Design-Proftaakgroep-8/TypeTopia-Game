@@ -7,6 +7,8 @@ public class WaterController : MonoBehaviour {
 	public ContainerManager measuringCup;
 	public Transform rain;
 	public Text millilitersText;
+	public GameObject tapGlow;
+	public GameObject measuringCupGlow;
 	/// <summary>
 	/// MeasuringCup is 1 [unitPrefix]l
 	/// </summary>
@@ -15,12 +17,14 @@ public class WaterController : MonoBehaviour {
 	private bool playing;
 	private bool increasing = false;
 	private bool decreasing = false;
+	private bool glow = false;
 	private float maxHeight;
 	private float minHeight;
 	private float visible;
 	private float invisible;
 
 	private float speedPerSecond = 0.005f * 60;
+	private int level;
 
 	// Use this for initialization
 	void Start () {
@@ -42,10 +46,20 @@ public class WaterController : MonoBehaviour {
 		if(playing){
 			if(measuringCup.OnMinPosX()) {
 				millilitersText.text = this.GetMilliliters ().ToString() + " ml";
+				if(level == 0 && glow) {
+					StartCoroutine(this.ShowGlow(this.tapGlow));
+					glow = false;
+				}
 				if(increasing) {
 					this.ChangeWaterLevelTo(maxHeight);
+					if(this.GetMilliliters() > 900 && level == 0 && !glow) {
+						glow = true;
+					}
 				} else if (decreasing && measuringCup.OnMaxRotation ()) {
 					this.ChangeWaterLevelTo(minHeight);
+					if(this.GetMilliliters() <= 1 && level == 0) {
+						StartCoroutine(this.ShowGlow(this.measuringCupGlow));
+					}
 				}
 			}
 		} else {
@@ -53,6 +67,15 @@ public class WaterController : MonoBehaviour {
 				Vector3 localScale = this.transform.localScale;
 				this.transform.localScale = new Vector3(localScale.x, 0f, localScale.z);
 			}
+		}
+	}
+
+	private IEnumerator ShowGlow(GameObject glow) {
+		for (int i = 0; i < 3 && glow != null; i++) {
+			glow.renderer.sortingOrder = 1;
+			yield return new WaitForSeconds(1);
+			glow.renderer.sortingOrder = -1;
+			yield return new WaitForSeconds(1);
 		}
 	}
 
@@ -74,6 +97,9 @@ public class WaterController : MonoBehaviour {
 			rain.position = new Vector3(pos.x, pos.y, visible);
 		} else {
 			rain.position = new Vector3(pos.x, pos.y, invisible);
+			if(level == 0 && this.GetMilliliters() > 900) {
+				StartCoroutine(this.ShowGlow(this.measuringCupGlow));
+			}
 		}
 	}
 
@@ -88,9 +114,11 @@ public class WaterController : MonoBehaviour {
 		return !decreasing && !increasing && measuringCup.OnMinRotation () && measuringCup.OnMinPosX ();
 	}
 
-	public void StartGame() {
+	public void StartGame(int level) {
 		if(!playing) {
 			this.playing = true;
+			this.level = level;
+			this.glow = true;
 			measuringCup.StartGame();
 		}
 	}
@@ -98,6 +126,8 @@ public class WaterController : MonoBehaviour {
 	public void StopGame() {
 		if(playing) {
 			this.playing = false;
+			this.glow = false;
+			this.level = -1;
 			millilitersText.text = string.Empty;
 			measuringCup.StopGame();
 		}

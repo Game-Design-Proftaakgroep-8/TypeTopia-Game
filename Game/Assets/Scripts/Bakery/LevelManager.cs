@@ -35,10 +35,13 @@ public class LevelManager : MonoBehaviour {
 
 	private int counterPlayed = 0;
 	private int maxCounter;
+	public GameObject counterGlow;
 	private int workbenchPlayed = 0;
 	private int maxWorkbench;
+	public GameObject workbenchGlow;
 	private int ovenPlayed = 0;
 	private int maxOven;
+	public GameObject ovenGlow;
 
 	public Text geslaagd;
 	public Text topiansText;
@@ -153,7 +156,6 @@ public class LevelManager : MonoBehaviour {
 
 						int nr = nextCustomerNr - leftCount;
 						cus.GetComponent<Customer>().SetNewPosition(GetCustomerPosition(nr));
-						print (nextCustomerNr);
 						customers[nextCustomerNr - 1] = cus;
 
 						if (nextCustomerNr < nrOfCustomers)
@@ -243,7 +245,6 @@ public class LevelManager : MonoBehaviour {
 
 	public IEnumerator StartGame(GameObject hit)
 	{
-		//??
 		yield return new WaitForSeconds (0);
 
 		this.pauze = true;
@@ -252,30 +253,78 @@ public class LevelManager : MonoBehaviour {
 		data.updateCustomers(this.customers, this.nextCustomerNr, this.leftCount);
 
 		//start game
-		if (hit == oven && ovenPlayed < maxOven)
+		if (hit == workbench && workbenchPlayed < maxWorkbench)
 		{
-			ovenPlayed++;
-			data.setOvenPlayed(ovenPlayed);
-			CustomersToBackground();
+			if (ovenPlayed == 0 || (ovenPlayed == 1 && counterPlayed == 2))
+			{
+				workbenchPlayed++;
+				data.setWorkbenchPlayed(workbenchPlayed);
+				CustomersToBackground();
+				
+				Application.LoadLevel(workbenchScene);
+			}
+		}
+		else if (hit == oven && ovenPlayed < maxOven)
+		{
+			if ((workbenchPlayed == 1 && counterPlayed == 0) || (workbenchPlayed == 2))
+			{
+				ovenPlayed++;
+				data.setOvenPlayed(ovenPlayed);
+				CustomersToBackground();
 
-			Application.LoadLevel(ovenScene);
+				Application.LoadLevel(ovenScene);
+			}
 		}
 		else if (hit == counter && counterPlayed < maxCounter)
 		{
-			counterPlayed++;
-			data.setCounterPlayed(counterPlayed);
-			CustomersToBackground();
-			this.Leave();
+			if ((ovenPlayed == 1 && counterPlayed == 1) || (ovenPlayed == 2 && counterPlayed == 2))
+			{
+				counterPlayed++;
+				data.setCounterPlayed(counterPlayed);
+				CustomersToBackground();
+				this.Leave();
 
-			Application.LoadLevel(counterScene);
+				Application.LoadLevel(counterScene);
+			}
 		}
-		else if (hit == workbench && workbenchPlayed < maxWorkbench)
-		{
-			workbenchPlayed++;
-			data.setWorkbenchPlayed(workbenchPlayed);
-			CustomersToBackground();
+	}
 
-			Application.LoadLevel(workbenchScene);
+	public IEnumerator showObjectToTouch()
+	{
+		if (data.getLevel() == 0)
+		{
+			if (workbenchPlayed == 0)
+			{
+				for (int i = 0; i < 3; i++)
+				{
+					workbenchGlow.renderer.sortingOrder = 5;
+					yield return new WaitForSeconds (1);
+					workbenchGlow.renderer.sortingOrder = -2;
+					yield return new WaitForSeconds (1);
+				}
+			}
+
+			if (workbenchPlayed == 1 && ovenPlayed == 0)
+			{
+				for (int i = 0; i < 3; i++)
+				{
+					ovenGlow.renderer.sortingOrder = 5;
+					yield return new WaitForSeconds (1);
+					ovenGlow.renderer.sortingOrder = -2;
+					yield return new WaitForSeconds (1);
+				}
+			}
+
+			if (workbenchPlayed == 1 && ovenPlayed == 1 && counterPlayed == 0)
+			{
+				for (int i = 0; i < 3; i++)
+				{
+					counterGlow.renderer.sortingOrder = 5;
+					yield return new WaitForSeconds (1);
+					counterGlow.renderer.sortingOrder = -2;
+					yield return new WaitForSeconds (1);
+				}
+			}
 		}
 	}
 
@@ -298,7 +347,8 @@ public class LevelManager : MonoBehaviour {
 
 	public void stop()
 	{
-		data.deleteInstance ();
+		data.reset ();
+		data.resetTopians ();
 		
 		//Remove customers
 		foreach (GameObject g in this.customers)
@@ -315,7 +365,8 @@ public class LevelManager : MonoBehaviour {
 	public IEnumerator StopGame()
 	{
 		yield return new WaitForSeconds (5);
-		data.deleteInstance ();
+		data.reset ();
+		data.resetTopians ();
 
 		//Remove customers
 		foreach (GameObject g in this.customers)

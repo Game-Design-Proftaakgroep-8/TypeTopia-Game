@@ -179,9 +179,9 @@ public class AssignmentManager : MonoBehaviour {
 			currentAnswer = (int) ((currentIngredient.amount * (int)currentIngredient.unitPrefix) / recipe.amount * wanted);
 			if(currentIngredient.ingredient == Ingredients.Water || currentIngredient.ingredient == Ingredients.Melk) {
 				// Ingredient meegeven
-				waterController.StartGame();
+				waterController.StartGame(this.level);
 			} else {
-				balanceController.StartGame ();
+				balanceController.StartGame (this.level);
 			}
 		} else {
 			winLoseText.text = "Einde van dit spel";
