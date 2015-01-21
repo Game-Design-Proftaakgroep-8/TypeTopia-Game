@@ -23,6 +23,12 @@ public class HighscoreMenu : MonoBehaviour {
 		menuScene = "Menu";
 		startScene = "BakeryOverview";
 
+		score1.text = "1. ";
+		score2.text = "2. ";
+		score3.text = "3. ";
+		score4.text = "4. ";
+		score5.text = "5. ";
+
 		getScore ();
 	}
 	
@@ -34,11 +40,31 @@ public class HighscoreMenu : MonoBehaviour {
 	public void getScore()
 	{
 		string[] scores = database.GetHighscore();
-		score1.text = "1. " + scores[0].ToString() + " Topians";
-		score2.text = "2. " + scores[1].ToString() + " Topians";
-		score3.text = "3. " + scores[2].ToString() + " Topians";
-		score4.text = "4. " + scores[3].ToString() + " Topians";
-		score5.text = "5. " + scores[4].ToString() + " Topians";
+
+		if (scores[0] != null)
+		{
+			score1.text = "1. " + scores[0].ToString();
+		}
+
+		if (scores[1] != null)
+		{
+			score2.text = "2. " + scores[1].ToString();
+		}
+
+		if (scores[2] != null)
+		{
+			score3.text = "3. " + scores[2].ToString();
+		}
+		
+		if (scores[3] != null)
+		{
+			score4.text = "4. " + scores[3].ToString();
+		}
+
+		if (scores[4] != null)
+		{
+			score5.text = "5. " + scores[4].ToString();
+		}
 	}
 
 	public void StartGame()

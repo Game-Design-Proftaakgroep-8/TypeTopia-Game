@@ -255,29 +255,37 @@ public class LevelManager : MonoBehaviour {
 		//start game
 		if (hit == workbench && workbenchPlayed < maxWorkbench)
 		{
-			//if (workbenchPlayed < 
-			workbenchPlayed++;
-			data.setWorkbenchPlayed(workbenchPlayed);
-			CustomersToBackground();
-			
-			Application.LoadLevel(workbenchScene);
+			if (ovenPlayed == 0 || (ovenPlayed == 1 && counterPlayed == 2))
+			{
+				workbenchPlayed++;
+				data.setWorkbenchPlayed(workbenchPlayed);
+				CustomersToBackground();
+				
+				Application.LoadLevel(workbenchScene);
+			}
 		}
 		else if (hit == oven && ovenPlayed < maxOven)
 		{
-			ovenPlayed++;
-			data.setOvenPlayed(ovenPlayed);
-			CustomersToBackground();
+			if ((workbenchPlayed == 1 && counterPlayed == 0) || (workbenchPlayed == 2))
+			{
+				ovenPlayed++;
+				data.setOvenPlayed(ovenPlayed);
+				CustomersToBackground();
 
-			Application.LoadLevel(ovenScene);
+				Application.LoadLevel(ovenScene);
+			}
 		}
 		else if (hit == counter && counterPlayed < maxCounter)
 		{
-			counterPlayed++;
-			data.setCounterPlayed(counterPlayed);
-			CustomersToBackground();
-			this.Leave();
+			if ((ovenPlayed == 1 && counterPlayed == 1) || (ovenPlayed == 2 && counterPlayed == 2))
+			{
+				counterPlayed++;
+				data.setCounterPlayed(counterPlayed);
+				CustomersToBackground();
+				this.Leave();
 
-			Application.LoadLevel(counterScene);
+				Application.LoadLevel(counterScene);
+			}
 		}
 	}
 
@@ -285,11 +293,8 @@ public class LevelManager : MonoBehaviour {
 	{
 		if (data.getLevel() == 0)
 		{
-			print ("wanna show");
-
 			if (workbenchPlayed == 0)
 			{
-				print ("workbench");
 				for (int i = 0; i < 3; i++)
 				{
 					workbenchGlow.renderer.sortingOrder = 5;
@@ -301,7 +306,6 @@ public class LevelManager : MonoBehaviour {
 
 			if (workbenchPlayed == 1 && ovenPlayed == 0)
 			{
-				print ("oven");
 				for (int i = 0; i < 3; i++)
 				{
 					ovenGlow.renderer.sortingOrder = 5;
@@ -313,7 +317,6 @@ public class LevelManager : MonoBehaviour {
 
 			if (workbenchPlayed == 1 && ovenPlayed == 1 && counterPlayed == 0)
 			{
-				print ("counter");
 				for (int i = 0; i < 3; i++)
 				{
 					counterGlow.renderer.sortingOrder = 5;

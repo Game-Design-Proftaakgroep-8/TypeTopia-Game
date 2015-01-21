@@ -15,6 +15,6 @@ public class Score : IComparable<Score>
 	}
 
 	public int CompareTo(Score other) {
-		return this.score.CompareTo (other.score);
+		return other.score.CompareTo (this.score);
 	}
 }

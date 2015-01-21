@@ -42,7 +42,6 @@ public class CharacterMovement : MonoBehaviour {
 			{
 				if (touches >= 15)
 				{
-					print ("touched 5 times");
 					StartCoroutine(level.showObjectToTouch());
 					touches = 0;
 				}

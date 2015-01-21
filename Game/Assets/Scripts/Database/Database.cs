@@ -22,9 +22,9 @@ public class Database {
 		persons.Add (new Person ("alex", "123"));
 		persons.Add (new Person ("bart", "bb"));
 
-		scores.Add (new Score("mel", 1100));
-		scores.Add (new Score("alex", 1450));
-		scores.Add (new Score("bart", 760));
+		scores.Add (new Score("mel", 18));
+		scores.Add (new Score("alex", 12));
+		scores.Add (new Score("bart", 4));
 
 		sums.Add (new SumInfo ("money", 0, 1, 10, 0));
 		sums.Add (new SumInfo ("money", 1, 0, 5, 1));
@@ -83,20 +83,20 @@ public class Database {
 
 	public string[] GetHighscore()
 	{
+		this.scores.Sort ();
+		string[] highscores = new string[5];
 
-		return null;
-//			MySqlDataReader reader = cmd.ExecuteReader ();
-//			
-//			while (reader.Read() && count < 5)
-//			{
-//				string name = reader.GetString("pName");
-//				int score = reader.GetInt32("score");
-//
-//				string total = name + " - " + score;
-//				scores[count] = total;
-//
-//				count++;
-//			}
+		int size = scores.Count;
+		int count = 0;
+
+		while (count < 5 && count < size)
+		{
+			string s = this.scores[count].name + " - " + this.scores[count].score + " Topians";
+			highscores[count] = s;
+			count++;
+		}
+
+		return highscores;
 	}
 
 	public void AddScore(string name, int score)
