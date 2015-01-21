@@ -161,6 +161,7 @@ public class CounterManager : MonoBehaviour {
 
 	public void addCustomerMoney(double money) {
 		moneyCustomer += money;
+		moneyCustomer = (double)Mathf.Round((float)moneyCustomer * 100f) / 100f;
 		print (moneyCustomer);
 	}
 
