@@ -1,0 +1,5 @@
+- zwarte tekst, bij donkere achtergrond wit
+- niet eerst 5x fout klikken
+- goed bericht: Goed gedaan!
+- fout bericht: Te veel! / Te weinig!
+of: Te lang! / Te kort!

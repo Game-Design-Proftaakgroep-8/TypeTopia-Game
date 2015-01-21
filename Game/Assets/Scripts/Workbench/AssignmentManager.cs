@@ -37,7 +37,6 @@ public class AssignmentManager : MonoBehaviour {
 		marge = 10f;
 		recipeText.text = recipe.ToString();
 		wantedText.text = "Ik wil " + wanted.ToString () + "x " + recipe.product;
-		//productText.text = recipe.product;
 		topiansText.text = "Topians: " + savedData.getTopians ().ToString();
 		StartCoroutine (this.startFirstGame());
 	}
@@ -184,7 +183,6 @@ public class AssignmentManager : MonoBehaviour {
 				balanceController.StartGame (this.level);
 			}
 		} else {
-			winLoseText.text = "Einde van dit spel";
 			StartCoroutine (this.backToOverview());
 		}
 	}
@@ -205,12 +203,17 @@ public class AssignmentManager : MonoBehaviour {
 			balanceController.StopGame ();
 		}
 		if(given >= currentAnswer - currentMarge && given <= currentAnswer + currentMarge) {
-			winLoseText.text = "GOED!!";
+			winLoseText.text = "Goed gedaan!";
 			audio.PlayOneShot(audioGood);
 			savedData.increaseTopians(this.level);
 			topiansText.text = "Topians: " + savedData.getTopians ().ToString();
 		} else {
-			winLoseText.text = "FOUT!!";
+			if(given < currentAnswer - currentMarge) {
+				winLoseText.text = "Te weinig!";
+			}
+			if(given > currentAnswer + currentMarge) {
+				winLoseText.text = "Te veel!";
+			}
 			audio.PlayOneShot(audioBad);
 		}
 		StartCoroutine (this.startNextGame ());

@@ -28,8 +28,8 @@ public class BalanceController : MonoBehaviour {
 	private int level;
 
 	private GameObject stockContainerGlow;
-	private int containerGlowed;
-	private int mixingBowlGlowed;
+	private int containerGlowed = 0;
+	private int mixingBowlGlowed = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -57,7 +57,7 @@ public class BalanceController : MonoBehaviour {
 				}
 				milligramsText.text = currentWeight + " " + unitPrefixText + "g";
 				if(level == 0 && glowContainer && containerGlowed < 2) {
-					StartCoroutine(this.ShowGlow(this.stockContainerGlow));
+					StartCoroutine(this.ShowContainerGlow());
 					containerGlowed++;
 					glowContainer = false;
 				}
@@ -67,7 +67,7 @@ public class BalanceController : MonoBehaviour {
 					stockRain.position = new Vector3(pos.x, pos.y, visible);
 
 					currentWeight += Mathf.Round(Time.deltaTime * speedPerSecond);
-					if(currentWeight > 100 && level == 0 && containerGlowed < 2) {
+					if(currentWeight > 800 && level == 0 && containerGlowed < 2) {
 						glowContainer = true;
 					}
 				} else if (!increasingWeight) {
@@ -78,8 +78,9 @@ public class BalanceController : MonoBehaviour {
 					// decrease weight
 					if(currentWeight > 0) {
 						currentWeight -= Mathf.Round(Time.deltaTime * speedPerSecond);
-					} else if (level == 0 && mixingBowlGlowed < 2) {
-						StartCoroutine(this.ShowGlow(this.mixingBowlGlow));
+					}
+					if (currentWeight <= 1 && level == 0 && mixingBowlGlowed < 2) {
+						StartCoroutine(this.ShowMixingGlow());
 						mixingBowlGlowed++;
 					}
 				}
@@ -89,11 +90,24 @@ public class BalanceController : MonoBehaviour {
 		}
 	}
 
-	private IEnumerator ShowGlow(GameObject glow) {
-		for (int i = 0; i < 3 && glow != null; i++) {
-			glow.renderer.sortingOrder = 1;
+	private IEnumerator ShowContainerGlow() {
+		for (int i = 0; i < 3 && stockContainerGlow != null; i++) {
+			stockContainerGlow.renderer.sortingOrder = 1;
 			yield return new WaitForSeconds(1);
-			glow.renderer.sortingOrder = -1;
+			if(stockContainerGlow != null) {
+				stockContainerGlow.renderer.sortingOrder = -1;
+			}
+			yield return new WaitForSeconds(1);
+		}
+	}
+
+	private IEnumerator ShowMixingGlow() {
+		for (int i = 0; i < 3 && mixingBowlGlow != null; i++) {
+			mixingBowlGlow.transform.localPosition = Vector3.zero;
+			yield return new WaitForSeconds(1);
+			if(mixingBowlGlow != null) {
+				mixingBowlGlow.transform.localPosition = new Vector3(0, 0, -10);
+			}
 			yield return new WaitForSeconds(1);
 		}
 	}
@@ -107,8 +121,8 @@ public class BalanceController : MonoBehaviour {
 			increasingWeight = !increasingWeight;
 			stockContainer.StartStopDecreasing ();
 		}
-		if (!increasingWeight && level == 0 && currentWeight > 100 && mixingBowlGlowed < 2) {
-			StartCoroutine(this.ShowGlow(this.mixingBowlGlow));
+		if (!increasingWeight && level == 0 && currentWeight > 800 && mixingBowlGlowed < 2) {
+			StartCoroutine(this.ShowMixingGlow());
 			this.mixingBowlGlowed++;
 		}
 	}
@@ -128,8 +142,6 @@ public class BalanceController : MonoBehaviour {
 		if(!playing) {
 			this.playing = true;
 			this.level = level;
-			this.containerGlowed = 0;
-			this.mixingBowlGlowed = 0;
 			this.stockContainerGlow = stockContainer.gameObject.transform.GetChild(0).FindChild("glow3").gameObject;
 			this.glowContainer = true;
 			stockContainer.StartGame();

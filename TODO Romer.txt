@@ -1,3 +1,4 @@
-- Oplichten/Hints geven
+
+- Animatie van oven (door OG?)
 
 - usertesten regelen
