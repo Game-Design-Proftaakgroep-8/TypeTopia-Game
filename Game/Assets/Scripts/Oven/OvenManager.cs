@@ -31,7 +31,11 @@ public class OvenManager : MonoBehaviour {
 	void Start () {
 		data = SavedData.getInstance ();
 		db = DatabaseHandler.Load ();
-		info = db.GetSumInfo ("time", 1);
+		info = db.GetSumInfo ("time", 0);
+
+		if(info.sumLevel == 0)
+			winText.text = "Zet de ovenklok op de juiste digitale tijd";
+
 		setTopianText ();
 
 		gameOver = false;
@@ -116,7 +120,7 @@ public class OvenManager : MonoBehaviour {
 	public void increaseHour() {
 		if(!gameOver) {
 			timeTimerH += 1;
-			if(timeTimerH >= info.maxRange)
+			if(timeTimerH > info.maxRange)
 				timeTimerH = 0;
 
 			updateTimer ();
@@ -126,7 +130,7 @@ public class OvenManager : MonoBehaviour {
 	public void decreaseHour() {
 		if(!gameOver) {
 			timeTimerH -= 1;
-			if(timeTimerH <= info.minRange)
+			if(timeTimerH < info.minRange)
 				timeTimerH = 23;
 
 			updateTimer ();
@@ -146,7 +150,7 @@ public class OvenManager : MonoBehaviour {
 	public void decreaseMinute() {
 		if(!gameOver) {
 			timeTimerM -= 15;
-			if(timeTimerM <= 0) {
+			if(timeTimerM < 0) {
 				timeTimerM = 45;
 			}
 			updateTimer ();
@@ -156,17 +160,17 @@ public class OvenManager : MonoBehaviour {
 	public void confirm() {
 		setGivenAnswer ();
 		if(givenAnswer == answer) {
-			winText.text = "Goed Gedaan!";
+			winText.text = "Goed gedaan!";
 			data.increaseTopians(1);
 			setTopianText();
 			gameOver = true;
 		}
 		else if(givenAnswer < answer) {
-			winText.text = "De tijd was te kort!";
+			winText.text = "Te kort!";
 			gameOver = true;
 		}
 		else if(givenAnswer > answer) {
-			winText.text = "Je hebt het aan laten branden!";
+			winText.text = "Te lang!";
 			gameOver = true;
 		}
 		StartCoroutine (returnToOverview());

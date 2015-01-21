@@ -44,7 +44,7 @@ public class CounterManager : MonoBehaviour {
 		db = DatabaseHandler.Load ();
 		gameOver = false;
 
-		info = db.GetSumInfo ("money", 1);
+		info = db.GetSumInfo ("money", data.getLevel ());
 		moneyCustomer = 0;
 		setTopianText ();
 		setQuestion ();
@@ -80,6 +80,9 @@ public class CounterManager : MonoBehaviour {
 		demandCustomer = (int)Mathf.Round(Random.Range (info.minRange + 1, info.maxRange + 1));
 		cost = priceBread * demandCustomer;
 
+		if (cost == 100)
+			setQuestion ();
+
 		print ("priceBread: " + priceBread);
 		print ("demandCustomer: " + demandCustomer);
 		print ("cost: " + cost);
@@ -112,7 +115,7 @@ public class CounterManager : MonoBehaviour {
 
 	private void generateCustomerMoney() {
 		GameObject money = (GameObject)eenEuro;
-		Vector2 inHand = new Vector2(hand.transform.position.x, hand.transform.position.y);
+		Vector2 inHand = new Vector2 (hand.transform.position.x, hand.transform.position.y);
 
 		if(cost < 0.05) {
 			money = (GameObject)Instantiate(vijfCent);
@@ -144,6 +147,9 @@ public class CounterManager : MonoBehaviour {
         else if(cost < 50) {
 			money = (GameObject)Instantiate(vijftigEuro);
         }
+		else {
+			money = (GameObject)Instantiate(vijftigEuro);
+		}
 
 		money.GetComponent<MoneyManager>().setStartMoney(true);
 		moneyCustomer += money.GetComponent<MoneyManager>().getAmount();
