@@ -6,6 +6,7 @@ public class HandMovement : MonoBehaviour {
 	private int moveDirection;
 	private float handSpeed;
 
+
 	// Use this for initialization
 	void Start () {
 		moveDirection = 0;

@@ -7,11 +7,14 @@ public class DragManager : MonoBehaviour {
 
 	private GameObject lastTouched;
 
+	private bool handGlowShown;
+
 	// Use this for initialization
 	void Start () {
 		manager = GameObject.Find ("Manager").GetComponent<CounterManager> ();
 
 		lastTouched = null;
+		handGlowShown = false;
 	}
 	
 	// Update is called once per frame
@@ -68,6 +71,11 @@ public class DragManager : MonoBehaviour {
 
 					money.transform.position = hit.transform.position;
 					lastTouched = InputDetection.CheckTouch(touch.position);
+
+					if(!handGlowShown) {
+						handGlowShown = true;
+						StartCoroutine(manager.ShowHandGlow());
+					}
 				}
             }
         }

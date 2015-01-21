@@ -31,7 +31,7 @@ public class OvenManager : MonoBehaviour {
 	void Start () {
 		data = SavedData.getInstance ();
 		db = DatabaseHandler.Load ();
-		info = db.GetSumInfo ("time", 0);
+		info = db.GetSumInfo ("time", data.getLevel ());
 
 		if(info.sumLevel == 0)
 			winText.text = "Zet de ovenklok op de juiste digitale tijd";

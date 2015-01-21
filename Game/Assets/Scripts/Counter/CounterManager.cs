@@ -5,6 +5,8 @@ using System.Collections;
 public class CounterManager : MonoBehaviour {
 
 	public GameObject hand;
+	public GameObject handGlow;
+	public GameObject registerGlow;
 	private HandMovement handMovement;
 	private SavedData data;
 	private Database db;
@@ -36,6 +38,9 @@ public class CounterManager : MonoBehaviour {
 	private double cost;
 	private double answer;
 
+	private bool handGlowShown;
+	private bool registerGlowShown;
+
 
 	// Use this for initialization
 	void Start () {
@@ -43,6 +48,8 @@ public class CounterManager : MonoBehaviour {
 		data = SavedData.getInstance ();
 		db = DatabaseHandler.Load ();
 		gameOver = false;
+		handGlowShown = false;
+		registerGlowShown = false;
 
 		info = db.GetSumInfo ("money", data.getLevel ());
 		moneyCustomer = 0;
@@ -53,7 +60,12 @@ public class CounterManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		if(hand.transform.position.y <= 3f || hand.transform.position.y >= 9f) {
+			if(!handGlowShown) {
+				handGlowShown = true;
+				StartCoroutine(ShowHandGlow());
+			}
+		}
 	}
 
 	private void setQuestion() {
@@ -169,6 +181,11 @@ public class CounterManager : MonoBehaviour {
 		moneyCustomer += money;
 		moneyCustomer = (double)Mathf.Round((float)moneyCustomer * 100f) / 100f;
 		print (moneyCustomer);
+
+		if(!registerGlowShown) {
+			registerGlowShown = true;
+			StartCoroutine(ShowRegisterGlow());
+		}
 	}
 
 	public void confirm() {
@@ -191,5 +208,27 @@ public class CounterManager : MonoBehaviour {
 	public IEnumerator returnToOverview() {
 		yield return new WaitForSeconds(5);
 		Application.LoadLevel ("BakeryOverview");
+	}
+
+	public IEnumerator ShowHandGlow() {
+		for (int i = 0; i < 3 && handGlow != null; i++) {
+			handGlow.renderer.sortingOrder = 0;
+			yield return new WaitForSeconds(1);
+			if(handGlow != null) {
+				handGlow.renderer.sortingOrder = -1;
+			}
+			yield return new WaitForSeconds(1);
+		}
+	}
+
+	public IEnumerator ShowRegisterGlow() {
+		for (int i = 0; i < 3 && registerGlow != null; i++) {
+			registerGlow.renderer.sortingOrder = 0;
+			yield return new WaitForSeconds(1);
+			if(handGlow != null) {
+				registerGlow.renderer.sortingOrder = -1;
+			}
+			yield return new WaitForSeconds(1);
+		}
 	}
 }
