@@ -347,7 +347,8 @@ public class LevelManager : MonoBehaviour {
 
 	public void stop()
 	{
-		data.deleteInstance ();
+		data.reset ();
+		data.resetTopians ();
 		
 		//Remove customers
 		foreach (GameObject g in this.customers)
@@ -364,7 +365,8 @@ public class LevelManager : MonoBehaviour {
 	public IEnumerator StopGame()
 	{
 		yield return new WaitForSeconds (5);
-		data.deleteInstance ();
+		data.reset ();
+		data.resetTopians ();
 
 		//Remove customers
 		foreach (GameObject g in this.customers)
