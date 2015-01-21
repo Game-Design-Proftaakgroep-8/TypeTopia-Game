@@ -35,7 +35,7 @@ public class AssignmentManager : MonoBehaviour {
 		GenerateRecipe ();
 
 		marge = 10f;
-		recipeText.text = recipe.ToString();
+		recipeText.text = recipe.ToString() + "\nJe mag 10 van het antwoord afwijken";
 		wantedText.text = "Ik wil " + wanted.ToString () + "x " + recipe.product;
 		topiansText.text = "Topians: " + savedData.getTopians ().ToString();
 		StartCoroutine (this.startFirstGame());
@@ -218,7 +218,7 @@ public class AssignmentManager : MonoBehaviour {
 		}
 		StartCoroutine (this.startNextGame ());
 		recipe.CheckFirst();
-		recipeText.text = recipe.ToString ();
+		recipeText.text = recipe.ToString () + "\nJe mag 10 van het antwoord afwijken";
 	}
 
 	private IEnumerator startFirstGame() {
