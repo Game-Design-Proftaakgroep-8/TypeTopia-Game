@@ -35,7 +35,7 @@ public class AssignmentManager : MonoBehaviour {
 		GenerateRecipe ();
 
 		marge = 10f;
-		recipeText.text = recipe.ToString();
+		recipeText.text = recipe.ToString() + "\nJe mag 10 van het antwoord afwijken";
 		wantedText.text = "Ik wil " + wanted.ToString () + "x " + recipe.product;
 		topiansText.text = "Topians: " + savedData.getTopians ().ToString();
 		StartCoroutine (this.startFirstGame());
@@ -218,7 +218,7 @@ public class AssignmentManager : MonoBehaviour {
 		}
 		StartCoroutine (this.startNextGame ());
 		recipe.CheckFirst();
-		recipeText.text = recipe.ToString ();
+		recipeText.text = recipe.ToString () + "\nJe mag 10 van het antwoord afwijken";
 	}
 
 	private IEnumerator startFirstGame() {
@@ -233,7 +233,7 @@ public class AssignmentManager : MonoBehaviour {
 	}
 
 	private IEnumerator backToOverview() {
-		yield return new WaitForSeconds (3);
+		yield return new WaitForSeconds (2);
 		Application.LoadLevel ("BakeryOverview");
 	}
 }
@@ -306,8 +306,11 @@ public class RecipeRow {
 		if(unitPrefix == UnitPrexixes.no) {
 			unitPrefixText = "";
 		}
-		string tabs = "\t\t\t";
+		string tabs = "\t\t";
 		if (ingredient == Ingredients.Gist && !finished) {
+			tabs += "\t";
+		}
+		if (ingredient != Ingredients.Suiker || !finished) {
 			tabs += "\t";
 		}
 		string text = string.Format ("{0} {1} {2} {3}{4}", ingredient.ToString(), tabs, amount, unitPrefixText, unit);
