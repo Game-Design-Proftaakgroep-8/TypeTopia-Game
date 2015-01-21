@@ -52,7 +52,7 @@ public class WaterController : MonoBehaviour {
 				}
 				if(increasing) {
 					this.ChangeWaterLevelTo(maxHeight);
-					if(this.GetMilliliters() > 100 && level == 0) {
+					if(this.GetMilliliters() > 900 && level == 0 && !glow) {
 						glow = true;
 					}
 				} else if (decreasing && measuringCup.OnMaxRotation ()) {
@@ -97,7 +97,7 @@ public class WaterController : MonoBehaviour {
 			rain.position = new Vector3(pos.x, pos.y, visible);
 		} else {
 			rain.position = new Vector3(pos.x, pos.y, invisible);
-			if(level == 0 && this.GetMilliliters() > 100) {
+			if(level == 0 && this.GetMilliliters() > 900) {
 				StartCoroutine(this.ShowGlow(this.measuringCupGlow));
 			}
 		}

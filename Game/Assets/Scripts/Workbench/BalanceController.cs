@@ -63,7 +63,7 @@ public class BalanceController : MonoBehaviour {
 					stockRain.position = new Vector3(pos.x, pos.y, visible);
 
 					currentWeight += Mathf.Round(Time.deltaTime * speedPerSecond);
-					if(currentWeight > 100 && level == 0) {
+					if(currentWeight > 100 && level == 0 && !glowContainer) {
 						glowContainer = true;
 					}
 				} else if (!increasingWeight) {

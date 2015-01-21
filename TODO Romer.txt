@@ -1,13 +1,3 @@
 - Oplichten/Hints geven
-- logische volgorde (levels) + weglopen klanten
-- eerst startlevel voor leren gameplay
-- score (topians?) (1 punt oven, 1 punt afrekenen, 1 punt per ingredient)
-- Geluiden
-- Oven: tijd invullen ipv min.
-- Afrekenen: geld dat klant geeft beter afstemmen
-- Animatie van oven (door OG?)
 
-
-- prioritering
-- betere balancing
 - usertesten regelen
