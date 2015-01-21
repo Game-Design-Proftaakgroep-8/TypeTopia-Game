@@ -169,13 +169,13 @@ public class CounterManager : MonoBehaviour {
 		gameOver = true;
 
 		if(answer > moneyCustomer) {
-			winText.text = "Je hebt te weinig gegeven";
+			winText.text = "Te weinig!";
 		}
 		else if(answer < moneyCustomer) {
-			winText.text = "Je hebt te veel gegeven";
+			winText.text = "Te veel!";
 		}
 		else if(answer == moneyCustomer) {
-			winText.text = "Goed Gedaan!";
+			winText.text = "Goed gedaan!";
 			data.increaseTopians(1);
 			setTopianText();
 		}
