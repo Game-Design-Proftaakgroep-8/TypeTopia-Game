@@ -5,7 +5,7 @@ public class MoneyManager : MonoBehaviour {
 	private GameObject manager;
 	private CounterManager counterManager;
 
-	public float amount;
+	public double amount;
 	private bool startMoney;
 
 	// Use this for initialization
@@ -21,7 +21,7 @@ public class MoneyManager : MonoBehaviour {
 	
 	}
 
-	public float getAmount() {
+	public double getAmount() {
 		return amount;
 	}
 

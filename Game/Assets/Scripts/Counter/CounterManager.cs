@@ -10,6 +10,10 @@ public class CounterManager : MonoBehaviour {
 	private Database db;
 	private SumInfo info;
 
+	public Object vijfCent;
+	public Object tienCent;
+	public Object twintigCent;
+	public Object vijftigCent;
 	public Object eenEuro;
 	public Object tweeEuro;
 	public Object vijfEuro;
@@ -24,11 +28,13 @@ public class CounterManager : MonoBehaviour {
 
 	private bool gameOver;
 
-	private float moneyCustomer;
-	private float demandCustomer;
-	private float priceBread;
-	private float cost;
-	private float answer;
+	private double moneyCustomer;
+	private int demandCustomer;
+	private double priceBread1;
+	private double priceBread2;
+	private double priceBread;
+	private double cost;
+	private double answer;
 
 
 	// Use this for initialization
@@ -51,8 +57,27 @@ public class CounterManager : MonoBehaviour {
 	}
 
 	private void setQuestion() {
-		priceBread = Mathf.Round(Random.Range (info.minRange, info.maxRange + 1));
-		demandCustomer = Mathf.Round(Random.Range (info.minRange, info.maxRange + 1));
+		priceBread1 = Mathf.Round(Random.Range (info.minRange, info.maxRange + 1));
+		if(priceBread1 != info.maxRange) {
+			print("sumCommas: " + info.sumCommas);
+			switch (info.sumCommas) {
+			case 0:
+				priceBread2 = 0;
+				break;
+			case 1:
+				priceBread2 = Random.Range(0, 10);
+				priceBread2 = priceBread2 / 10;
+				break;
+			case 2:
+				float commaOptions = info.commaOptions.Count;
+				priceBread2 = info.commaOptions[(int)Mathf.Round (Random.Range (0, commaOptions -1))];
+				break;
+			}
+		}
+		print ("priceBread1: " + priceBread1 + " - priceBread2: " + priceBread2);
+		priceBread = priceBread1 + priceBread2;
+
+		demandCustomer = (int)Mathf.Round(Random.Range (info.minRange + 1, info.maxRange + 1));
 		cost = priceBread * demandCustomer;
 
 		print ("priceBread: " + priceBread);
@@ -68,19 +93,40 @@ public class CounterManager : MonoBehaviour {
 	}
 
 	private void updateText (){
-		priceText.text = "1 brood kost €" + priceBread;
-
-		if(demandCustomer > 1)
-			demandText.text = "Ik wil " + demandCustomer + " broden";
+		priceText.text = "1 brood kost €" + priceBread1 + ",";
+		if(priceBread2 > 0) {
+			if(priceBread2.ToString().Length < 4)
+				priceText.text += (10 * priceBread2) + "0";
+			else
+				priceText.text += (100 * priceBread2);
+		}
 		else
-			demandText.text = "Ik wil " + demandCustomer + " brood";
+			priceText.text += "-";
+
+		demandText.text = "Ik wil " + demandCustomer;
+		if(demandCustomer > 1)
+			demandText.text += " broden";
+		else
+			demandText.text += " brood";
 	}
 
 	private void generateCustomerMoney() {
 		GameObject money = (GameObject)eenEuro;
 		Vector2 inHand = new Vector2(hand.transform.position.x, hand.transform.position.y);
 
-		if(cost < 1) {
+		if(cost < 0.05) {
+			money = (GameObject)Instantiate(vijfCent);
+		}
+		else if(cost < 0.10) {
+			money = (GameObject)Instantiate(tienCent);
+		}
+		else if(cost < 0.20) {
+			money = (GameObject)Instantiate(twintigCent);
+		}
+		else if(cost < 0.50) {
+			money = (GameObject)Instantiate(vijftigCent);
+		}
+		else if(cost < 1) {
 			money = (GameObject)Instantiate(eenEuro);
         }
 		else if(cost < 2) {
@@ -113,7 +159,7 @@ public class CounterManager : MonoBehaviour {
 		print ("answer: " + answer);
 	}
 
-	public void addCustomerMoney(float money) {
+	public void addCustomerMoney(double money) {
 		moneyCustomer += money;
 		print (moneyCustomer);
 	}

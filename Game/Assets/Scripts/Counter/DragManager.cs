@@ -4,12 +4,6 @@ using System.Collections;
 public class DragManager : MonoBehaviour {
 
 	private CounterManager manager;
-	private GameObject eenEuro;
-	private GameObject tweeEuro;
-	private GameObject vijfEuro;
-	private GameObject tienEuro;
-	private GameObject twintigEuro;
-	private GameObject vijftigEuro;
 
 	private GameObject lastTouched;
 
@@ -25,7 +19,7 @@ public class DragManager : MonoBehaviour {
 		if (Input.touchCount == 1) {
 			Touch touch = Input.GetTouch(0);
 			GameObject hit = InputDetection.CheckTouch(touch.position);
-			GameObject money = (GameObject)eenEuro;
+			GameObject money = (GameObject)manager.eenEuro;
 
 			if(touch.phase == TouchPhase.Began)
 				lastTouched = hit;
@@ -41,7 +35,19 @@ public class DragManager : MonoBehaviour {
 					lastTouched.transform.position = touchPosition;
 				}
 				else {
-					if(lastTouched.tag == "1euro" && touch.phase == TouchPhase.Began) {
+					if(lastTouched.tag == "5cent" && touch.phase == TouchPhase.Began) {
+						money = (GameObject)Instantiate(manager.vijfCent);
+					}
+					else if(lastTouched.tag == "10cent" && touch.phase == TouchPhase.Began) {
+						money = (GameObject)Instantiate(manager.tienCent);
+					}
+					else if(lastTouched.tag == "20cent" && touch.phase == TouchPhase.Began) {
+						money = (GameObject)Instantiate(manager.twintigCent);
+					}
+					else if(lastTouched.tag == "50cent" && touch.phase == TouchPhase.Began) {
+						money = (GameObject)Instantiate(manager.vijftigCent);
+					}
+					else if(lastTouched.tag == "1euro" && touch.phase == TouchPhase.Began) {
 						money = (GameObject)Instantiate(manager.eenEuro);
 					}
 					else if(lastTouched.tag == "2euro" && touch.phase == TouchPhase.Began) {
