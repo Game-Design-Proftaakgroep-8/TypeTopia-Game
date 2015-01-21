@@ -26,7 +26,10 @@ public class BalanceController : MonoBehaviour {
 
 	private int speedPerSecond = 60;
 	private int level;
+
 	private GameObject stockContainerGlow;
+	private int containerGlowed;
+	private int mixingBowlGlowed;
 
 	// Use this for initialization
 	void Start () {
@@ -53,8 +56,9 @@ public class BalanceController : MonoBehaviour {
 					unitPrefixText = "";
 				}
 				milligramsText.text = currentWeight + " " + unitPrefixText + "g";
-				if(level == 0 && glowContainer) {
+				if(level == 0 && glowContainer && containerGlowed < 2) {
 					StartCoroutine(this.ShowGlow(this.stockContainerGlow));
+					containerGlowed++;
 					glowContainer = false;
 				}
 				if(increasingWeight && stockContainer.OnMaxRotation()) {
@@ -63,7 +67,7 @@ public class BalanceController : MonoBehaviour {
 					stockRain.position = new Vector3(pos.x, pos.y, visible);
 
 					currentWeight += Mathf.Round(Time.deltaTime * speedPerSecond);
-					if(currentWeight > 100 && level == 0 && !glowContainer) {
+					if(currentWeight > 100 && level == 0 && containerGlowed < 2) {
 						glowContainer = true;
 					}
 				} else if (!increasingWeight) {
@@ -74,8 +78,9 @@ public class BalanceController : MonoBehaviour {
 					// decrease weight
 					if(currentWeight > 0) {
 						currentWeight -= Mathf.Round(Time.deltaTime * speedPerSecond);
-					} else if (level == 0) {
+					} else if (level == 0 && mixingBowlGlowed < 2) {
 						StartCoroutine(this.ShowGlow(this.mixingBowlGlow));
+						mixingBowlGlowed++;
 					}
 				}
 			}
@@ -102,8 +107,9 @@ public class BalanceController : MonoBehaviour {
 			increasingWeight = !increasingWeight;
 			stockContainer.StartStopDecreasing ();
 		}
-		if (!increasingWeight && level == 0 && currentWeight > 100) {
+		if (!increasingWeight && level == 0 && currentWeight > 100 && mixingBowlGlowed < 2) {
 			StartCoroutine(this.ShowGlow(this.mixingBowlGlow));
+			this.mixingBowlGlowed++;
 		}
 	}
 
@@ -122,6 +128,8 @@ public class BalanceController : MonoBehaviour {
 		if(!playing) {
 			this.playing = true;
 			this.level = level;
+			this.containerGlowed = 0;
+			this.mixingBowlGlowed = 0;
 			this.stockContainerGlow = stockContainer.gameObject.transform.GetChild(0).FindChild("glow3").gameObject;
 			this.glowContainer = true;
 			stockContainer.StartGame();
