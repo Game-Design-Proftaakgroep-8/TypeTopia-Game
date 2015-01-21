@@ -32,6 +32,7 @@ public class LevelManager : MonoBehaviour {
 	private GameObject hit; 
 	private Touch touch;
 	private bool pauze;
+	private bool stopped;
 
 	private int counterPlayed = 0;
 	private int maxCounter;
@@ -105,6 +106,7 @@ public class LevelManager : MonoBehaviour {
 		}
 
 		pauze = false;
+		stopped = false;
 
 		ovenScene = "Oven";
 		counterScene = "Counter";
@@ -117,8 +119,9 @@ public class LevelManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		if (counterPlayed == maxCounter && workbenchPlayed == maxWorkbench && ovenPlayed == maxOven)
+		if (stopped == false && counterPlayed == maxCounter && workbenchPlayed == maxWorkbench && ovenPlayed == maxOven)
 		{
+			stopped = true;
 			audio.PlayOneShot(audioGood);
 			geslaagd.text = "Geslaagd";
 			StartCoroutine(StopGame());
@@ -277,7 +280,7 @@ public class LevelManager : MonoBehaviour {
 		}
 		else if (hit == counter && counterPlayed < maxCounter)
 		{
-			if ((ovenPlayed == 1 && counterPlayed == 1) || (ovenPlayed == 2 && counterPlayed == 2))
+			if ((workbenchPlayed == 1 && ovenPlayed == 1) || (workbenchPlayed == 2 && ovenPlayed == 2))
 			{
 				counterPlayed++;
 				data.setCounterPlayed(counterPlayed);
