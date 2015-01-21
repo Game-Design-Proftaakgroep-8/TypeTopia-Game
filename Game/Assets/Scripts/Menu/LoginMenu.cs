@@ -69,4 +69,8 @@ public class LoginMenu : MonoBehaviour {
 			}
 		}
 	}
+
+	public void Quit() {
+		Application.Quit ();
+	}
 }
