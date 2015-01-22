@@ -7,13 +7,11 @@ public class CharacterMovement : MonoBehaviour {
 
 	private GameObject hit; 
 	private Touch touch;
-	private int touches;
 
 	// Use this for initialization
 	void Start ()
 	{
 		hit = null;
-		touches = 0;
 	}
 	
 	// Update is called once per frame
@@ -27,24 +25,12 @@ public class CharacterMovement : MonoBehaviour {
 		//Touch input
 		if(Input.touchCount == 1)
 		{
-			touches++;
-
-			print(touches);
-
 			touch = Input.touches[0];
 			GameObject o = InputDetection.CheckTouch(touch.position);
 						
 			if (o != null)
 			{
 				hit = o;
-			}
-			else
-			{
-				if (touches >= 15)
-				{
-					StartCoroutine(level.showObjectToTouch());
-					touches = 0;
-				}
 			}
 		}
 	}

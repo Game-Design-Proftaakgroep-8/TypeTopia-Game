@@ -114,6 +114,8 @@ public class LevelManager : MonoBehaviour {
 		scoreScene = "Score";
 
 		customerTimer = Time.time + 1f;
+
+		StartCoroutine(showObjectToTouch());
 	}
 	
 	// Update is called once per frame
@@ -123,7 +125,7 @@ public class LevelManager : MonoBehaviour {
 		{
 			stopped = true;
 			audio.PlayOneShot(audioGood);
-			geslaagd.text = "Geslaagd";
+			geslaagd.text = "Goed gedaan!";
 			StartCoroutine(StopGame());
 		}
 
@@ -146,7 +148,7 @@ public class LevelManager : MonoBehaviour {
 			//Place customer
 			if (customerTimer != 0)
 			{
-				if (Time.time >= customerTimer + 4f)
+				if ((Time.time >= customerTimer + 4f) || nextCustomerNr == 1)
 				{
 					if (nextCustomerNr <= nrOfCustomers)
 					{
@@ -369,7 +371,6 @@ public class LevelManager : MonoBehaviour {
 	{
 		yield return new WaitForSeconds (5);
 		data.reset ();
-		data.resetTopians ();
 
 		//Remove customers
 		foreach (GameObject g in this.customers)
