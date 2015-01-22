@@ -211,24 +211,28 @@ public class CounterManager : MonoBehaviour {
 	}
 
 	public IEnumerator ShowHandGlow() {
-		for (int i = 0; i < 3 && handGlow != null; i++) {
-			handGlow.renderer.sortingOrder = 0;
-			yield return new WaitForSeconds(1);
-			if(handGlow != null) {
-				handGlow.renderer.sortingOrder = -1;
+		if(info.sumLevel == 0) {
+			for (int i = 0; i < 3 && handGlow != null; i++) {
+				handGlow.renderer.sortingOrder = 0;
+				yield return new WaitForSeconds(1);
+				if(handGlow != null) {
+					handGlow.renderer.sortingOrder = -1;
+				}
+				yield return new WaitForSeconds(1);
 			}
-			yield return new WaitForSeconds(1);
 		}
 	}
 
 	public IEnumerator ShowRegisterGlow() {
-		for (int i = 0; i < 3 && registerGlow != null; i++) {
-			registerGlow.renderer.sortingOrder = 0;
-			yield return new WaitForSeconds(1);
-			if(handGlow != null) {
-				registerGlow.renderer.sortingOrder = -1;
+		if(info.sumLevel == 0) {
+			for (int i = 0; i < 3 && registerGlow != null; i++) {
+				registerGlow.renderer.sortingOrder = 0;
+				yield return new WaitForSeconds(1);
+				if(handGlow != null) {
+					registerGlow.renderer.sortingOrder = -1;
+				}
+				yield return new WaitForSeconds(1);
 			}
-			yield return new WaitForSeconds(1);
 		}
 	}
 }
