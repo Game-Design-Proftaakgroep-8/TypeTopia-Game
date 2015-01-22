@@ -260,7 +260,8 @@ public class LevelManager : MonoBehaviour {
 		//start game
 		if (hit == workbench && workbenchPlayed < maxWorkbench)
 		{
-			if (ovenPlayed == 0 || (ovenPlayed == 1 && counterPlayed == 2))
+			if ((ovenPlayed == 0 && workbenchPlayed == 0) 
+			    || (workbenchPlayed == 1 && ovenPlayed == 1 && counterPlayed == 2))
 			{
 				workbenchPlayed++;
 				data.setWorkbenchPlayed(workbenchPlayed);
@@ -271,7 +272,8 @@ public class LevelManager : MonoBehaviour {
 		}
 		else if (hit == oven && ovenPlayed < maxOven)
 		{
-			if ((workbenchPlayed == 1 && counterPlayed == 0) || (workbenchPlayed == 2))
+			if ((workbenchPlayed == 1 && ovenPlayed == 0 && counterPlayed == 0) 
+			    || (workbenchPlayed == 2 && ovenPlayed == 1))
 			{
 				ovenPlayed++;
 				data.setOvenPlayed(ovenPlayed);
@@ -282,7 +284,8 @@ public class LevelManager : MonoBehaviour {
 		}
 		else if (hit == counter && counterPlayed < maxCounter)
 		{
-			if ((workbenchPlayed == 1 && ovenPlayed == 1) || (workbenchPlayed == 2 && ovenPlayed == 2))
+			if ((workbenchPlayed == 1 && ovenPlayed == 1 && counterPlayed < 2) 
+			    || (workbenchPlayed == 2 && ovenPlayed == 2))
 			{
 				counterPlayed++;
 				data.setCounterPlayed(counterPlayed);
