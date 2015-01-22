@@ -14,6 +14,9 @@ public class OvenManager : MonoBehaviour {
 	public Text winText;
 	public Text topiansText;
 
+	public AudioClip audioGood;
+	public AudioClip audioBad;
+
 	public GameObject Clock;
 
 	private int timeH;
@@ -158,22 +161,25 @@ public class OvenManager : MonoBehaviour {
 	}
 
 	public void confirm() {
-		setGivenAnswer ();
-		if(givenAnswer == answer) {
-			winText.text = "Goed gedaan!";
-			data.increaseTopians(1);
-			setTopianText();
+		if(!gameOver) {
 			gameOver = true;
+			setGivenAnswer ();
+			if(givenAnswer == answer) {
+				winText.text = "Goed gedaan!";
+				data.increaseTopians(1);
+				setTopianText();
+				audio.PlayOneShot(audioGood);
+			}
+			else if(givenAnswer < answer) {
+				winText.text = "Te kort!";
+				audio.PlayOneShot(audioBad);
+			}
+			else if(givenAnswer > answer) {
+				winText.text = "Te lang!";
+				audio.PlayOneShot(audioBad);
+			}
+			StartCoroutine (returnToOverview());
 		}
-		else if(givenAnswer < answer) {
-			winText.text = "Te kort!";
-			gameOver = true;
-		}
-		else if(givenAnswer > answer) {
-			winText.text = "Te lang!";
-			gameOver = true;
-		}
-		StartCoroutine (returnToOverview());
 	}
 
 	private IEnumerator returnToOverview() {

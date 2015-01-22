@@ -12,6 +12,9 @@ public class CounterManager : MonoBehaviour {
 	private Database db;
 	private SumInfo info;
 
+	public AudioClip audioGood;
+	public AudioClip audioBad;
+
 	public Object vijfCent;
 	public Object tienCent;
 	public Object twintigCent;
@@ -189,20 +192,24 @@ public class CounterManager : MonoBehaviour {
 	}
 
 	public void confirm() {
-		gameOver = true;
-
-		if(answer > moneyCustomer) {
-			winText.text = "Te weinig!";
+		if(!gameOver) {
+			gameOver = true;
+			if(answer > moneyCustomer) {
+				winText.text = "Te weinig!";
+				audio.PlayOneShot(audioBad);
+			}
+			else if(answer < moneyCustomer) {
+				winText.text = "Te veel!";
+				audio.PlayOneShot(audioBad);
+			}
+			else if(answer == moneyCustomer) {
+				winText.text = "Goed gedaan!";
+				data.increaseTopians(1);
+				setTopianText();
+				audio.PlayOneShot(audioGood);
+			}
+			StartCoroutine (returnToOverview ());
 		}
-		else if(answer < moneyCustomer) {
-			winText.text = "Te veel!";
-		}
-		else if(answer == moneyCustomer) {
-			winText.text = "Goed gedaan!";
-			data.increaseTopians(1);
-			setTopianText();
-		}
-		StartCoroutine (returnToOverview ());
 	}
 
 	public IEnumerator returnToOverview() {
