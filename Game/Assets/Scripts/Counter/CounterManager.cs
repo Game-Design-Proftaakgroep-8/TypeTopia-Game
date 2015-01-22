@@ -55,6 +55,7 @@ public class CounterManager : MonoBehaviour {
 		registerGlowShown = false;
 
 		info = db.GetSumInfo ("money", data.getLevel ());
+		print ("sumLevel: " + info.sumLevel);
 		moneyCustomer = 0;
 		setTopianText ();
 		setQuestion ();
@@ -85,12 +86,20 @@ public class CounterManager : MonoBehaviour {
 				break;
 			case 2:
 				float commaOptions = info.commaOptions.Count;
-				priceBread2 = info.commaOptions[(int)Mathf.Round (Random.Range (0, commaOptions -1))];
+				if(info.sumLevel == 2) {
+				priceBread2 = info.commaOptions[(int)Mathf.Round (Random.Range (0, commaOptions - 1))];
+				}
+				else {
+					priceBread2 = Random.Range (0, 20) * 5;
+				}
 				break;
 			}
 		}
 		print ("priceBread1: " + priceBread1 + " - priceBread2: " + priceBread2);
-		priceBread = priceBread1 + priceBread2;
+		if(info.sumLevel != 3)
+			priceBread = priceBread1 + priceBread2;
+		else
+			priceBread = priceBread1 + (priceBread2 / 100);
 
 		demandCustomer = (int)Mathf.Round(Random.Range (info.minRange + 1, info.maxRange + 1));
 		cost = priceBread * demandCustomer;
@@ -113,10 +122,12 @@ public class CounterManager : MonoBehaviour {
 	private void updateText (){
 		priceText.text = "1 brood kost €" + priceBread1 + ",";
 		if(priceBread2 > 0) {
-			if(priceBread2.ToString().Length < 4)
+			if(priceBread2.ToString().Length < 4 && info.sumLevel != 3)
 				priceText.text += (10 * priceBread2) + "0";
-			else
+			else if(info.sumLevel != 3)
 				priceText.text += (100 * priceBread2);
+			else if(info.sumLevel == 3)
+				priceText.text += priceBread2;
 		}
 		else
 			priceText.text += "-";
