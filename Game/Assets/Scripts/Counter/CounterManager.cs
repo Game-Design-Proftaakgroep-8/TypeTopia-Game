@@ -204,7 +204,7 @@ public class CounterManager : MonoBehaviour {
 			}
 			else if(answer == moneyCustomer) {
 				winText.text = "Goed gedaan!";
-				data.increaseTopians(1);
+				data.increaseTopians(info.sumLevel);
 				setTopianText();
 				audio.PlayOneShot(audioGood);
 			}

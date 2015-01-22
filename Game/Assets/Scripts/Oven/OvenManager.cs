@@ -166,7 +166,7 @@ public class OvenManager : MonoBehaviour {
 			setGivenAnswer ();
 			if(givenAnswer == answer) {
 				winText.text = "Goed gedaan!";
-				data.increaseTopians(1);
+				data.increaseTopians(info.sumLevel);
 				setTopianText();
 				audio.PlayOneShot(audioGood);
 			}
