@@ -80,6 +80,7 @@ public class BalanceController : MonoBehaviour {
 						currentWeight -= Mathf.Round(Time.deltaTime * speedPerSecond);
 					}
 					if (currentWeight <= 1 && level == 0 && mixingBowlGlowed < 2) {
+						currentWeight = 0;
 						StartCoroutine(this.ShowMixingGlow());
 						mixingBowlGlowed++;
 					}
