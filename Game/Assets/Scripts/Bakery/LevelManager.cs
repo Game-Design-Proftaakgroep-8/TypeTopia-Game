@@ -260,7 +260,7 @@ public class LevelManager : MonoBehaviour {
 		//start game
 		if (hit == workbench && workbenchPlayed < maxWorkbench)
 		{
-			if ((ovenPlayed == 0 && workbenchPlayed == 0) 
+			if ((ovenPlayed == 0 && workbenchPlayed == 0 && counterPlayed == 0) 
 			    || (workbenchPlayed == 1 && ovenPlayed == 1 && counterPlayed == 2))
 			{
 				workbenchPlayed++;
